@@ -1,6 +1,6 @@
 ## logback-manual-jp
 
-[Logbackマニュアル](https://logback.qos.ch/manual/index_ja.html)を[本家](https://github.com/qos-ch/logback/tree/master/logback-site/src/site/pages/manual)から切り離して管理するためのリポジトリ
+[Logbackの日本語マニュアル](https://logback.qos.ch/manual/index_ja.html)を[本家](https://github.com/qos-ch/logback/tree/master/logback-site/src/site/pages/manual)から切り離して管理するためのリポジトリ
 
 ## 経緯
 
