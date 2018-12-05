@@ -2,21 +2,21 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
     <title>第8章 診断コンテキスト</title>
-    <link rel="stylesheet" type="text/css" href="../css/common.css"></link>
-    <link rel="stylesheet" type="text/css" href="../css/screen.css" media="screen"></link>
-    <link rel="stylesheet" type="text/css" href="../css/_print.css" media="print"></link>
-    <link rel="stylesheet" type="text/css" href="../css/prettify.css" media="screen"></link>
+    <link rel="stylesheet" type="text/css" href="https://logback.qos.ch/css/common.css"></link>
+    <link rel="stylesheet" type="text/css" href="https://logback.qos.ch/css/screen.css" media="screen"></link>
+    <link rel="stylesheet" type="text/css" href="https://logback.qos.ch/css/_print.css" media="print"></link>
+    <link rel="stylesheet" type="text/css" href="https://logback.qos.ch/css/prettify.css" media="screen"></link>
   </head>
   <body dir="ltr" onload="prettyPrint(); decorate();">
-    <script type="text/javascript">prefix='../';</script>
-    <script type="text/javascript" src="../js/prettify.js"></script>
-    <script src="../templates/header.js" type="text/javascript"></script>
-    <script type="text/javascript" src="../js/dsl.js"></script>
-    <script type="text/javascript" src="../js/jquery-min.js"></script>
-    <script type="text/javascript" src="../js/decorator.js"></script>
+    <script type="text/javascript">prefix='https://logback.qos.ch/';</script>
+    <script type="text/javascript" src="https://logback.qos.ch/js/prettify.js"></script>
+    <script src="https://logback.qos.ch/templates/header.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://logback.qos.ch/js/dsl.js"></script>
+    <script type="text/javascript" src="https://logback.qos.ch/js/jquery-min.js"></script>
+    <script type="text/javascript" src="https://logback.qos.ch/js/decorator.js"></script>
     <div id="left">
       <noscript>Please turn on Javascript to view this menu</noscript>
-      <script src="../templates/left.js" type="text/javascript"></script>
+      <script src="https://logback.qos.ch/templates/left.js" type="text/javascript"></script>
     </div>
     <div id="right">
       <script src="menu_ja.js" type="text/javascript"></script>
@@ -30,12 +30,12 @@
       <p>—LEROY CAIN, Flight Director, Columbia Mission Control</p>
     </div>
     
-    <script src="../templates/creative.js" type="text/javascript"></script>
+    <script src="https://logback.qos.ch/templates/creative.js" type="text/javascript"></script>
     
 		<p>logbackの設計目標の1つとして、複雑な分散アプリケーションの監査とデバッグに使うことがあります。現実世界のほとんどの分散型システムは、同時に複数のクライアントの相手をしなければなりません。こういうシステムの典型的なマルチスレッドの実装は、スレッドが別々のクライアントを処理するものです。それぞれのクライアントに対するログ出力を分離するために実際に行われているアプローチは、クライアントごとに新しいロガーを用意するという少々残念なものです。このやり方ではやたらめったらロガーを生成することになりますし、管理のためのオーバーヘッドも馬鹿になりません。
 		</p>
 		
-    <script src="../templates/setup.js" type="text/javascript"></script>
+    <script src="https://logback.qos.ch/templates/setup.js" type="text/javascript"></script>
 
     
     <p>もう少し軽めのやり方としては、リクエストを受け付けたクライアントの固有の情報をログに出力する方法があります。この方法は書籍「Patterns for Logging Diagnostic Messages in Pattern Languages of Program Design 3」（Addison-Wesley, 1997）でニール・ハリソンが紹介しています。logback が利用しているのはSLF4J API の診断コンテキスト（MDC）で、これはさっき紹介した技法を応用したものです。
@@ -536,7 +536,7 @@ public class UserServletFilter implements Filter {
 
   <p class="source">%X{req.remoteHost} %X{req.requestURI}%n%d - %m%n</p>
 
-    <script src="../templates/footer.js" type="text/javascript"></script>
+    <script src="https://logback.qos.ch/templates/footer.js" type="text/javascript"></script>
 </div>
 </body>
 </html>
