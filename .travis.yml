@@ -5,4 +5,4 @@ before_script:
   - linkchecker --version
 
 script:
-  - linkchecker --check-extern ./manual/
+  - linkchecker --check-extern --timeout 10 ./manual/
