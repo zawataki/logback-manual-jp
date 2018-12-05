@@ -1,4 +1,5 @@
 ## logback-manual-jp
+[![Build Status](https://travis-ci.org/zawataki/logback-manual-jp.svg?branch=master)](https://travis-ci.org/zawataki/logback-manual-jp)
 
 [Logbackの日本語マニュアル](https://logback.qos.ch/manual/index_ja.html)を[本家](https://github.com/qos-ch/logback/tree/master/logback-site/src/site/pages/manual)から切り離して管理するためのリポジトリ
 
