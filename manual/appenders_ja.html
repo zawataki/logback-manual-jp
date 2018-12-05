@@ -159,7 +159,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
   <p><code>OutputStreamAppender</code>は<code>ConsoleAppender</code> 、 <code>FileAppender</code>の基底クラスです。<code>RollingFileAppender</code>の基底クラスはFileAppenderなので、これも含めておきます。次の図は<code>OutputStreamAppender</code>とそのサブクラスの関係を図示したものです。
 	</p>
 	
-	<img src="images/chapters/appenders/appenderClassDiagram.jpg" alt="OutputStreamAppenderとサブクラスを示すUML図">
+	<img src="https://logback.qos.ch/manual/images/chapters/appenders/appenderClassDiagram.jpg" alt="OutputStreamAppenderとサブクラスを示すUML図">
 	
 
 	<h2 class="doAnchor" name="ConsoleAppender">ConsoleAppender</h2>
@@ -1450,7 +1450,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 		<p>指定したrecipientには<code>PatternLayout</code>で指定したとおりに書式化された100個のロギングイベントが含まれたメールが届くはずです。Mozilla Thunderbird で受信したメールを開いたところを示します。
 		</p>
     
-    <p><img src="images/chapters/appenders/smtpAppender1.jpg" alt="結果の電子メール"></p>
+    <p><img src="https://logback.qos.ch/manual/images/chapters/appenders/smtpAppender1.jpg" alt="結果の電子メール"></p>
 		
 		<p>設定ファイル<em>mail2.xml</em>では、<span class="prop">smtpHost</span>や<span class="prop">to</span>や<span class="prop">from</span>が変数で指定されています。<em>mail2.xml</em>の大事な部分を次に示します。
 		</p>		
@@ -1477,7 +1477,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p>循環バッファのサイズが256なので、recipientが受け取るメールでは256個のロギングイベントが綺麗にHTMLのテーブルに整形されるようになっています。<code>chapters.appenders.mail.Email</code>アプリケーションを実行して10000件のロギングイベントを生成しても、送信されるメールには最新の256件しか含まれないことになるので気をつけてください。
 		</p>
 		
-    <p><img src="images/chapters/appenders/smtpAppender2.jpg" alt="第2回のメール"></p>
+    <p><img src="https://logback.qos.ch/manual/images/chapters/appenders/smtpAppender2.jpg" alt="第2回のメール"></p>
 
     <p>Mozilla ThunderbirdやEudoraやMS Outlookといったメールクライアントは、HTML形式のメールでもCSSをわりと上手く処理します。ですが、勝手にHTMLを平文テキストにダウングレードすることがあります。例えば、Thunderbird でHTMLメールを表示するには、"表示→メッセージ本文→オリジナルのHTML" でオプションを指定しなければなりません。Yahoo!メールはHTMLメールをサポートしており、CSSの対応具合はピカ一です。一方、Gmailは普通のHTMLテーブルはそのまま表示してくれますが、内部CSSによる整形はしてくれません。GmailはインラインCSSをサポートしていますが、インラインCSSを使うとHTMLソースコードが膨れ上がってしまうので、<code>HTMLLayout</code>ではインラインCSSを使用しません。</p>
 
@@ -2020,15 +2020,15 @@ logger.error(<b>notifyAdmin</b>,
 		
 		<p><em>logging_event</em>テーブル</p>
 
-		<img src="images/chapters/appenders/dbAppenderLE.gif" alt="ロギングイベントテーブル">
+		<img src="https://logback.qos.ch/manual/images/chapters/appenders/dbAppenderLE.gif" alt="ロギングイベントテーブル">
 
 		<p><em>logging_event_exception</em>テーブル</p>
 		
-		<img src="images/chapters/appenders/dbAppenderLEException.gif" alt="ロギングイベント例外テーブル">
+		<img src="https://logback.qos.ch/manual/images/chapters/appenders/dbAppenderLEException.gif" alt="ロギングイベント例外テーブル">
 
 		<p><em>logging_event_property</em>テーブル</p>
 		
-		<img src="images/chapters/appenders/dbAppenderLEProperty.gif" alt="イベントログ記録Propertyテーブル">
+		<img src="https://logback.qos.ch/manual/images/chapters/appenders/dbAppenderLEProperty.gif" alt="イベントログ記録Propertyテーブル">
 
 		
 		<h4>ConnectionSource</h4>
