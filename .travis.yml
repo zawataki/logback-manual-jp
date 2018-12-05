@@ -2,4 +2,7 @@ language: minimal
 
 before_script:
   - pip install --user linkchecker
+  - linkchecker --version
+
+script:
   - linkchecker ./manual/
