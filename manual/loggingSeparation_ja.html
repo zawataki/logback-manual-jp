@@ -172,7 +172,7 @@
     <p>この問題を文句のつけようもないくらいに完全に解決するには、別の観点でロガーの内部事情に切り込まなければなりません。たとえば、ロガーは実際の仕事をするロガーを内包するものとして、ロガーに対するメッセージは内包するロガーに委譲するようにします。そして、内包されたロガーは適切なロガーコンテキストを参照するようにするのです。このアプローチは実装が大変だし、オーバーヘッドが非常に高くなってしまうでしょう。取りかかる気にはなれません。
     </p>
 
-    <p>クラスの共有を止めて、アプリケーションの内部に移動してしまうのが、"共有クラスの静的ロガー"問題に対するお手軽な解決方法の1つであることは言うまでもありません。共有しないようにするのが不可能なら、<a href="http://logback.qos.ch/manual/appenders.html#SiftingAppender"><code>SiftingAppender</code></a>の魔法を使ってログの分離を実現するしかないでしょう。
+    <p>クラスの共有を止めて、アプリケーションの内部に移動してしまうのが、"共有クラスの静的ロガー"問題に対するお手軽な解決方法の1つであることは言うまでもありません。共有しないようにするのが不可能なら、<a href="http://logback.qos.ch/manual/appenders_ja.html#SiftingAppender"><code>SiftingAppender</code></a>の魔法を使ってログの分離を実現するしかないでしょう。
     </p>
 
     <p>logbackの配布物には<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/sift/JNDIBasedContextDiscriminator.html">JNDIBasedContextDiscriminator</a>という弁別器が含まれています。これは<code>ContextJNDISelector</code>の返すロガーコンテキストの名前を返すものです。<code>SiftingAppender</code>と<code>JNDIBasedContextDiscriminator</code>を組み合わせると、アプリケーションごとに別々のアペンダーインスタンスを生成することができます。

@@ -183,7 +183,7 @@ public class MySampleLayout2 extends LayoutBase&lt;ILoggingEvent&gt; {
 }</pre>
 
 
-    <p>プロパティのセッターメソッドを追加すれば設定ファイルから指定できるようになります。<code>printThreadName</code>プロパティの型は真偽値（boolean）であって文字列（<code>String</code>）ではないので注意してください。logbackのコンポーネントの設定については、<a href="http://logback.qos.ch/manual/configuration.html">設定に関する章</a>で詳しく説明しています。<a href="http://logback.qos.ch/manual/onJoran.html">Joranの章</a>にはより詳細な説明があります。<code>MySampleLayout2</code>のために特別に誂えた設定ファイルは次のとおりです。
+    <p>プロパティのセッターメソッドを追加すれば設定ファイルから指定できるようになります。<code>printThreadName</code>プロパティの型は真偽値（boolean）であって文字列（<code>String</code>）ではないので注意してください。logbackのコンポーネントの設定については、<a href="http://logback.qos.ch/manual/configuration_ja.html">設定に関する章</a>で詳しく説明しています。<a href="http://logback.qos.ch/manual/onJoran_ja.html">Joranの章</a>にはより詳細な説明があります。<code>MySampleLayout2</code>のために特別に誂えた設定ファイルは次のとおりです。
     </p>
 
 
@@ -267,10 +267,10 @@ WARN  [main]: Message 2</p>
     <p>変換パターン文字列の<b>"%-5level [％thread] %msg%n"</b>には、文字列リテラルと変換指定子を明示的に区切る文字が無いことに気付きましたか。変換パターン文字列を解析する際、<code>PatternLayout</code>は文字列リテラル（空白文字、括弧、コロンなど）と変換指定を分離することができます。上記の例では、変換指定"％-5level"は、ロギングイベントのレベルを5文字の幅に左揃えすることを意味します。書式指定子については後で説明します。
     </p>
 
-    <p><code>PatternLayout</code>は変換パターン文字列をグループ化するために括弧を使います。<b>つまり '（'と '）'には特別な意味があるので、リテラル文字列として使うときはエスケープしなければならないということです。</b> 括弧の特殊な性質について詳しくは<a href="http://logback.qos.ch/manual/layouts.html#Parentheses">後で説明</a>します。
+    <p><code>PatternLayout</code>は変換パターン文字列をグループ化するために括弧を使います。<b>つまり '（'と '）'には特別な意味があるので、リテラル文字列として使うときはエスケープしなければならないということです。</b> 括弧の特殊な性質について詳しくは<a href="http://logback.qos.ch/manual/layouts_ja.html#Parentheses">後で説明</a>します。
     </p>
 
-    <p>前述のとおり、変換指定によっては括弧で囲んでオプションの引数を指定することができます。例えばこういう書き方です。<code>%logger{10}</code>"logger" が変換指定子で、10が引数です。オプションの指定の仕方について詳しくは<a href="http://logback.qos.ch/manual/layouts.html#cwOptions">後で説明</a>します。
+    <p>前述のとおり、変換指定によっては括弧で囲んでオプションの引数を指定することができます。例えばこういう書き方です。<code>%logger{10}</code>"logger" が変換指定子で、10が引数です。オプションの指定の仕方について詳しくは<a href="http://logback.qos.ch/manual/layouts_ja.html#cwOptions">後で説明</a>します。
     </p>
 
     <p>利用できる変換指定とオプションを表にまとめました。1つのセルに複数の変換指定子が登場する場合、それらは別名という意味です。
@@ -278,13 +278,13 @@ WARN  [main]: Message 2</p>
 
     <table class="bodyTable properties striped" border="0">
       <tr>
-        <th><a name="conversionWord" href="http://logback.qos.ch/manual/layouts.html#conversionWord">変換指定子</a></th>
+        <th><a name="conversionWord" href="http://logback.qos.ch/manual/layouts_ja.html#conversionWord">変換指定子</a></th>
         <th>効果</th>
       </tr>
 
       <tr>
         <td class="word" name="logger">
-          <a name="logger" href="http://logback.qos.ch/manual/layouts.html#logger"><span class="anchor"></span></a>
+          <a name="logger" href="http://logback.qos.ch/manual/layouts_ja.html#logger"><span class="anchor"></span></a>
           <b>c</b>{<em>length</em>} <br>
           <b>lo</b>{<em>length</em>} <br>
           <b>logger</b>{<em>length</em>} <br>
@@ -574,7 +574,7 @@ thread</b>
           <p>キーが未指定のときは、MDCの内容がすべて出力されます。そのときの書式は"key1=val1,key2=val2"のようになります。
           </p>
 
-          <p>詳しくは<a href="http://logback.qos.ch/manual/mdc.html">MDCの章</a>を参照してください。</p>
+          <p>詳しくは<a href="http://logback.qos.ch/manual/mdc_ja.html">MDCの章</a>を参照してください。</p>
 
         </td>
       </tr>
@@ -717,7 +717,7 @@ thread</b>
           <b>property{key}</b>
         </td>
 
-        <td><p><em>キー</em>という名前のプロパティに設定された値を出力します。関連するドキュメントは<a href="http://logback.qos.ch/manual/configuration.html#variableSubstitution">変数の定義</a>と<a href="http://logback.qos.ch/manual/configuration.html#scopes">変数のスコープ</a>です。
+        <td><p><em>キー</em>という名前のプロパティに設定された値を出力します。関連するドキュメントは<a href="http://logback.qos.ch/manual/configuration_ja.html#variableSubstitution">変数の定義</a>と<a href="http://logback.qos.ch/manual/configuration_ja.html#scopes">変数のスコープ</a>です。
 
         <em>キー</em>がロガーコンテキストのプロパティではなかったら、システムプロパティを探します。</p>
 
@@ -897,7 +897,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
     <h3 class="doAnchor" name="oneLetterLevel">レベルを1文字で出力する</h3>
 
-    <p>ロギングレベルをTRACE、DEBUG、WARN、INFO、ERRORのような文字列として出力するのではなく、T、D、W、I、Eのように一文字だけ出力したい場合もあるでしょう。<a href="http://logback.qos.ch/manual/layouts.html#customConversionSpecifier">カスタムコンバーター</a>を実装してもできるでしょうし、書式修飾子を使うこともできます。書式修飾子を使うなら<code>"%.-1level"</code>とすればよいでしょう。
+    <p>ロギングレベルをTRACE、DEBUG、WARN、INFO、ERRORのような文字列として出力するのではなく、T、D、W、I、Eのように一文字だけ出力したい場合もあるでしょう。<a href="http://logback.qos.ch/manual/layouts_ja.html#customConversionSpecifier">カスタムコンバーター</a>を実装してもできるでしょうし、書式修飾子を使うこともできます。書式修飾子を使うなら<code>"%.-1level"</code>とすればよいでしょう。
     </p>
 
     <h2 class="doAnchor" name="cwOptions">変換指定子のオプション</h2>
@@ -920,7 +920,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
     <h2 class="doAnchor" name="Parentheses">括弧は特別扱い</h2>
 
-    <p>logbackでは、パターン文字列の中の括弧は、トークンをグループ化するものとして扱います。それぞれのグループはそれ自体を1つのパターン文字列として扱うことができます。logback0.9.27から、<a href="http://logback.qos.ch/manual/layouts.html#replace">%replace</a>のような変換指定子を組み合わせて部分パターン文字列を作れるようになりました。
+    <p>logbackでは、パターン文字列の中の括弧は、トークンをグループ化するものとして扱います。それぞれのグループはそれ自体を1つのパターン文字列として扱うことができます。logback0.9.27から、<a href="http://logback.qos.ch/manual/layouts_ja.html#replace">%replace</a>のような変換指定子を組み合わせて部分パターン文字列を作れるようになりました。
     </p>
 
     <p>こんなパターン文字列があるとします。</p>
@@ -963,7 +963,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
     <h2 class="doAnchor" name="coloring">カラー化</h2>
 
-    <p><a href="http://logback.qos.ch/manual/layouts.html#Parentheses">括弧</a>でグループ化した部分パターン文字列には色を指定することができます。logback1.0.5から<code>PatternLayout</code>で指定できるようになった色付け用の変換指定子は次のとおりです。
+    <p><a href="http://logback.qos.ch/manual/layouts_ja.html#Parentheses">括弧</a>でグループ化した部分パターン文字列には色を指定することができます。logback1.0.5から<code>PatternLayout</code>で指定できるようになった色付け用の変換指定子は次のとおりです。
     <ul>
       <li>"%black"</li>
       <li>"%red"</li>
@@ -1020,7 +1020,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 [main] <span style="color:#611">WARN</span>  <span style="color:#2bd">c.l.TrivialMain</span> - a warning message 5
 [main] <span style="color:#f00">ERROR</span> <span style="color:#2bd">c.l.TrivialMain</span> - Finish off with fireworks</pre>
 
-    <p>色付け用変換指定子を使うとパターン文字列が複数行になってしまうこともあります。<a href="http://logback.qos.ch/manual/layouts.html#customConversionSpecifier">変換指定を自作する</a>では設定ファイルで使用できる変換指定子を登録する手順について議論しています。</p>
+    <p>色付け用変換指定子を使うとパターン文字列が複数行になってしまうこともあります。<a href="http://logback.qos.ch/manual/layouts_ja.html#customConversionSpecifier">変換指定を自作する</a>では設定ファイルで使用できる変換指定子を登録する手順について議論しています。</p>
 
     <h2 class="doAnchor" name="Evaluators">評価器</h2>
 
@@ -1031,7 +1031,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
     <p>早速<code>EventEvaluator</code>の例を見てみましょう。次の設定ファイルは、ロギングイベントの日付、スレッド、レベル、メッセージと送信者情報をコンソールに出力するものです。ロギングイベントの送信者情報を抽出するのはとてもコストが高いので、特定のロガーが生成したロギング要求の場合だけに限定しています。さらに、メッセージに特定の文字列が含まれている場合だけにしています。ですので、特定のロギングイベントについてだけ、送信者情報の生成と出力を行うことになります。そうすれば、送信者情報のいらないケースではアプリケーションの性能ペナルティが発生しません。
     </p>
 
-    <p>評価器と<em>具体的な評価式</em>については、<a href="http://logback.qos.ch/manual/filters.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="http://docs.codehaus.org/display/JANINO/Home">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="http://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
+    <p>評価器と<em>具体的な評価式</em>については、<a href="http://logback.qos.ch/manual/filters_ja.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="http://docs.codehaus.org/display/JANINO/Home">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="http://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
 
   <p class="example">例：EventEvaluatorsの使用例（<a href="http://logback.qos.ch/xref/chapters/callerEvaluatorConfig.xml">logback-examples/src/main/java/chapters/callerEvaluatorConfig.xml</a>）</p>
 <span class="asGroovy" onclick="return asGroovy(&#39;callerEvaluatorConfig&#39;);">Groovyとして表示</span>
@@ -1205,7 +1205,7 @@ java.lang.Exception: display
   at chapters.layouts.ExceptionEvaluatorExample.main(ExceptionEvaluatorExample.java:43) [logback-examples-0.9.19.jar:na]</p>
 
 
-    <p>二つ目のロギング要求による出力にはスタックトレースが含まれていないことがわかりますか。うまく<code>TestException</code>のスタックトレースを出力しないようにできました。スタックトレースの各行の最後にある角括弧で囲まれた部分は<a href="http://logback.qos.ch/manual/layouts.html#xThrowable">パッケージング情報</a>です。</p>
+    <p>二つ目のロギング要求による出力にはスタックトレースが含まれていないことがわかりますか。うまく<code>TestException</code>のスタックトレースを出力しないようにできました。スタックトレースの各行の最後にある角括弧で囲まれた部分は<a href="http://logback.qos.ch/manual/layouts_ja.html#xThrowable">パッケージング情報</a>です。</p>
 
     <p><b><em>%ex</em></b>変換指定があるので、<em>評価式</em>の結果が<b>false</b>になったときだけスタックトレースが出力されるようになっています。</p>
 
@@ -1285,7 +1285,7 @@ java.lang.Exception: display
     <p>デフォルトのCSSを使った<code>HTMLLayout</code>の出力例を見てください。</p>
     <img src="https://logback.qos.ch/manual/images/chapters/layouts/htmlLayout0.gif" alt="HTMLレイアウトサンプル画像">
 
-    <p>テーブルの列は変換パターン文字列で指定します。<a href="http://logback.qos.ch/manual/layouts.html#ClassicPatternLayout"><code>PatternLayout</code></a>のドキュメントに書かれた変換パターン文字列の説明を見てください。テーブルの形も内容も全て制御することができます。<code>PatternLayout</code>で使えるあらゆるコンバーターを使うことができます。
+    <p>テーブルの列は変換パターン文字列で指定します。<a href="http://logback.qos.ch/manual/layouts_ja.html#ClassicPatternLayout"><code>PatternLayout</code></a>のドキュメントに書かれた変換パターン文字列の説明を見てください。テーブルの形も内容も全て制御することができます。<code>PatternLayout</code>で使えるあらゆるコンバーターを使うことができます。
     </p>
 
     <p>自由に使えるとはいえ一つだけ例外的な制限があります。<code>PatternLayout</code>と<code>HTMLLayout</code>を使うときは、変換パターン文字列中で変換指定を半角スペースで区切ってはいけません。もっというと文字列リテラルを使わないようにしてください。変換パターン文字列中の変換指定はそれぞれがテーブルの列になるからです。同様に、変換指定を区切るつもりの文字列リテラルはそれぞれが列になってしまいます。下手をすると、横に超長いテーブルが出力されてしまうかもしれません。</p>
@@ -1617,7 +1617,7 @@ server</b></td>
 
     <h3 class="doAnchor" name="AccessHTMLLayout">HTMLLayout</h3>
 
-    <p>logback-accessモジュールの<a href="http://logback.qos.ch/xref/ch/qos/logback/access/html/HTMLLayout.html"><code>HTMLLayout</code></a>は、logback-classicモジュールの<a href="http://logback.qos.ch/manual/layouts.html#ClassicHTMLLayout"><code>HTMLLayout</code></a>とほとんど変わりません。
+    <p>logback-accessモジュールの<a href="http://logback.qos.ch/xref/ch/qos/logback/access/html/HTMLLayout.html"><code>HTMLLayout</code></a>は、logback-classicモジュールの<a href="http://logback.qos.ch/manual/layouts_ja.html#ClassicHTMLLayout"><code>HTMLLayout</code></a>とほとんど変わりません。
     </p>
 
     <p>デフォルトでは次の項目を含む表を作ります。</p>

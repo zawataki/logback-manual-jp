@@ -33,7 +33,7 @@
 
     <script src="../templates/creative.js" type="text/javascript"></script>
     
-    <p>ここまでに、<a href="http://logback.qos.ch/manual/architecture.html#basic_selection">基本的な選択ルール</a>がlogback-classicモジュールの中核を担っていることを説明してきました。本章では、それに加えてフィルタリングの方法を紹介します。
+    <p>ここまでに、<a href="http://logback.qos.ch/manual/architecture_ja.html#basic_selection">基本的な選択ルール</a>がlogback-classicモジュールの中核を担っていることを説明してきました。本章では、それに加えてフィルタリングの方法を紹介します。
     </p>
   
 
@@ -228,7 +228,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
     <p>この設定は、ログレベルがWARN以上で、ユーザーエージェントがクローラー（GooglebotやmsnbotやYahoo）以外のロギングイベントのメッセージをコンソールに出力します。ロギングイベントに関連付けられた MDC の "req.userAgent" の値を正規表現<code>/Googlebot|msnbot|Yahoo/</code>で評価して、ユーザーエージェントを判定しています。MDCがnullになることもあるので、Groovyの<a href="http://groovy.codehaus.org/Null+Object+Pattern">安全なデリファレンス演算子</a>（?.)を使っています。同じことをJava言語で実装するともっと長くなってしまうでしょう。
     </p>
     
-    <p>ユーザーエージェント文字列がいつMDCに登録されたのか疑問に思うかもしれません。説明しておくべきでしたが、logbackの配布物に含まれている<a href="http://logback.qos.ch/manual/mdc.html#mis"><code>MDCInsertingServletFilter</code></a>を使っています。詳しくは後の章で説明します。
+    <p>ユーザーエージェント文字列がいつMDCに登録されたのか疑問に思うかもしれません。説明しておくべきでしたが、logbackの配布物に含まれている<a href="http://logback.qos.ch/manual/mdc_ja.html#mis"><code>MDCInsertingServletFilter</code></a>を使っています。詳しくは後の章で説明します。
     </p>
 
     <!-- ==================== JaninoEventEvaluator ======================== -->
@@ -362,7 +362,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
   &lt;/root&gt;
 &lt;/configuration&gt;</pre>
 
-		<p>設定ファイル中の太字部分で、<code>ConsoleAppender</code>に<code>EvaluatorFilter</code>を追加しています。<code>EvaluationFilter</code>に追加されたのは<code>JaninoEventEvaluator</code>です。<code>evaluator要素</code>の<span class="attr">class属性</span>を省略すると、Joranはデフォルトの<code>JaninoEventEvaluator</code>を使用します。これはJoranが暗黙的にコンポーネントの型を推測する<a href="http://logback.qos.ch/manual/onJoran.html#defaultClassMapping">珍しいケース</a>の1つです。
+		<p>設定ファイル中の太字部分で、<code>ConsoleAppender</code>に<code>EvaluatorFilter</code>を追加しています。<code>EvaluationFilter</code>に追加されたのは<code>JaninoEventEvaluator</code>です。<code>evaluator要素</code>の<span class="attr">class属性</span>を省略すると、Joranはデフォルトの<code>JaninoEventEvaluator</code>を使用します。これはJoranが暗黙的にコンポーネントの型を推測する<a href="http://logback.qos.ch/manual/onJoran_ja.html#defaultClassMapping">珍しいケース</a>の1つです。
     </p>
 
     <p><em>expression要素</em>に指定されているのは評価式です。<code>return message.contains("billing");</code>という式の値は真偽値です。<em>message変数</em>は、<code>JaninoEventEvaluator</code>が自動的に公開した変数です。
@@ -703,7 +703,7 @@ logger.debug("Hello {}.", name1);</pre>
 2008-12-19 15:04:26,156 [main] INFO  chapters.filters.FilterEvents - logging statement 5
 2008-12-19 15:04:26,171 [main] ERROR chapters.filters.FilterEvents - billing statement 6</p>
 
-    <p>"logging statement 0" は、書式化する前のメッセージ"logging statement {}" によって出力された<em>最初</em>のメッセージです。"logging statement 1"が1回目の<em>繰り返し</em>、"logging statement 2"が2回目の繰り返しとなります。<em>3回目</em>の繰り返しとなる"logging statement 3"はログレベルがDEBUGのはずなので、<a href="http://logback.qos.ch/manual/architecture.html#basic_selection">基本的な選択ルール</a>によって破棄されました。つまり、ターボフィルターは基本的な選択ルールを含む他のフィルターに先駆けて呼び出されるということなのです。したがって、後続の処理チェインの中で破棄されてしまうのですが、<code>DuplicateMessageFilter</code>は"logging statement 3"を繰り返しメッセージだと判断したはずです。したがって "logging statement 4" は4回目の繰り返し、"logging statement 5" は5回目の繰り返しになります。デフォルトで許されている繰り返しは5回なので、"logging statement 5"より後は出てきませんでした。
+    <p>"logging statement 0" は、書式化する前のメッセージ"logging statement {}" によって出力された<em>最初</em>のメッセージです。"logging statement 1"が1回目の<em>繰り返し</em>、"logging statement 2"が2回目の繰り返しとなります。<em>3回目</em>の繰り返しとなる"logging statement 3"はログレベルがDEBUGのはずなので、<a href="http://logback.qos.ch/manual/architecture_ja.html#basic_selection">基本的な選択ルール</a>によって破棄されました。つまり、ターボフィルターは基本的な選択ルールを含む他のフィルターに先駆けて呼び出されるということなのです。したがって、後続の処理チェインの中で破棄されてしまうのですが、<code>DuplicateMessageFilter</code>は"logging statement 3"を繰り返しメッセージだと判断したはずです。したがって "logging statement 4" は4回目の繰り返し、"logging statement 5" は5回目の繰り返しになります。デフォルトで許されている繰り返しは5回なので、"logging statement 5"より後は出てきませんでした。
     </p>
 
     <h1 class="doAnchor" name="logbac-access">logback-access モジュール</h1>
@@ -743,7 +743,7 @@ logger.debug("Hello {}.", name1);</pre>
     <h3 class="doAnchor" name="access_EvalutorFilter">EvaluatorFilter</h3>
 
     
-    <p><a href="http://logback.qos.ch/xref/ch/qos/logback/core/filter/EvaluatorFilter.html"><code>EvaluatorFilter</code></a>は<code>EventEvaluator</code>をカプセル化した汎用的なフィルターです。名前が示すように、 <code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/boolex/EventEvaluator.html">EventEvaluator</a></code>は指定された条件を評価して、イベントがその条件を満たすかどうかを判定します。条件を満たす場合もそうでない場合も、<code>EvaluatorFilter</code>の<span class="option">onMatch</span>プロパティ、または、<span class="option">onMismatch</span>プロパティに指定された値を返します。<code>EvaluatorFilter</code>についてはlogback-classicモジュールの章で説明してあるので思い出してください（<a href="http://logback.qos.ch/manual/filters.html#evalutatorFilter">上記参照</a>）。ここの説明は前の章に記載した内容の繰り返しです。</p>
+    <p><a href="http://logback.qos.ch/xref/ch/qos/logback/core/filter/EvaluatorFilter.html"><code>EvaluatorFilter</code></a>は<code>EventEvaluator</code>をカプセル化した汎用的なフィルターです。名前が示すように、 <code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/boolex/EventEvaluator.html">EventEvaluator</a></code>は指定された条件を評価して、イベントがその条件を満たすかどうかを判定します。条件を満たす場合もそうでない場合も、<code>EvaluatorFilter</code>の<span class="option">onMatch</span>プロパティ、または、<span class="option">onMismatch</span>プロパティに指定された値を返します。<code>EvaluatorFilter</code>についてはlogback-classicモジュールの章で説明してあるので思い出してください（<a href="http://logback.qos.ch/manual/filters_ja.html#evalutatorFilter">上記参照</a>）。ここの説明は前の章に記載した内容の繰り返しです。</p>
 
 
     <p><code>EventEvaluator</code>は抽象クラスです。
