@@ -271,7 +271,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
        <td>prudentモードでは、指定されたファイルに安全に書き込むようになります。同じファイルを対象にした他の<code>FileAppender</code>がいるとしても、それが別のJVMで動いているとしても、ましてや別のホストで動いているとしても、です。デフォルト値は<code>false</code>です。
 
-         <p>prudent モードは、<a href="./appenders_ja.html#prudentWithRolling">多少の制限</a>はあるものの、<code>RollingFileAppender</code>と組み合わせて利用することもできます。</p>
+         <p>prudent モードは、<a href="#prudentWithRolling">多少の制限</a>はあるものの、<code>RollingFileAppender</code>と組み合わせて利用することもできます。</p>
 
          <p>prudent モードがtrueなら、<span class="prop">append</span>プロパティも自動的にtrueになります。
          </p>
@@ -380,7 +380,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
    <p><a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/RollingFileAppender.html"><code>RollingFileAppender</code></a>は<code>FileAppender</code>を拡張して、ログファイルを切り替えられるようにしたものです。たとえば、<code>RollingFileAppender</code>では、<em>log.txt</em>という名前のファイルにログを出力するようにした上で、一定の条件が満たされたら、出力先を別のファイルに変えることができます。
    </p>
 
-   <p><code>RollingFileAppender</code>と連携する2つの重要なサブコンポーネントがあります。一つは<code>RollingPolicy</code>です。これはファイルを切り替えるために必要な処理を行います。<a href="./appenders_ja.html#onRollingPolicies">詳しくは後述します</a>。もう一つは<code>TriggeringPolicy</code>です。これはいつ切り替えるのか決定するものです。こちらも<a href="./appenders_ja.html#TriggeringPolicy">詳しくは後述します</a>。つまり、<code>RollingPolicy</code>が<em>what</em>を、<code>TriggeringPolicy</code>が<em>when</em>を表しているのです。</p>
+   <p><code>RollingFileAppender</code>と連携する2つの重要なサブコンポーネントがあります。一つは<code>RollingPolicy</code>です。これはファイルを切り替えるために必要な処理を行います。<a href="#onRollingPolicies">詳しくは後述します</a>。もう一つは<code>TriggeringPolicy</code>です。これはいつ切り替えるのか決定するものです。こちらも<a href="#TriggeringPolicy">詳しくは後述します</a>。つまり、<code>RollingPolicy</code>が<em>what</em>を、<code>TriggeringPolicy</code>が<em>when</em>を表しているのです。</p>
 
    <p>どんな使い方をするにしても、<code>RollingFileAppender</code>には<code>RollingPolicy</code>と<code>TriggeringPolicy</code>の両方を設定しなければなりません。<code>RollingPolicy</code>は<code>TriggeringPolicy</code>インターフェイスを実装しているので、少なくともRollingPolicyだけは明示的に設定しなければなりません。
    </p>
@@ -428,9 +428,9 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
        <td valign="top"><code>boolean</code></td>
 
        <td valign="top">
-         prudentモードでは、<a href="./appenders_ja.html#FixedWindowRollingPolicy"><code>FixedWindowRollingPolicy</code></a>はサポートされていません。
+         prudentモードでは、<a href="#FixedWindowRollingPolicy"><code>FixedWindowRollingPolicy</code></a>はサポートされていません。
 
-         <p> <a href="./appenders_ja.html#TimeBasedRollingPolicy"><code>TimeBasedRollingPolicy</code></a>を使えば<code>RollingFileAppender</code>でもprudentモードを利用できますが、二つの制限があります。
+         <p> <a href="#TimeBasedRollingPolicy"><code>TimeBasedRollingPolicy</code></a>を使えば<code>RollingFileAppender</code>でもprudentモードを利用できますが、二つの制限があります。
          </p>
 
          <ol>
@@ -862,7 +862,7 @@ public interface RollingPolicy extends LifeCycle {
     </p>
 
 		<h2>
-      <a name="TriggeringPolicy" href="./appenders_ja.html#TriggeringPolicy">トリガーポリシーについて</a>
+      <a name="TriggeringPolicy" href="#TriggeringPolicy">トリガーポリシーについて</a>
     </h2>
 
 		<p><code>RollingFileAppender</code>にファイルを切り替えるタイミングを通知するのが<a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/TriggeringPolicy.html"><code>TriggeringPolicy</code></a>です。</p>
@@ -882,9 +882,9 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 		<p><code>isTriggeringEvent()</code>メソッドには、二つの引数があります。1つは現在有効なファイル、もう1つは処理中のロギングイベントです。これらのパラメータに基づいて、ファイルの切り替えをするべきかどうかを判断します。
 		</p>
 
-    <p>最もよく使われているトリガーポリシーは<code>TimeBasedRollingPolicy</code>です。これはローリングポリシーの別名です。他のローリングポリシーの説明と合わせて<a href="./appenders_ja.html#TimeBasedRollingPolicy">説明</a>したとおりです。</p>
+    <p>最もよく使われているトリガーポリシーは<code>TimeBasedRollingPolicy</code>です。これはローリングポリシーの別名です。他のローリングポリシーの説明と合わせて<a href="#TimeBasedRollingPolicy">説明</a>したとおりです。</p>
 
-		<h4><a name="SizeBasedTriggeringPolicy" href="./appenders_ja.html#SizeBasedTriggeringPolicy">SizeBasedTriggeringPolicy</a></h4>
+		<h4><a name="SizeBasedTriggeringPolicy" href="#SizeBasedTriggeringPolicy">SizeBasedTriggeringPolicy</a></h4>
 
 		<p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/SizeBasedTriggeringPolicy.html">SizeBasedTriggeringPolicy</a></code>は現在有効なファイルのサイズを判断します。指定したサイズより大きくなった場合、<code>RollingFileAppender</code>に現在のファイルを切り替えるよう通知します。
 		</p>
@@ -2061,7 +2061,7 @@ logger.error(<b>notifyAdmin</b>,
 		</p>
 
 		<p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/db/DriverManagerConnectionSource.html">DriverManagerConnectionSource</a></code>は<code>ConnectionSource</code>の実装クラスで、JDBCの伝統的なやり方（接続用URLに基づくやり方）でデータベース接続を取得します。</p>
-		<p>このクラスは<code>getConnection()</code>メソッドが呼ばれるたびに新しい<code>Connection</code>を生成することに注意してください。コネクションプーリングをサポートしているJDBCドライバーを使うか、コネクションプーリングを利用する<code>ConnectionSource</code>を自分で実装することをおすすめします。Java EE アプリケーションサーバの上で、<code>javax.sql.DataSource</code>をサポートしたJNDI実装を利用する場合は、後述する<a href="./appenders_ja.html#JNDIConnectionSource"><code>JNDIConnectionSource</code></a>を参照してください。
+		<p>このクラスは<code>getConnection()</code>メソッドが呼ばれるたびに新しい<code>Connection</code>を生成することに注意してください。コネクションプーリングをサポートしているJDBCドライバーを使うか、コネクションプーリングを利用する<code>ConnectionSource</code>を自分で実装することをおすすめします。Java EE アプリケーションサーバの上で、<code>javax.sql.DataSource</code>をサポートしたJNDI実装を利用する場合は、後述する<a href="#JNDIConnectionSource"><code>JNDIConnectionSource</code></a>を参照してください。
 		</p>
 <!--
 
