@@ -93,7 +93,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 
     <p class="example">例：SampleFilterの設定（<a href="http://logback.qos.ch/xref/chapters/filters/SampleFilterConfig.xml">logback-examples/src/main/java/chapters/filters/SampleFilterConfig.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;SampleFilterConfig&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('SampleFilterConfig');">Groovyとして表示</span>
     <pre id="SampleFilterConfig" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
 
@@ -127,7 +127,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 		
     <p class="example">例：LevelFilterの設定例（<a href="http://logback.qos.ch/xref/chapters/filters/levelFilterConfig.xml">logback-examples/src/main/java/chapters/filters/levelFilterConfig.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;levelFilterConfig&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('levelFilterConfig');">Groovyとして表示</span>
     <pre id="levelFilterConfig" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"&gt;
     <b>&lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
@@ -153,7 +153,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 
     <p class="example">例：ThresholdFilterの設定例（<a href="http://logback.qos.ch/xref/chapters/filters/thresholdFilterConfig.xml">logback-examples/src/main/java/chapters/filters/thresholdFilterConfig.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;thresholdFilterConfig&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('thresholdFilterConfig');">Groovyとして表示</span>
     <pre id="thresholdFilterConfig" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="CONSOLE"
     class="ch.qos.logback.core.ConsoleAppender"&gt;
@@ -198,7 +198,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 
     <p>具体的な例を見てみましょう。</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;GEventEvaluator&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('GEventEvaluator');">Groovyとして表示</span>
     <pre id="GEventEvaluator" class="prettyprint source">&lt;configuration&gt;
     
   &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
@@ -339,7 +339,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 
     <p class="example">例：評価式の基本的な使い方（<a href="http://logback.qos.ch/xref/chapters/filters/basicEventEvaluator.xml">logback-examples/src/main/java/chapters/filters/basicEventEvaluator.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;basicEventEvaluator&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('basicEventEvaluator');">Groovyとして表示</span>
     <pre id="basicEventEvaluator" class="prettyprint source longline">&lt;configuration&gt;
 
   &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
@@ -440,7 +440,7 @@ java chapters.filters.FilterEvents src/main/java/chapters/filters/basicConfigura
 
     <p class="example">例：マッチャーの定義（<a href="http://logback.qos.ch/xref/chapters/filters/evaluatorWithMatcher.xml">logback-examples/src/main/java/chapters/filters/evaluatorWithMatcher.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;evaluatorWithMatcher&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('evaluatorWithMatcher');">Groovyとして表示</span>
 
     <pre id="evaluatorWithMatcher" class="prettyprint source">&lt;configuration debug="true"&gt;
 
@@ -569,7 +569,7 @@ public class SampleTurboFilter extends TurboFilter {
 		
     <p class="example">例：基本的な自作<code>TurboFilter</code>の設定（<a href="http://logback.qos.ch/xref/chapters/filters/sampleTurboFilterConfig.xml">logback-examples/src/main/java/chapters/filters/sampleTurboFilterConfig.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;sampleTurboFilterConfig&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('sampleTurboFilterConfig');">Groovyとして表示</span>
 
     <pre id="sampleTurboFilterConfig" class="prettyprint source">&lt;configuration&gt;
   <b>&lt;turboFilter class="chapters.filters.SampleTurboFilter"&gt;
@@ -596,7 +596,7 @@ public class SampleTurboFilter extends TurboFilter {
    	
     <p class="example">例：<code>MDCFilter</code>と<code>MarkerFilter</code>の設定例（<a href="http://logback.qos.ch/xref/chapters/filters/turboFilters.xml">logback-examples/src/main/java/chapters/filters/turboFilters.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;turboFilters&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('turboFilters');">Groovyとして表示</span>
     <pre id="turboFilters" class="prettyprint source">&lt;configuration&gt;
 
   &lt;turboFilter class="ch.qos.logback.classic.turbo.MDCFilter"&gt;
@@ -678,7 +678,7 @@ logger.debug("Hello {}.", name1);</pre>
     
     <p class="example">例：<code>DuplicateMessageFilter</code>の設定例（<a href="http://logback.qos.ch/xref/chapters/filters/duplicateMessage.xml">logback-examples/src/main/java/chapters/filters/duplicateMessage.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;duplicateMessage&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('duplicateMessage');">Groovyとして表示</span>
     <pre id="duplicateMessage" class="prettyprint source">&lt;configuration&gt;
 
   <b>&lt;turboFilter class="ch.qos.logback.classic.turbo.DuplicateMessageFilter"/&gt;</b>

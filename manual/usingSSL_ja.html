@@ -137,7 +137,7 @@
       <p><code>SSLServerSocketReceiver</code>を使うときは、keystoreプロパティでサーバーの証明書を含んだキーストアを指定します。
       </p>
 
-      <span class="asGroovy" onclick="return asGroovy(&#39;logback-ssl-serverKeyStore&#39;);">Groovyとして表示</span>
+      <span class="asGroovy" onclick="return asGroovy('logback-ssl-serverKeyStore');">Groovyとして表示</span>
       <pre id="logback-ssl-serverKeyStore" class="prettyprint source">&lt;configuration&gt;
 
   &lt;appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"&gt;
@@ -166,7 +166,7 @@
       <p>アプリケーションで<code>SSLSocketAppender</code>を使いたいけど、アプリケーション自体の（JSEEの）デフォルトのトラストストアを変更したくないときは、<code>javax.net.ssl.trustStore</code>プロパティを使うことができます。
       </p>          
 
-      <span class="asGroovy" onclick="return asGroovy(&#39;logback-ssl-clientTrustStore&#39;);">Groovyとして表示</span>
+      <span class="asGroovy" onclick="return asGroovy('logback-ssl-clientTrustStore');">Groovyとして表示</span>
       <pre id="logback-ssl-clientTrustStore" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="SOCKET" class="ch.qos.logback.classic.net.SSLSocketAppender"&gt;
     &lt;ssl&gt;

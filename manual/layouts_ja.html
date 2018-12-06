@@ -107,7 +107,7 @@ public class MySampleLayout extends LayoutBase&lt;ILoggingEvent&gt; {
     <p>自作レイアウトは、他のコンポーネントと同じように設定されます。前述したように<code>FileAppender</code>とその派生クラスにはエンコーダーが必要です。<code>FileAppender</code>のニーズを満たすため、<code>LayoutWrappingEncoder</code>に自作した<code>MySampleLayout</code>をラップしてみましょう。次のような設定になります。</p>
 
   <p class="example">例：MySampleLayoutの設定（<a href="http://logback.qos.ch/xref/chapters/layouts/sampleLayoutConfig.xml">logback-examples/src/main/java/chapters/layouts/sampleLayoutConfig.xml</a>）</p>
-  <span class="asGroovy" onclick="return asGroovy(&#39;logback_Console&#39;);">Groovyで表示</span>
+  <span class="asGroovy" onclick="return asGroovy('logback_Console');">Groovyで表示</span>
 <pre id="sampleLayoutConfig" class="prettyprint source">&lt;configuration&gt;
 
   &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
@@ -187,7 +187,7 @@ public class MySampleLayout2 extends LayoutBase&lt;ILoggingEvent&gt; {
     </p>
 
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;MySampleLayout2&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('MySampleLayout2');">Groovyとして表示</span>
     <pre id="MySampleLayout2" class="prettyprint source">&lt;configuration&gt;
 
   &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
@@ -990,7 +990,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
   <p class="example">例：ログレベルに応じた強調表示（<a href="http://logback.qos.ch/xref/chapters/layouts/highlighed.xml">logback-examples/src/main/java/chapters/layouts/highlighed.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;highlighted&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('highlighted');">Groovyとして表示</span>
 
 
 <pre id="highlighted" class="prettyprint">&lt;configuration debug="true"&gt;
@@ -1034,7 +1034,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
     <p>評価器と<em>具体的な評価式</em>については、<a href="http://logback.qos.ch/manual/filters_ja.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="http://docs.codehaus.org/display/JANINO/Home">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="http://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
 
   <p class="example">例：EventEvaluatorsの使用例（<a href="http://logback.qos.ch/xref/chapters/callerEvaluatorConfig.xml">logback-examples/src/main/java/chapters/callerEvaluatorConfig.xml</a>）</p>
-<span class="asGroovy" onclick="return asGroovy(&#39;callerEvaluatorConfig&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('callerEvaluatorConfig');">Groovyとして表示</span>
 
 
     <pre id="callerEvaluatorConfig" class="prettyprint source">&lt;configuration&gt;
@@ -1244,7 +1244,7 @@ java.lang.Exception: display
     <p>logback に自作した<code>Converter</code>のことを教えなければいけません。そのためには、設定ファイルで新しい変換指定子を宣言する必要があります。</p>
 
   <p class="example">例：自作コンバーターの設定例（<a href="http://logback.qos.ch/xref/chapters/mySampleConverterConfig.xml">logback-examples/src/main/java/chapters/mySampleConverterConfig.xml</a>）</p>
-<span class="asGroovy" onclick="return asGroovy(&#39;mySampleConverterConfig&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('mySampleConverterConfig');">Groovyとして表示</span>
 <pre id="mySampleConverterConfig" class="prettyprint source">&lt;configuration&gt;
 
   <b>&lt;conversionRule conversionWord="nanos"
@@ -1295,7 +1295,7 @@ java.lang.Exception: display
 
   <p class="example">例：HTMLLayoutの設定例（<a href="http://logback.qos.ch/xref/chapters/htmlLayoutConfig1.xml">logback-examples/src/main/java/chapters/htmlLayoutConfig1.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;htmlLayoutConfig1&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('htmlLayoutConfig1');">Groovyとして表示</span>
 <pre id="htmlLayoutConfig1" class="prettyprint source">&lt;configuration debug="true"&gt;
   &lt;appender name="FILE" class="ch.qos.logback.core.FileAppender"&gt;
     &lt;encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder"&gt;
@@ -1360,7 +1360,7 @@ java.lang.Exception: display
 
   <p class="example">例：Log4jXMLLayoutの例（<a href="http://logback.qos.ch/xref/chapters/log4jXMLLayout.xml">logback-examples/src/main/java/chapters/log4jXMLLayout.xml</a>）</p>
 
-<span class="asGroovy" onclick="return asGroovy(&#39;log4jXMLLayout&#39;);">Groovyとして表示</span>
+<span class="asGroovy" onclick="return asGroovy('log4jXMLLayout');">Groovyとして表示</span>
     <pre id="log4jXMLLayout" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="FILE" class="ch.qos.logback.core.FileAppender"&gt;
     &lt;file&gt;test.xml&lt;/file&gt;

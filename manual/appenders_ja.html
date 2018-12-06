@@ -206,7 +206,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
   <p class="example">例：ConsoleAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-Console.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-Console.xml</a>）</p>
 
-  <span class="asGroovy" onclick="return asGroovy(&#39;logback_Console&#39;);">Groovyで表示</span>
+  <span class="asGroovy" onclick="return asGroovy('logback_Console');">Groovyで表示</span>
 
   <pre id="logback_Console" class="prettyprint source">&lt;configuration&gt;
 
@@ -301,7 +301,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
    <p class="example">例：FileAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-fileAppender.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-fileAppender.xml</a>）</p>
 
-   <span class="asGroovy" onclick="return asGroovy(&#39;logback-fileAppender&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('logback-fileAppender');">Groovyとして表示</span>
    <pre id="logback-fileAppender" class="prettyprint source">&lt;configuration&gt;
 
   <b>&lt;appender name="FILE" class="ch.qos.logback.core.FileAppender"&gt;
@@ -333,7 +333,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
    <p class="example">例：タイムスタンプを使ってファイル名を一意にするFileAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-timestamp.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-timestamp.xml</a>）</p>
 
-   <span class="asGroovy" onclick="return asGroovy(&#39;logback-timestamp&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('logback-timestamp');">Groovyとして表示</span>
    <pre id="logback-timestamp" class="prettyprint source">&lt;configuration&gt;
 
   &lt;!-- Insert the current time formatted as "yyyyMMdd'T'HHmmss" under
@@ -368,7 +368,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
    <p class="example">例：タイムスタンプの基準時間にロガーコンテキストを生成した日時を使用する（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/blogback-timestamp-contextBirth.xml">logback-examples/src/main/java/chapters/appenders/conf/blogback-timestamp-contextBirth.xml</a>）</p>
 
-   <span class="asGroovy" onclick="return asGroovy(&#39;logback-timestamp-contextBirth&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('logback-timestamp-contextBirth');">Groovyとして表示</span>
    <pre id="logback-timestamp-contextBirth" class="prettyprint source">&lt;configuration&gt;
   &lt;timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"
              <b>timeReference="contextBirth"</b>/&gt;
@@ -647,7 +647,7 @@ public interface RollingPolicy extends LifeCycle {
 
    <p class="example">例：<code>RollingFileAppender</code>と<code>TimeBasedRollingPolicy</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-RollingTimeBased.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-RollingTimeBased.xml</a>）</p>
 
-   <span class="asGroovy" onclick="return asGroovy(&#39;logback-RollingTimeBased&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('logback-RollingTimeBased');">Groovyとして表示</span>
    <pre id="logback-RollingTimeBased" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
     &lt;file&gt;logFile.log&lt;/file&gt;
@@ -674,7 +674,7 @@ public interface RollingPolicy extends LifeCycle {
 
    <p class="example">例：prudentモードにした<code>RollingFileAppender</code>と<code>TimeBasedRollingPolicy</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-PrudentTimeBasedRolling.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-PrudentTimeBasedRolling.xml</a>）</p>
 
-  <span class="asGroovy" onclick="return asGroovy(&#39;logback-PrudentTimeBasedRolling&#39;);">Groovyとして表示</span>
+  <span class="asGroovy" onclick="return asGroovy('logback-PrudentTimeBasedRolling');">Groovyとして表示</span>
   <pre id="logback-PrudentTimeBasedRolling" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
     <b>&lt;!-- Support multiple-JVM writing to the same log file --&gt;</b>
@@ -798,7 +798,7 @@ public interface RollingPolicy extends LifeCycle {
 
    <p class="example">例：<code>RollingFileAppender</code>と<code>FixedWindowRollingPolicy</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-RollingFixedWindow.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-RollingFixedWindow.xml</a>）</p>
 
-   <span class="asGroovy" onclick="return asGroovy(&#39;logback-RollingFixedWindow&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('logback-RollingFixedWindow');">Groovyとして表示</span>
    <pre id="logback-RollingFixedWindow" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
     <b>&lt;file&gt;test.log&lt;/file&gt;</b>
@@ -831,7 +831,7 @@ public interface RollingPolicy extends LifeCycle {
 
   <p class="example">例：<code>SizeAndTimeBasedFNATP</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-sizeAndTime.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-sizeAndTime.xml</a>）</p>
 
-  <span class="asGroovy" onclick="return asGroovy(&#39;logback-sizeAndTime&#39;);">Groovyとして表示</span>
+  <span class="asGroovy" onclick="return asGroovy('logback-sizeAndTime');">Groovyとして表示</span>
   <pre id="logback-sizeAndTime" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
     &lt;file&gt;mylog.txt&lt;/file&gt;
@@ -900,7 +900,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <p class="example">例：<code>RollingFileAppender</code>と<code>SizeBasedTriggeringPolicy</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-RollingSizeBased.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-RollingSizeBased.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;logback-RollingSizeBased&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('logback-RollingSizeBased');">Groovyとして表示</span>
     <pre id="logback-RollingSizeBased" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
     &lt;file&gt;test.log&lt;/file&gt;
@@ -1040,7 +1040,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 		</p>
 
 		<p class="example">例：SocketAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/socket/client1.xml">logback-examples/src/main/java/chapters/appenders/socket/client1.xml</a>）</p>
-    <span class="asGroovy" onclick="return asGroovy(&#39;client1&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('client1');">Groovyとして表示</span>
 <pre id="client1" class="prettyprint source">&lt;configuration&gt;
 
   &lt;appender name="SOCKET" class="ch.qos.logback.classic.net.SocketAppender"&gt;
@@ -1104,7 +1104,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p>実行中の<code>SimpleSSLSocketServer</code>には、<code>SSLSocketAppender</code>を使って接続することができます。アペンダーの設定例は次のとおりです。</p>
 
    	<p class="example">例：SSLSocketAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/socket/ssl/client.xml">logback-examples/src/main/java/chapters/appenders/socket/ssl/client.xml</a>）</p>
-    <span class="asGroovy" onclick="return asGroovy(&#39;sslclient&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('sslclient');">Groovyとして表示</span>
 <pre id="sslclient" class="prettyprint source">&lt;configuration debug="true"&gt;
 
   &lt;appender name="SOCKET" class="ch.qos.logback.classic.net.SSLSocketAppender"&gt;
@@ -1400,7 +1400,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
         <td><code>boolean</code></td>
         <td><code>javax.mail.Session</code>を使用してメールを送信します。デフォルトは<code>false</code>なので、<code>SMTPAppender</code>は利用者の指定した設定に従って<code>javax.mail.Session</code>インスタンスを構築します。<code>true</code>を指定するとJNDIから<code>javax.mail.Session</code>インスタンスを取得します。<span class="prop">jndiLocation</span>プロパティも参照してください。
 
-        <p><span class="label">注意</span>JNDIから<code>Session</code>を取得すれば、設定する場所は減るし、同じ情報をあちこちで指定しなくてもよくなります。そうすると、アプリケーションはより<a href="http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself">DRY</a>になります。TomcatでJNDIリソースを設定する方法については<a href="http://tomcat.apache.org/tomcat-6.0-doc/jndi-resources-howto.html#JavaMail_Sessions">JNDIリソースハウツー</a>を参照してください。JNDIから<code>Session</code>オブジェクトを取得する場合は、ドキュメントに記載されているように、<em>mail.jar</em>と<em>activation.jar</em>をWebアプリケーションの<em>WEB-INF/lib</em>フォルダから取り除いてください。</p>
+        <p><span class="label">注意</span>JNDIから<code>Session</code>を取得すれば、設定する場所は減るし、同じ情報をあちこちで指定しなくてもよくなります。そうすると、アプリケーションはより<a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>になります。TomcatでJNDIリソースを設定する方法については<a href="http://tomcat.apache.org/tomcat-6.0-doc/jndi-resources-howto.html#JavaMail_Sessions">JNDIリソースハウツー</a>を参照してください。JNDIから<code>Session</code>オブジェクトを取得する場合は、ドキュメントに記載されているように、<em>mail.jar</em>と<em>activation.jar</em>をWebアプリケーションの<em>WEB-INF/lib</em>フォルダから取り除いてください。</p>
         </td>
       </tr>
 
@@ -1425,7 +1425,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 		<p><code>Email</code>アプリケーションから使う設定ファイルは次のとおりです。</p>
 
     <p class="example">例：<code>SMTPAppender</code>の設定例（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mail1.xml">logback-examples/src/main/java/chapters/appenders/mail/mail1.xml</a>）</p>
-    <span class="asGroovy" onclick="return asGroovy(&#39;mail1&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('mail1');">Groovyとして表示</span>
     <pre id="mail1" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     &lt;smtpHost&gt;ADDRESS-OF-YOUR-SMTP-HOST&lt;/smtpHost&gt;
@@ -1558,7 +1558,7 @@ public class CounterBasedEvaluator extends ContextAwareBase implements EventEval
 		</p>
 
     <p class="example">例： <code>SMTPAppender</code>とカスタム<code>評価器</code>とバッファサイズの設定例（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mail3.xml">logback-examples/src/main/java/chapters/appenders/mail/mail3.xml</a>）</p>
-    <span class="asGroovy" onclick="return asGroovy(&#39;mail3&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('mail3');">Groovyとして表示</span>
     <pre id="mail3" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     <b>&lt;evaluator class="chapters.appenders.mail.CounterBasedEvaluator" /&gt;</b>
@@ -1594,7 +1594,7 @@ logger.error(<b>notifyAdmin</b>,
 
    <p class="example">例: <code>OnMarkerEvaluator</code>を指定した<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mailWithMarker.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker.xml</a>）</p>
 
-   <span class="asGroovy" onclick="return asGroovy(&#39;mailWithMarker&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('mailWithMarker');">Groovyとして表示</span>
    <pre id="mailWithMarker" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     <b>&lt;evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator"&gt;
@@ -1627,7 +1627,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p class="example">例: <code>JaninoEventEvaluator</code>を指定した<code>SMTPAppender</code>の設定（logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker_Janino.xml）</p>
 
-   <span class="asGroovy" onclick="return asGroovy(&#39;mailWithMarker_Janino&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('mailWithMarker_Janino');">Groovyとして表示</span>
     <pre id="mailWithMarker_Janino" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     &lt;evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator"&gt;
@@ -1645,7 +1645,7 @@ logger.error(<b>notifyAdmin</b>,
     <p><a href="./filters_ja.html#GEventEvaluator">GEventEvaluator</a>を使っている以外は前の例と同じ内容です。</p>
 
     <p class="example">例:<code>GEventEvaluator</code>を指定したSMTPAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mailWithMarker_GEvent.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker_GEvent.xml</a>）</p>
-   <span class="asGroovy" onclick="return asGroovy(&#39;mailWithMarker_GEventEvaluator&#39;);">Groovyとして表示</span>
+   <span class="asGroovy" onclick="return asGroovy('mailWithMarker_GEventEvaluator');">Groovyとして表示</span>
 
    <pre id="mailWithMarker_GEventEvaluator" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
@@ -1673,7 +1673,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p class="example">例:GmailにSSLで接続する<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/gmaliSSL.xml">logback-examples/src/main/java/chapters/appenders/mail/gmaliSSL.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;gmailSSLExample&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('gmailSSLExample');">Groovyとして表示</span>
     <pre id="gmailSSLExample" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     <b>&lt;smtpHost&gt;smtp.gmail.com&lt;/smtpHost&gt;</b>
@@ -1704,7 +1704,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p class="example">例:GmailにSTARTTLSで接続する<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/gmailSTARTTLS.xml">logback-examples/src/main/java/chapters/appenders/mail/gmailSTARTTLS.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;gmailSTARTTLSExample&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('gmailSTARTTLSExample');">Groovyとして表示</span>
     <pre id="gmailSTARTTLSExample" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     &lt;smtpHost&gt;smtp.gmail.com&lt;/smtpHost&gt;
@@ -1739,7 +1739,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p class="example">例：MDCDiscriminatorを指定した<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mailWithMDCBasedDiscriminator.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMDCBasedDiscriminator.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;mailWithMDCBasedDiscriminator&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('mailWithMDCBasedDiscriminator');">Groovyとして表示</span>
     <pre id="mailWithMDCBasedDiscriminator" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     &lt;smtpHost&gt;ADDRESS-OF-YOUR-SMTP-HOST&lt;/smtpHost&gt;
@@ -2040,7 +2040,7 @@ logger.error(<b>notifyAdmin</b>,
 		</p>
 
     <p class="example">例： <code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-driveManger.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-driveManger.xml</a>）</p>
-    <span class="asGroovy" onclick="return asGroovy(&#39;append-toMySQL-with-driverManager&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('append-toMySQL-with-driverManager');">Groovyとして表示</span>
     <pre id="append-toMySQL-with-driverManager" class="prettyprint source">&lt;configuration&gt;
 
   <b>&lt;appender name="DB" class="ch.qos.logback.classic.db.DBAppender"&gt;
@@ -2097,7 +2097,7 @@ logger.error(<b>notifyAdmin</b>,
     <p class="example">例： <code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-with-datasource.xml">logback-examples/src/main/java/chapters/appenders/db/append-with-datasource.xml</a>）</p>
 
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;append-with-datasource&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('append-with-datasource');">Groovyとして表示</span>
     <pre id="append-with-datasource" class="prettyprint source">&lt;configuration  debug="true"&gt;
 
   &lt;appender name="DB" class="ch.qos.logback.classic.db.DBAppender"&gt;
@@ -2157,7 +2157,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <h4 class="doAnchor" name="JNDIConnectionSource">JNDIConnectionSource</h4>
 
-		<p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/db/JNDIConnectionSource.html">JNDIConnectionSource</a></code>もlogbackの配布物に含まれる<code>ConnectionSource</code>の実装クラスです。名前のとおり、JNDIから<code>javax.sql.DataSource</code>を取得し、そこから<code>java.sql.Connection</code>を取得します。<code>JNDIConnectionSource</code>は、Java EE アプリケーションサーバの内部か、アプリケーションサーバのクライアント（アプリケーションサーバの<code>javax.sql.DataSource</code>にリモートアクセスできることを想定しています）で使用することを念頭に設計されています。したがって、他にどんな便利機能を提供しているかはともかくとして、少なくともコネクションプーリングを利用することができるはずです。もっと重要なのは、<em>logback.xml</em>で<code>DataSource</code>を定義しなくてもよくなるので、アプリケーションをより<a href="http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself">DRY</a>にできることです。</p>
+		<p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/db/JNDIConnectionSource.html">JNDIConnectionSource</a></code>もlogbackの配布物に含まれる<code>ConnectionSource</code>の実装クラスです。名前のとおり、JNDIから<code>javax.sql.DataSource</code>を取得し、そこから<code>java.sql.Connection</code>を取得します。<code>JNDIConnectionSource</code>は、Java EE アプリケーションサーバの内部か、アプリケーションサーバのクライアント（アプリケーションサーバの<code>javax.sql.DataSource</code>にリモートアクセスできることを想定しています）で使用することを念頭に設計されています。したがって、他にどんな便利機能を提供しているかはともかくとして、少なくともコネクションプーリングを利用することができるはずです。もっと重要なのは、<em>logback.xml</em>で<code>DataSource</code>を定義しなくてもよくなるので、アプリケーションをより<a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>にできることです。</p>
 
     <p>次の例はTomcat用の設定ファイルから抜粋したものです。PostgreSQL で使うための設定ですが、サポートしているデータベースならどれでも同じように動くはずです。</p>
 
@@ -2179,7 +2179,7 @@ logger.error(<b>notifyAdmin</b>,
 
    <p class="example">例：<code>JNDIConnectionSource</code>を使った<code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-via-jndi.xml">logback-examples/src/main/java/chapters/appenders/db/append-via-jndi.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;append-via-jndi&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('append-via-jndi');">Groovyとして表示</span>
 
 
 <pre id="append-via-jndi" class="prettyprint source">&lt;configuration debug="true"&gt;
@@ -2207,7 +2207,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p class="example">例： コネクションプーリング無しの<code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-datasource.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-datasource.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;append-toMySQL-with-datasource&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('append-toMySQL-with-datasource');">Groovyとして表示</span>
     <pre id="append-toMySQL-with-datasource" class="prettyprint source">&lt;configuration&gt;
 
   &lt;appender name="DB" class="ch.qos.logback.classic.db.DBAppender"&gt;
@@ -2234,7 +2234,7 @@ logger.error(<b>notifyAdmin</b>,
 		</p>
 
     <p class="example">例： <code>DBAppender</code>でコネクションプーリングを利用する設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-datasource-and-pooling.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-datasource-and-pooling.xml</a>）</p>
-    <span class="asGroovy" onclick="return asGroovy(&#39;append-toMySQL-with-datasource-and-pooling&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('append-toMySQL-with-datasource-and-pooling');">Groovyとして表示</span>
     <pre id="append-toMySQL-with-datasource-and-pooling" class="prettyprint source">&lt;configuration&gt;
 
   &lt;appender name="DB" class="ch.qos.logback.classic.db.DBAppender"&gt;
@@ -2323,7 +2323,7 @@ logger.error(<b>notifyAdmin</b>,
 		<p><code>SyslogAppender</code>の設定例を見てみましょう。</p>
 
     <p class="example">例： <code>SyslogAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-syslog.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-syslog.xml</a>）</p>
-    <span class="asGroovy" onclick="return asGroovy(&#39;logback-syslog&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('logback-syslog');">Groovyとして表示</span>
     <pre id="logback-syslog" class="prettyprint source">&lt;configuration&gt;
 
   &lt;appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender"&gt;
@@ -2385,7 +2385,7 @@ logger.debug("Alice says hello"); </p>
 
     <p class="example">例： <code>SiftingAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/sift/byUserid.xml">logback-examples/src/main/java/chapters/appenders/sift/byUserid.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;byUserid&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('byUserid');">Groovyとして表示</span>
 
     <pre id="byUserid" class="prettyprint source">&lt;configuration&gt;
 
@@ -2524,7 +2524,7 @@ AsyncAppenderはロギングイベントを<a href="http://docs.oracle.com/javas
 
     <p class="example">例： <code>AsyncAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conc/logback-async.xml">logback-examples/src/main/java/chapters/appenders/conc/logback-async.xml</a>）</p>
 
-    <span class="asGroovy" onclick="return asGroovy(&#39;asyncAppender&#39;);">Groovyとして表示</span>
+    <span class="asGroovy" onclick="return asGroovy('asyncAppender');">Groovyとして表示</span>
 
     <pre id="asyncAppender" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="<b>FILE</b>" class="ch.qos.logback.core.FileAppender"&gt;
