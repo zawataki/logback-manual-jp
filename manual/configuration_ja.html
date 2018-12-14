@@ -206,7 +206,7 @@ public class Foo {
    </p>
 
 
-   <p class="example">例：基本的な設定ファイルをデバッグモードにする（<a href="http://logback.qos.ch/xref/chapters/configuration/sample1.xml">logbackexamples/src/main/java/chapters/configuration/sample1.xml</a>）</p>
+   <p class="example">例：基本的な設定ファイルをデバッグモードにする（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/sample1.xml">logback-examples/src/main/resources/chapters/configuration/sample1.xml</a>）</p>
    <span class="asGroovy" onclick="return asGroovy('sample1');">Groovyで見る</span>
 
    <pre id="sample1" class="prettyprint source">
@@ -478,7 +478,7 @@ import ch.qos.logback.classic.LoggerContext;
    <p>ロガーあるいはルートロガーにレベルを設定するのは非常に簡単です。例を示します。"chapters.configuration" パッケージのコンポーネントから出力されていたDEBUGメッセージが不要になったとしましょう。次の設定ファイルはそれを実現するための例です。
    </p>
 
-   <p class="example">例：ロガーのレベルを設定する（<a href="http://logback.qos.ch/xref/chapters/configuration/sample2.xml">logback-examples/src/main/java/chapters/configuration/sample2.xml</a>）</p>
+   <p class="example">例：ロガーのレベルを設定する（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/sample2.xml">logback-examples/src/main/resources/chapters/configuration/sample2.xml</a>）</p>
 
    <span class="asGroovy" onclick="return asGroovy('sample2');">Groovyで見る</span>
    <pre id="sample2" class="prettyprint source">&lt;configuration&gt;
@@ -510,7 +510,7 @@ import ch.qos.logback.classic.LoggerContext;
 
   <p>あらゆるロガーのレベルを思った通りに設定することができます。次の設定ファイルでは、<em>chapters.configuration</em>ロガーのレベルをINFOに設定していますが、同時に<em>chapters.configuration.Foo</em>のレベルを<code>DEBUG</code>に設定しています。</p>
 
-  <p class="example">例：複数のロガーのレベルを設定する（<a href="http://logback.qos.ch/xref/chapters/configuration/sample3.xml">logback-examples/src/main/java/chapters/configuration/sample3.xml</a>）</p>
+  <p class="example">例：複数のロガーのレベルを設定する（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/sample3.xml">logback-examples/src/main/resources/chapters/configuration/sample3.xml</a>）</p>
 
   <span class="asGroovy" onclick="return asGroovy('sample3');">Groovyで見る</span>
   <pre id="sample3" class="source prettyprint">&lt;configuration&gt;
@@ -575,7 +575,7 @@ import ch.qos.logback.classic.LoggerContext;
 
   <p><a href="./architecture_ja.html#basic_selection">基本的な選択ルール</a>についても考えてみましょう。ロギング要求が呼び出されるかどうかは、アペンダーを割り当てられたロガーに指定されたレベルそのものではなく、ロガーの有効レベルによって決定されるというものです。logback はまず最初にロギング式が有効かどうかを判定します。有効な場合は、ロガーのレベルに依らず、ロガー階層で見つかったアペンダーを呼び出します。設定ファイル<em>sample4.xml</em>でその点を確認しましょう。</p>
 
-  <p class="example">例：ロガーレベルのサンプル（<a href="http://logback.qos.ch/xref/chapters/configuration/sample4.xml">logback-examples/src/main/java/chapters/configuration/sample4.xml</a>）</p>
+  <p class="example">例：ロガーレベルのサンプル（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/sample4.xml">logback-examples/src/main/resources/chapters/configuration/sample4.xml</a>）</p>
   <span class="asGroovy" onclick="return asGroovy('sample4');">Groovyで見る</span>
   <pre id="sample4" class="prettyprint source">&lt;configuration&gt;
 
