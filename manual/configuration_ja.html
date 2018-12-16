@@ -255,7 +255,7 @@ public class Foo {
 
    </p>
 
-   <p class="example">例：設定ファイルの変更の監視と自動的な再読み込み（<a href="http://logback.qos.ch/xref/chapters/configuration/scan1.xml">logback-examples/src/main/java/chapters/configuration/scan1.xml</a>）</p>
+   <p class="example">例：設定ファイルの変更の監視と自動的な再読み込み（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/scan1.xml">logback-examples/src/main/resources/chapters/configuration/scan1.xml</a>）</p>
 
   <span class="asGroovy" onclick="return asGroovy('scan1');">Groovyで見る</span>
 <pre id="scan1" class="prettyprint source">
@@ -266,7 +266,7 @@ public class Foo {
 
    <p>デフォルトでは、設定ファイルを一分毎に監視します。<code>configuration</code>要素の<span class="attr">scanPeriod</span>属性に、監視周期を設定することができます。設定値はミリ秒、秒、分または時間単位で指定することができます。以下に例を示します。</p>
 
-  <p class="example">例：デフォルトとは異なる監視周期を指定する（<a href="http://logback.qos.ch/xref/chapters/configuration/scan2.xml">logback-examples/src/main/java/chapters/configuration/scan2.xml</a>）</p>
+  <p class="example">例：デフォルトとは異なる監視周期を指定する（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/scan2.xml">logback-examples/src/main/resources/chapters/configuration/scan2.xml</a>）</p>
   <span class="asGroovy" onclick="return asGroovy('scan2');">Groovyで見る</span>
   <pre id="scan2" class="prettyprint source">
 &lt;configuration scan="true" <b>scanPeriod="30 seconds"</b> &gt;
@@ -385,7 +385,7 @@ public class MyApp3 {
 
    <p>また、これは一つ以上のステータスリスナーを登録できるということでもあります。例を示します。</p>
 
-   <p class="example">例：ステータスリスナーの登録（<a href="http://logback.qos.ch/xref/chapters/configuration/onConsoleStatusListener.xml">logback-examples/src/main/java/chapters/configuration/onConsoleStatusListener.xml</a>）</p>
+   <p class="example">例：ステータスリスナーの登録（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/onConsoleStatusListener.xml">logback-examples/src/main/resources/chapters/configuration/onConsoleStatusListener.xml</a>）</p>
 
    <span class="asGroovy" onclick="return asGroovy('onConsoleStatusListener');">Groovyで見る</span>
    <pre id="onConsoleStatusListener" class="prettyprint source">&lt;configuration&gt;
@@ -653,7 +653,7 @@ import ch.qos.logback.classic.LoggerContext;
 
   <p>複数のアペンダーにログを出力するのも、さまざまなアペンダーを定義してロガーから参照するのも簡単です。設定ファイルの例を示しましょう。</p>
 
-  <p class="example">例：複数のロガー（<a href="http://logback.qos.ch/xref/chapters/configuration/multiple.xml">logback-examples/src/main/java/chapters/configuration/multiple.xml</a>）</p>
+  <p class="example">例：複数のロガー（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/multiple.xml">logback-examples/src/main/resources/chapters/configuration/multiple.xml</a>）</p>
 
   <span class="asGroovy" onclick="return asGroovy('multiple');">Groovyで見る</span>
   <pre id="multiple" class="prettyprint source">&lt;configuration&gt;
@@ -689,7 +689,7 @@ import ch.qos.logback.classic.LoggerContext;
   <p>デフォルトでは<b>アペンダーは積み重ねられていきます</b>。つまり、ロガーに割り当てられたアペンダーにログを出力するのとまったく同様に、祖先ロガーに割り当てられたアペンダーにもログが出力されます。従って、同じアペンダーを複数のロガーに割り当てると、ログ出力が重複することになります。
   </p>
 
-  <p class="example">例：アペンダーの重複（<a href="http://logback.qos.ch/xref/chapters/configuration/duplicate.xml">logback-examples/src/main/java/chapters/configuration/duplicate.xml</a>）</p>
+  <p class="example">例：アペンダーの重複（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/duplicate.xml">logback-examples/src/main/resources/chapters/configuration/duplicate.xml</a>）</p>
 
   <span class="asGroovy" onclick="return asGroovy('duplicate');">Groovyで見る</span>
   <pre id="duplicate" class="prettyprint source">&lt;configuration&gt;
@@ -724,7 +724,7 @@ import ch.qos.logback.classic.LoggerContext;
   <p>アペンダーが積み重ねられるようになっているのは、決して新しい利用者を罠にかけるためではありません。これは非常に便利なフィーチャなのです。例えば、システム中の全てのロガーによるメッセージをコンソールに出力させつつ、特定のロガーのメッセージだけを特別なアペンダーに出力させるように設定することができるのです。
   </p>
 
-  <p class="example">例：複数のアペンダー（<a href="http://logback.qos.ch/xref/chapters/configuration/restricted.xml">logback-examples/src/main/java/chapters/configuration/restricted.xml</a>）</p>
+  <p class="example">例：複数のアペンダー（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/restricted.xml">logback-examples/src/main/resources/chapters/configuration/restricted.xml</a>）</p>
   <span class="asGroovy" onclick="return asGroovy('restricted');">Groovyで見る</span>
   <pre id="restricted" class="prettyprint source">&lt;configuration&gt;
 
@@ -755,10 +755,10 @@ import ch.qos.logback.classic.LoggerContext;
 
   <h4 class="doAnchor" name="overrridingCumulativity">デフォルトの積み重ねを止める</h4>
 
-  <p>デフォルトの積み重ねがニーズに合わない場合は、aditivity フラグに false を設定して止めることができます。そうすれば、ロガーツリーのある枝から下の部分では、ツリーの他の部分と違って、ロガーに割り当てられたアペンダーにだけ出力するようになります。
+  <p>デフォルトの積み重ねがニーズに合わない場合は、additivity フラグに false を設定して止めることができます。そうすれば、ロガーツリーのある枝から下の部分では、ツリーの他の部分と違って、ロガーに割り当てられたアペンダーにだけ出力するようになります。
   </p>
 
-  <p class="example">例：aditivity フラグ（<a href="http://logback.qos.ch/xref/chapters/configuration/aditivityFlag.xml">logback-examples/src/main/java/chapters/configuration/aditivityFlag.xml</a>）</p>
+  <p class="example">例：additivity フラグ（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/additivityFlag.xml">logback-examples/src/main/resources/chapters/configuration/additivityFlag.xml</a>）</p>
 
   <span class="asGroovy" onclick="return asGroovy('additivityFlag');">Groovyで見る</span>
   <pre id="additivityFlag" class="prettyprint source">&lt;configuration&gt;
@@ -785,7 +785,7 @@ import ch.qos.logback.classic.LoggerContext;
   &lt;/root&gt;
 &lt;/configuration&gt;</pre>
 
-  <p>この例では<em>chapters.configuration.Foo</em>ロガーに<em>FILE</em>というアペンダーが割り当てられています。また、<em>chapters.configuration.Foo</em>ロガーのaditivityフラグにfalseが指定されているので、ログは<em>FILE</em>アペンダーにだけ出力されて、ログ階層の先祖に割り当てられているアペンダーには出力されません。他のロガーが<em>chapters.configuration.Foo</em>ロガーのaditivityフラグの設定に気づくことはありません。<code>MyApp3</code>アプリケーションを<em>aditivityFlag.xml</em>を引数として実行すると、コンソールに<em>chapters.configuration.MyApp3</em>ロガーからの出力が表示されます。しかし、<em>chapters.configuration.Foo</em>ロガーの出力が<em>foo.log</em>以外に表れることはありません。
+  <p>この例では<em>chapters.configuration.Foo</em>ロガーに<em>FILE</em>というアペンダーが割り当てられています。また、<em>chapters.configuration.Foo</em>ロガーのadditivityフラグにfalseが指定されているので、ログは<em>FILE</em>アペンダーにだけ出力されて、ログ階層の先祖に割り当てられているアペンダーには出力されません。他のロガーが<em>chapters.configuration.Foo</em>ロガーのadditivityフラグの設定に気づくことはありません。<code>MyApp3</code>アプリケーションを<em>additivityFlag.xml</em>を引数として実行すると、コンソールに<em>chapters.configuration.MyApp3</em>ロガーからの出力が表示されます。しかし、<em>chapters.configuration.Foo</em>ロガーの出力が<em>foo.log</em>以外に表れることはありません。
   </p>
 
   <h3 class="doAnchor" name="contextName">コンテキスト名の設定</h3>

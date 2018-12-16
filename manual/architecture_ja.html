@@ -400,16 +400,16 @@ Logger y = LoggerFactory.getLogger("wombat");</pre>
 			<p>ロガー<em>L</em>のログ出力は、<em>L</em>とその祖先も割り当てられた全てのアペンダーに転送される。これが「アペンダーの加算性」の定義である。
 			</p>
 
-			<p>ロガー<em>L</em>の祖先<em>P</em>の aditivity フラグが false の場合、<em>L</em>の出力は<em>L</em>自身に割り当てられたアペンダーと、祖先<em>P</em>に割り当てられたアペンダーだけに転送される。<em>P</em>よりも祖先のロガーのアペンダーには転送されない。</p>
+			<p>ロガー<em>L</em>の祖先<em>P</em>の additivity フラグが false の場合、<em>L</em>の出力は<em>L</em>自身に割り当てられたアペンダーと、祖先<em>P</em>に割り当てられたアペンダーだけに転送される。<em>P</em>よりも祖先のロガーのアペンダーには転送されない。</p>
 
-			<p>デフォルトでは、ロガーの aditivity は true になっています。
+			<p>デフォルトでは、ロガーの additivity は true になっています。
 			</p>
 
 		</div>以上を踏まえた例を次の表に示します。<table class="bodyTable">
 			<tr>
 				<th>ロガー名</th>
 				<th>割り当てられたアペンダー</th>
-				<th>aditivity フラグ</th>
+				<th>additivity フラグ</th>
 				<th>宛先</th>
 				<th>コメント</th>
 			</tr>
@@ -419,7 +419,7 @@ Logger y = LoggerFactory.getLogger("wombat");</pre>
 				<td>適用できません</td>
 				<td>A1</td>
 
-				<td>ルートロガーは、ロガー階層の最上位になるため、aditivity フラグは無効です。
+				<td>ルートロガーは、ロガー階層の最上位になるため、additivity フラグは無効です。
 				</td>
 			</tr>
 			<tr class="alt">
@@ -449,7 +449,7 @@ Logger y = LoggerFactory.getLogger("wombat");</pre>
 				<td class="blue"><span class="blue">false</span></td>
 				<td>A-sec</td>
 
-				<td>aditivity フラグが<code>false</code>なので、アペンダーは加算されません。A-sec だけが対象になります
+				<td>additivity フラグが<code>false</code>なので、アペンダーは加算されません。A-sec だけが対象になります
 				</td>
 			</tr>
 			<tr class="alt">
@@ -457,7 +457,7 @@ Logger y = LoggerFactory.getLogger("wombat");</pre>
 				<td>なし</td>
 				<td>true</td>
         <td>A-sec</td>
-				<td>「security」のaditivityフラグが<code>false</code>なので、「security」のアペンダーだけが加算されます
+				<td>「security」のadditivityフラグが<code>false</code>なので、「security」のアペンダーだけが加算されます
 				</td>
 			</tr>
 		</table>
