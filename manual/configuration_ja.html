@@ -961,7 +961,11 @@ import ch.qos.logback.classic.LoggerContext;
    <p>変数のスコープは、<code>property要素</code>、<code>define要素</code>、<code>insertFromJNDI要素</code>の<span class="attr">scope属性</span>で指定します。<span class="attr">scope属性</span>に指定できるのは、"local"、"context"、"system" のいずれかの文字列です。scope属性を指定しなかった場合、スコープは常に"local"と見做されます。
    </p>
 
-   <p class="example">例：変数をコンテキストスコープで定義する（<a href="http://logback.qos.ch/xref/chapters/configuration/contextScopedVariable.xml">logback-examples/src/main/java/chapters/configuration/contextScopedVariable.xml</a>）</p>
+    <p class="example">
+      例：変数をコンテキストスコープで定義する（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/contextScopedVariable.xml"><!--
+        -->logback-examples/src/main/resources/chapters/configuration/contextScopedVariable.xml</a>）
+    </p>
 
   <span class="asGroovy" onclick="return
   asGroovy('contextScopedVariable');">Groovyで見る</span>
@@ -997,7 +1001,11 @@ import ch.qos.logback.classic.LoggerContext;
    <p>変数の値を定義するとき、他の変数を指定することができます。例えば、宛先のディレクトリだけでなく、ファイル名も変数で指定したい場合、それぞれの変数をまとめた第三の変数"destination"を定義して、それを利用できるのです。プロパティファイルの例を示します。
    </p>
 
-   <p class="example">例：変数のネスト（<a href="http://logback.qos.ch/xref/chapters/configuration/variables2.properties">logback-examples/src/main/java/chapters/configuration/variables2.properties</a>）</p>
+    <p class="example">
+      例：変数のネスト（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/variables2.properties"><!--
+        -->logback-examples/src/main/resources/chapters/configuration/variables2.properties</a>）
+    </p>
 
    <pre class="source">USER_HOME=/home/sebastien
 fileName=myApp.log
@@ -1088,13 +1096,13 @@ fileName=myApp.log
     </tr>
 
     <tr>
-      <td><a href="http://logback.qos.ch/apidocs/ch/qos/logback/core/property/FileExistsPropertyDefiner.html"><code>FileExistsPropertyDefiner</code></a>
+      <td><a href="https://logback.qos.ch/apidocs/ch/qos/logback/core/property/FileExistsPropertyDefiner.html"><code>FileExistsPropertyDefiner</code></a>
       </td>
       <td><span class="prop">path</span>プロパティに指定したファイルが存在していれば"true"を、そうでなければ"false"を返します。
       </td>
     </tr>
     <tr>
-      <td><a href="http://logback.qos.ch/apidocs/ch/qos/logback/core/property/FileExistsPropertyDefiner.html"><code>ResourceExistsPropertyDefiner</code></a>
+      <td><a href="https://logback.qos.ch/apidocs/ch/qos/logback/core/property/FileExistsPropertyDefiner.html"><code>ResourceExistsPropertyDefiner</code></a>
       </td>
       <td>クラスパス上に指定された<span class="prop">リソース</span>が存在すれば"true"を、そうでなければ"false"を返します。
       </td>
@@ -1197,7 +1205,11 @@ fileName=myApp.log
 
   <p>Joranは、設定ファイルの一部として別のファイルを読み込むことができます。そのためには、<code>include要素</code>として宣言します。</p>
 
-  <p class="example">例：ファイルの取り込み（<a href="http://logback.qos.ch/xref/chapters/configuration/containingConfig.xml">logback-examples/src/main/java/chapters/configuration/containingConfig.xml</a>）</p>
+  <p class="example">
+    例：ファイルの取り込み（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/containingConfig.xml"><!--
+      -->logback-examples/src/main/resources/chapters/configuration/containingConfig.xml</a>）
+  </p>
 
   <pre class="prettyprint source">&lt;configuration&gt;
   <b>&lt;include file="src/main/java/chapters/configuration/includedConfig.xml"/&gt;</b>
