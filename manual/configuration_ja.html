@@ -802,7 +802,11 @@ import ch.qos.logback.classic.LoggerContext;
   <p><a href="./architecture_ja.html#LoggerContext">前の章</a>で述べたように、全てのロガーはロガーコンテキストに割り当てられます。ロガーコンテキストのデフォルトの名前は「default」です。しかし、<code>contextNameディレクティブ</code>を使えば別の名前を付けることが出来ます。ロガーコンテキストの名前は一度設定したら<a href="http://logback.qos.ch/apidocs/ch/qos/logback/core/ContextBase.html#setName(java.lang.String)">変更できない</a>ので注意してください。複数のアプリケーションが同じ対象にロギングする場合、アプリケーションを区別しやすくするには、コンテキストに名前を付けるのが簡単でわかりやすい方法です。
   </p>
 
-  <p class="example">例：コンテキスト名を設定して表示する（<a href="http://logback.qos.ch/xref/chapters/configuration/contextName.xml">logback-examples/src/main/java/chapters/configuration/contextName.xml</a>）</p>
+  <p class="example">
+    例：コンテキスト名を設定して表示する（<a
+    href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/contextName.xml"><!--
+    -->logback-examples/src/main/resources/chapters/configuration/contextName.xml</a>）
+  </p>
 
   <span class="asGroovy" onclick="return asGroovy('contextName');">Groovyで見る</span>
   <pre id="contextName" class="prettyprint source">&lt;configuration&gt;
