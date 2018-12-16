@@ -1181,7 +1181,11 @@ fileName=myApp.log
    <p>特定の状況下では、JNDIに格納されたenvの内容を参照したいこともあるでしょう。<code>insertFromJNDIディレクティブ</code>を使うと、JNDIに格納されたenvを取得して、ローカルスコープの変数<span class="attr">として</span>取り込むことができます。他の変数と同じく、<em>scope属性</em>に指定した<a href="#scopes">別のスコープ</a>に新しい変数を登録することができます。
    </p>
 
-   <p class="example">例：JNDI経由で取得したenvを変数として登録する（<a href="http://logback.qos.ch/xref/chapters/configuration/insertFromJNDI.xml">logback-examples/src/main/java/chapters/configuration/insertFromJNDI.xml</a>）</p>
+    <p class="example">
+      例：JNDI経由で取得したenvを変数として登録する（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/insertFromJNDI.xml"><!--
+        -->logback-examples/src/main/resources/chapters/configuration/insertFromJNDI.xml</a>）
+    </p>
 
    <pre class="prettyprint source">&lt;configuration&gt;
   <b>&lt;insertFromJNDI env-entry-name="java:comp/env/appName" as="<span class="green">appName"</span> /&gt;</b>
