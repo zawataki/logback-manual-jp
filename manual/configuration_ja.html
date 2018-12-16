@@ -785,7 +785,16 @@ import ch.qos.logback.classic.LoggerContext;
   &lt;/root&gt;
 &lt;/configuration&gt;</pre>
 
-  <p>この例では<em>chapters.configuration.Foo</em>ロガーに<em>FILE</em>というアペンダーが割り当てられています。また、<em>chapters.configuration.Foo</em>ロガーのadditivityフラグにfalseが指定されているので、ログは<em>FILE</em>アペンダーにだけ出力されて、ログ階層の先祖に割り当てられているアペンダーには出力されません。他のロガーが<em>chapters.configuration.Foo</em>ロガーのadditivityフラグの設定に気づくことはありません。<code>MyApp3</code>アプリケーションを<em>additivityFlag.xml</em>を引数として実行すると、コンソールに<em>chapters.configuration.MyApp3</em>ロガーからの出力が表示されます。しかし、<em>chapters.configuration.Foo</em>ロガーの出力が<em>foo.log</em>以外に表れることはありません。
+  <p>この例では<em>chapters.configuration.Foo</em>ロガーに<em>FILE</em><!--
+  -->というアペンダーが割り当てられています。また、<em>chapters.configuration.Foo</em><!--
+  -->ロガーのadditivityフラグにfalseが指定されているので、ログは<em>FILE</em><!--
+  -->アペンダーにだけ出力されて、ログ階層の先祖に割り当てられているアペンダーには<!--
+  -->出力されません。他のロガーが<em>chapters.configuration.Foo</em>ロガーの<!--
+  -->additivityフラグの設定に気づくことはありません。<code>MyApp3</code><!--
+  -->アプリケーションを<em>additivityFlag.xml</em>を引数として実行すると、<!--
+  -->コンソールに<em>chapters.configuration.MyApp3</em>ロガーからの出力が表示されます。<!--
+  -->しかし、<em>chapters.configuration.Foo</em>ロガーの出力が<em>foo.log</em><!--
+  -->以外に表れることはありません。
   </p>
 
   <h3 class="doAnchor" name="contextName">コンテキスト名の設定</h3>
