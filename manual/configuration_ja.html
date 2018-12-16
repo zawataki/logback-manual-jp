@@ -851,7 +851,7 @@ import ch.qos.logback.classic.LoggerContext;
   <p>設定ファイルの先頭で変数を定義する例を見てみましょう。定義された変数は、設定ファイルの後半のほうでログ出力用ファイルの位置を指定するために使われています。
   </p>
 
-  <p class="example">例：変数の置換（<a href="http://logback.qos.ch/xref/chapters/configuration/variableSubstitution1.xml">logback-examples/src/main/java/chapters/configuration/variableSubstitution1.xml</a>）</p>
+  <p class="example">例：変数の置換（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/variableSubstitution1.xml">logback-examples/src/main/resources/chapters/configuration/variableSubstitution1.xml</a>）</p>
 
   <span class="asGroovy" onclick="return asGroovy('variableSubstitution1');">Groovyで見る</span>
   <pre id="variableSubstitution1" class="prettyprint source">&lt;configuration&gt;
@@ -874,7 +874,7 @@ import ch.qos.logback.classic.LoggerContext;
 
   <p class="source">java -DUSER_HOME="/home/sebastien" MyApp2</p>
 
-  <p class="example">例：システム変数の置換（<a href="http://logback.qos.ch/xref/chapters/configuration/variableSubstitution2.xml">logback-examples/src/main/java/chapters/configuration/variableSubstitution2.xml</a>）</p>
+  <p class="example">例：システム変数の置換（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/variableSubstitution2.xml">logback-examples/src/main/resources/chapters/configuration/variableSubstitution2.xml</a>）</p>
   <span class="asGroovy" onclick="return asGroovy('variableSubstitution2');">Groovyで見る</span>
   <pre id="variableSubstitution2" class="prettyprint source">&lt;configuration&gt;
 
@@ -894,7 +894,7 @@ import ch.qos.logback.classic.LoggerContext;
   <p>複数の変数が必要なときは、変数の定義だけを含むファイルを別に用意したほうが便利な場合もあります。構成例を示します。
   </p>
 
-  <p class="example">例：別ファイルを使用する変数の置換（<a href="http://logback.qos.ch/xref/chapters/configuration/variableSubstitution3.xml">logback-examples/src/main/java/chapters/configuration/variableSubstitution3.xml</a>）</p>
+  <p class="example">例：別ファイルを使用する変数の置換（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/variableSubstitution3.xml">logback-examples/src/main/resources/chapters/configuration/variableSubstitution3.xml</a>）</p>
   <span class="asGroovy" onclick="return asGroovy('variableSubstitution3');">Groovyで見る</span>
   <pre id="variableSubstitution3" class="prettyprint source">&lt;configuration&gt;
 
@@ -1006,7 +1006,10 @@ fileName=myApp.log
     <p>"destination"変数の定義で、"USER_HOME"変数と"fileName"変数を組み合わせていることが分かりますか。
     </p>
 
-    <em>例：別のファイルを使用した変数の置換（logback-examples/src/main/java/chapters/configuration/variableSubstitution4.xml）</em>
+    <em>例：別のファイルを使用した変数の置換（<!--
+    --><a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/configuration/variableSubstitution4.xml"><!--
+    -->logback-examples/src/main/resources/chapters/configuration/variableSubstitution4.xml</a>）
+    </em>
 
     <pre class="prettyprint source">&lt;configuration&gt;
 
