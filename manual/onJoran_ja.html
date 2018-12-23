@@ -251,7 +251,11 @@ public abstract class Action {
 
   <p>暗黙的なアクションがどのように振る舞うのか、<em>implicit1.xml</em>で試してみましょう。</p>
 
-  <p class="example">例10: 暗黙的なルールの使い方（<a href="http://logback.qos.ch/xref/chapters/onJoran/implicit/implicit1.xml">logback-examples/src/main/java/chapters/onJoran/implicit/implicit1.xml</a>）</p>
+  <p class="example">
+    例10: 暗黙的なルールの使い方（<a
+    href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/onJoran/implicit/implicit1.xml"><!--
+    -->logback-examples/src/main/resources/chapters/onJoran/implicit/implicit1.xml</a>）
+  </p>
 
   <pre class="prettyprint source">&lt;foo&gt;
   &lt;xyz printme="true"&gt;
@@ -364,7 +368,11 @@ Element [abc] asked to be printed.
 
   <p>newRule宣言を使って、<code>NewRuleCalculator</code>に<code>Calculator1</code>のような振る舞いをさせることができます。</p>
 
-  <p class="example">例10: 動的にルールを定義する設定例（<a href="http://logback.qos.ch/xref/chapters/onJoran/newrule/newRule.xml">logback-examples/src/main/java/chapters/onJoran/newrule/newRule.xml</a>）</p>
+  <p class="example">
+    例10: 動的にルールを定義する設定例（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/onJoran/newRule/newRule.xml"><!--
+      -->logback-examples/src/main/resources/chapters/onJoran/newRule/newRule.xml</a>）
+  </p>
 
   <pre class="prettyprint source">&lt;computation name="toto"&gt;
   &lt;newRule pattern="*/computation/literal"
