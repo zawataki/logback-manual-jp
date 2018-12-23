@@ -194,7 +194,7 @@ public abstract class Action {
       <li>computation要素のstartイベントが、"/computation" パターンとみなされます。<code><a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/Calculator1.html">Calculator1</a></code>アプリケーションは"/computation"パターンと<a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/ComputationAction1.html"><code>ComputationAction1</code></a>を関連付けています。ですので、<code>ComputationAction1</code>のインスタンスの<code>begin()</code>メソッドが実行されます。
       </li>
 
-      <li><p>literal要素のstartイベントが、"/computation/literal" パターンとみなされます。"/computation/literal" パターンは<code><a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/LiteralAction.html">LiteralAction</a></code>と関連付けられています。ですので、<code>LiteralAction</code>のインスタンスの<code>begin()</code>メソッドが実行されます。</p>
+      <li><p>literal要素のstartイベントが、"/computation/literal" パターンとみなされます。"/computation/literal" パターンは<code><a href="https://logback.qos.ch/xref/chapters/onJoran/calculator/LiteralAction.html">LiteralAction</a></code>と関連付けられています。ですので、<code>LiteralAction</code>のインスタンスの<code>begin()</code>メソッドが実行されます。</p>
       </li>
 
       <li><p>また、literal要素のendイベントより、<code>LiteralAction</code>のインスタンスの<code>end()</code>メソッドを実行されます。</p>
@@ -224,7 +224,7 @@ public abstract class Action {
 &lt;/computation&gt;</pre>
 
 
-  <p>前の例と同じく、literal要素に対応する<code><a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/LiteralAction.html">LiteralAction</a></code>は、解釈コンテキストのオブジェクトスタックに整数値を登録します。ここ（<em>calculator2.xml</em>）ではまず7と3が登録されています。add要素には<a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/AddAction.html"><code>AddAction</code></a>が関連付けられています。これはオブジェクトスタックから二回整数値をポップして、それらを加算した結果をオブジェクトスタックにプッシュするものです。次のliteral要素に対応するLiteralActionは、オブジェクトスタックの一番上に整数値3をプッシュします。multiply要素には<a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/MultiplyAction.html"><code>MultiplyAction</code></a>が関連付けられています。これはオブジェクトスタックから二回整数値をポップして、それらをかけあわせた結果をオブジェクトスタックにプッシュするものです。ここでは、計算結果の30がオブジェクトスタックの一番上にプッシュされることになります。一番最後に、computation要素に関連付けられたComputationAction1（のend()メソッド）によって、オブジェクトスタックの一番上の値が出力されます。実行してみましょう。</p>
+  <p>前の例と同じく、literal要素に対応する<code><a href="https://logback.qos.ch/xref/chapters/onJoran/calculator/LiteralAction.html">LiteralAction</a></code>は、解釈コンテキストのオブジェクトスタックに整数値を登録します。ここ（<em>calculator2.xml</em>）ではまず7と3が登録されています。add要素には<a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/AddAction.html"><code>AddAction</code></a>が関連付けられています。これはオブジェクトスタックから二回整数値をポップして、それらを加算した結果をオブジェクトスタックにプッシュするものです。次のliteral要素に対応するLiteralActionは、オブジェクトスタックの一番上に整数値3をプッシュします。multiply要素には<a href="http://logback.qos.ch/xref/chapters/onJoran/calculator/MultiplyAction.html"><code>MultiplyAction</code></a>が関連付けられています。これはオブジェクトスタックから二回整数値をポップして、それらをかけあわせた結果をオブジェクトスタックにプッシュするものです。ここでは、計算結果の30がオブジェクトスタックの一番上にプッシュされることになります。一番最後に、computation要素に関連付けられたComputationAction1（のend()メソッド）によって、オブジェクトスタックの一番上の値が出力されます。実行してみましょう。</p>
 
   <p class="command">java chapters.onJoran.calculator.Calculator1 src/main/java/chapters/onJoran/calculator/calculator2.xml </p>
 
