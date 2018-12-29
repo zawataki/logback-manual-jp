@@ -129,7 +129,11 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 		<p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/filter/LevelFilter.html">LevelFilter</a></code>は、ロギングイベントのログレベルの正確なマッチングに基づいたフィルタリングをします。ログレベルが設定されたレベルと等しければ、<span class="option">omMatch</span>プロパティあるいは<span class="option">omMismach</span>プロパティに設定された値に応じて、ロギングイベントを受け入れるか拒否するかが決まります。設定ファイルを見てみましょう。
 		</p>
 
-    <p class="example">例：LevelFilterの設定例（<a href="http://logback.qos.ch/xref/chapters/filters/levelFilterConfig.xml">logback-examples/src/main/java/chapters/filters/levelFilterConfig.xml</a>）</p>
+    <p class="example">
+      例：LevelFilterの設定例（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/levelFilterConfig.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/levelFilterConfig.xml</a>）
+    </p>
 
 <span class="asGroovy" onclick="return asGroovy('levelFilterConfig');">Groovyとして表示</span>
     <pre id="levelFilterConfig" class="prettyprint source">&lt;configuration&gt;
@@ -229,7 +233,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 &lt;/configuration&gt;</pre>
 
 
-    <p>この設定は、ログレベルがWARN以上で、ユーザーエージェントがクローラー（GooglebotやmsnbotやYahoo）以外のロギングイベントのメッセージをコンソールに出力します。ロギングイベントに関連付けられた MDC の "req.userAgent" の値を正規表現<code>/Googlebot|msnbot|Yahoo/</code>で評価して、ユーザーエージェントを判定しています。MDCがnullになることもあるので、Groovyの<a href="http://groovy.codehaus.org/Null+Object+Pattern">安全なデリファレンス演算子</a>（?.)を使っています。同じことをJava言語で実装するともっと長くなってしまうでしょう。
+    <p>この設定は、ログレベルがWARN以上で、ユーザーエージェントがクローラー（GooglebotやmsnbotやYahoo）以外のロギングイベントのメッセージをコンソールに出力します。ロギングイベントに関連付けられた MDC の "req.userAgent" の値を正規表現<code>/Googlebot|msnbot|Yahoo/</code>で評価して、ユーザーエージェントを判定しています。MDCがnullになることもあるので、Groovyの<a href="http://docs.groovy-lang.org/docs/next/html/documentation/design-pattern-in-groovy.html#_null_object_pattern">安全なデリファレンス演算子</a>（?.)を使っています。同じことをJava言語で実装するともっと長くなってしまうでしょう。
     </p>
 
     <p>ユーザーエージェント文字列がいつMDCに登録されたのか疑問に思うかもしれません。説明しておくべきでしたが、logbackの配布物に含まれている<a href="http://logback.qos.ch/manual/mdc_ja.html#mis"><code>MDCInsertingServletFilter</code></a>を使っています。詳しくは後の章で説明します。
