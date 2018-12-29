@@ -159,7 +159,11 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 		<p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/filter/ThresholdFilter.html">ThresholdFilter</a></code>は、ログレベルが指定されたしきい値より低いロギングイベントをフィルタリングします。ログレベルがしきい値と同じかより高い場合、<code>ThresholdFilter</code>の<code>decide()</code>はNEUTRALを返します。一方、しきい値より低いログレベルのロギングイベントは拒否します。設定ファイルを見てみましょう。
 		</p>
 
-    <p class="example">例：ThresholdFilterの設定例（<a href="http://logback.qos.ch/xref/chapters/filters/thresholdFilterConfig.xml">logback-examples/src/main/java/chapters/filters/thresholdFilterConfig.xml</a>）</p>
+    <p class="example">
+      例：ThresholdFilterの設定例（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/thresholdFilterConfig.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/thresholdFilterConfig.xml</a>）
+    </p>
 
 <span class="asGroovy" onclick="return asGroovy('thresholdFilterConfig');">Groovyとして表示</span>
     <pre id="thresholdFilterConfig" class="prettyprint source">&lt;configuration&gt;
