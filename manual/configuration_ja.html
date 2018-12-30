@@ -44,7 +44,7 @@
     <p>アプリケーションコードにロギング要求を埋め込むには、かなりの計画と作業が必要です。調査したところ、だいたいコード全体の4%ほどがロギングのために使われていました。したがって、そこそこの規模のアプリケーションであっても、数千行のロギング行が含まれることになるのです。その数を考えれば、私たちにロギング式を管理するためのツールが必要となる理由が理解できるのではないでしょうか。
     </p>
 
-    <p>logback はプログラム的に設定することもできるし、XML や Groovy で記述された設定スクリプトで設定することもできます。なお、log4jユーザーのために、<em>log4j.propertiesファイル</em>を<em>logback.xml</em>に変換する<a href="http://logback.qos.ch/translator/">PropertiesTranslator</a>を用意しています。
+    <p>logback はプログラム的に設定することもできるし、XML や Groovy で記述された設定スクリプトで設定することもできます。なお、log4jユーザーのために、<em>log4j.propertiesファイル</em>を<em>logback.xml</em>に変換する<a href="https://logback.qos.ch/translator/">PropertiesTranslator</a>を用意しています。
 
     </p>
 
@@ -62,7 +62,7 @@
       <li><p>見つからなかったら、今度は<a href="https://logback.qos.ch/faq.html#configFileLocation">クラスパス</a>上で<em>logback.xml</em>というファイルを探します。</p>
       </li>
 
-      <li><p>何も見つからなかったら、自動的に<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/BasicConfigurator.html"><code>BasicConfigurator</code></a>を使って設定します。ロギング出力は直接コンソールに出力されるようになります。
+      <li><p>何も見つからなかったら、自動的に<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/BasicConfigurator.html"><code>BasicConfigurator</code></a>を使って設定します。ロギング出力は直接コンソールに出力されるようになります。
       </p>
       </li>
 
@@ -81,7 +81,7 @@
     <p>logback を設定する一番簡単な方法は、デフォルト設定を使わせることです。仮に<code>MyApp1</code>というアプリケーションがあるつもりで、これがどのように行われるのか詳しく見てみましょう。
     </p>
 
-    <p class="example">例：<code>BasicConfigurator</code>の使用例（<a href="http://logback.qos.ch/xref/chapters/configuration/MyApp1.html">logback-examples/src/main/java/chapters/configuration/MyApp1.java</a>）</p>
+    <p class="example">例：<code>BasicConfigurator</code>の使用例（<a href="https://logback.qos.ch/xref/chapters/configuration/MyApp1.html">logback-examples/src/main/java/chapters/configuration/MyApp1.java</a>）</p>
 
     <pre class="prettyprint source">package manual.configuration;
 
@@ -102,7 +102,7 @@ public class MyApp1 {
 
   <p>このクラスでは、ロガーを静的クラスメンバ変数として定義しています。その後、<code>Foo</code>クラスのオブジェクトを生成します。<code>Foo</code>クラスの定義は次のとおりです。</p>
 
-  <p class="example">例：ロギングするクラスの例（<a href="http://logback.qos.ch/xref/chapters/configuration/Foo.html">logback-examples/src/main/java/chapters/configuration/Foo.java</a>）
+  <p class="example">例：ロギングするクラスの例（<a href="https://logback.qos.ch/xref/chapters/configuration/Foo.html">logback-examples/src/main/java/chapters/configuration/Foo.java</a>）
   </p>
 
   <pre class="prettyprint source">package chapters.configuration;
@@ -119,10 +119,10 @@ public class Foo {
 }</pre>
 
 
-    <p>この章で紹介しているサンプルプログラムを実行するには、クラスパスに所定のjarファイルを置いておかなければなりません。詳しくは<a href="http://logback.qos.ch/setup.html">セットアップ</a>の説明をを参照してください。
+    <p>この章で紹介しているサンプルプログラムを実行するには、クラスパスに所定のjarファイルを置いておかなければなりません。詳しくは<a href="https://logback.qos.ch/setup.html">セットアップ</a>の説明をを参照してください。
     </p>
 
-    <p><em>logback-test.xml</em>も<em>logback.xml</em>も無い場合、logback は<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/BasicConfigurator.html"><code>BasicConfigurator</code></a>によって最小限の設定を行います。最小限の設定としてやることは、ルートロガーに<code>ConsoleAppender</code>を割り当てることだけです。出力は<code>PatternLayoutEncoder</code>によって書式化されます。<code>PatternLayoutEncoder</code>には、<em>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</em>という書式化パターンが設定されています。また、ルートロガーにはデフォルトで<code>DEBUG</code>レベルが割り当てられます。
+    <p><em>logback-test.xml</em>も<em>logback.xml</em>も無い場合、logback は<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/BasicConfigurator.html"><code>BasicConfigurator</code></a>によって最小限の設定を行います。最小限の設定としてやることは、ルートロガーに<code>ConsoleAppender</code>を割り当てることだけです。出力は<code>PatternLayoutEncoder</code>によって書式化されます。<code>PatternLayoutEncoder</code>には、<em>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</em>という書式化パターンが設定されています。また、ルートロガーにはデフォルトで<code>DEBUG</code>レベルが割り当てられます。
     </p>
 
     <p><em>java chapters.configuration.MyApp1</em>を実行すると次のような出力が得られます。</p>
@@ -172,7 +172,7 @@ public class Foo {
 
    <p>警告やエラーが起きていなくても logback の内部状態を出力させたければ、<code>StatusPrinter</code>クラスの<code>print()</code>メソッドを使えばよいです。次の<em>MyApp2</em>アプリケーションは、内部状態を出力するためのコードが二行追加されていることを除いて<em>MyApp1</em>とまったく同じです。</p>
 
-    <p class="example">例：logbackの内部状態を出力する（<a href="http://logback.qos.ch/xref/chapters/configuration/MyApp2.html">logback-examples/src/main/java/chapters/configuration/MyApp2.java</a>）</p>
+    <p class="example">例：logbackの内部状態を出力する（<a href="https://logback.qos.ch/xref/chapters/configuration/MyApp2.html">logback-examples/src/main/java/chapters/configuration/MyApp2.java</a>）</p>
 
 
 <pre class="prettyprint lang-java source">
@@ -231,7 +231,7 @@ public class Foo {
      <li>設定ファイルのXML文法が適格かどうか</li>
    </ol>
 
-   <p>これらのいずれかの条件が満たされなかった場合、設定ファイルを読み込むことができないので、Joran には<span class="attr">debug</span>属性を理解することができません。見つかった設定ファイルがXMLとして不適格な場合、logback はエラーと判断し、自動的に内部状態をコンソールに出力します。ですが、設定ファイルが見つからなかった場合、logback は内部状態を自動的に出力することはありません。それだけではエラーと見做すには不十分だからです。<a href="http://logback.qos.ch/xref/chapters/configuration/MyApp2.html"><em>MyApp2</em></a>アプリケーションの例で示したように、<code>StatusPrinter.print()</code>をプログラム的に呼び出していれば、どんな場合でも内部ステータス情報を確実に出力するようになります。</p>
+   <p>これらのいずれかの条件が満たされなかった場合、設定ファイルを読み込むことができないので、Joran には<span class="attr">debug</span>属性を理解することができません。見つかった設定ファイルがXMLとして不適格な場合、logback はエラーと判断し、自動的に内部状態をコンソールに出力します。ですが、設定ファイルが見つからなかった場合、logback は内部状態を自動的に出力することはありません。それだけではエラーと見做すには不十分だからです。<a href="https://logback.qos.ch/xref/chapters/configuration/MyApp2.html"><em>MyApp2</em></a>アプリケーションの例で示したように、<code>StatusPrinter.print()</code>をプログラム的に呼び出していれば、どんな場合でも内部ステータス情報を確実に出力するようになります。</p>
 
 
    <p>ステータスメッセージが無くても<span class="label">強制的に</span>内部ステータス情報を出力させていると、不正な<em>logback.xml</em>がどこにあるのか突き止めるのが難しくなります。アプリケーションのソースコードを簡単に変更できない商用環境においては特にそうです。不正な設定ファイルの場所を見つけやすくするには、システムプロパティの"logback.statusListenerClass"（<a href="#logback.statusLC">すぐ後で説明します</a>）に<code>StatusListener</code>を指定するとよいでしょう。そうすれば、強制的にステータスメッセージを出力させることができます。"logback.statusListenerClass" システムプロパティを使うと、エラーが発生したときに自動的に出力されるメッセージを抑止することもできます。
@@ -276,7 +276,7 @@ public class Foo {
    <p>時間の単位を指定しなかった場合ミリ秒として扱われますが、たいていの場合不適切だと思いますので<span class="label">注意</span>してください。時間単位を指定することを忘れないでください。
    </p>
 
-   <p>舞台裏で起きていることを説明しましょう。scan 属性に true を指定すると、<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/turbo/ReconfigureOnChangeFilter.html">ReconfigureOnChangeFilter</a>という<code>TurboFilter</code>の派生クラスがインストールされます。TurboFiltersについては<a href="./filters_ja.html#TurboFilter">後の章</a> で説明します。設定ファイルのスキャンは「内部スレッド」で行います。ロガーの出力メソッドが呼び出されるときは常にスキャンされるということです。（訳注：正確には、出力メソッドが呼び出されるたびにフィルタが評価されるので、その都度 logback のコンテキストに指定された ThreadExecutor にファイルをスキャンするタスクが投入されます。そして、ThreadExecutor の管理するスレッドによって実行されます。）例えば、scan 属性に true が設定されている場合、<code>myLogger</code>というロガーを使った「myLoger.debug("hello");」というロギング式があったら、このロギング式が実行されるたびに<code>ReconfigureOnChangeFilter</code>が呼び出されることになります。さらに言うと、<code>myLogger</code>でDEBUGレベルが無効になっているとしてもフィルターはその都度呼び出されることになります。
+   <p>舞台裏で起きていることを説明しましょう。scan 属性に true を指定すると、<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/turbo/ReconfigureOnChangeFilter.html">ReconfigureOnChangeFilter</a>という<code>TurboFilter</code>の派生クラスがインストールされます。TurboFiltersについては<a href="./filters_ja.html#TurboFilter">後の章</a> で説明します。設定ファイルのスキャンは「内部スレッド」で行います。ロガーの出力メソッドが呼び出されるときは常にスキャンされるということです。（訳注：正確には、出力メソッドが呼び出されるたびにフィルタが評価されるので、その都度 logback のコンテキストに指定された ThreadExecutor にファイルをスキャンするタスクが投入されます。そして、ThreadExecutor の管理するスレッドによって実行されます。）例えば、scan 属性に true が設定されている場合、<code>myLogger</code>というロガーを使った「myLoger.debug("hello");」というロギング式があったら、このロギング式が実行されるたびに<code>ReconfigureOnChangeFilter</code>が呼び出されることになります。さらに言うと、<code>myLogger</code>でDEBUGレベルが無効になっているとしてもフィルターはその都度呼び出されることになります。
    </p>
 
    <p class="highlight">設定ファイルを変更すると、何回かロギング処理を実行した後で、かつ、監視周期に基いて決定した遅延時間が経過したら、自動的に再読み込みします。
@@ -294,7 +294,7 @@ public class Foo {
 
    <p>logback は、logbac-core に含まれる Joran という設定用ライブラリを利用しています。logback のデフォルトの設定の仕組みでは、<code>JoranConfigurator</code>を呼び出して、クラスパス上で見つけたデフォルトの設定ファイルを渡すようになっています。何か理由があってデフォルトの設定の仕組みを上書きしたい場合、<code>JoranConfigurator</code>を直接呼び出すことができます。次に示す<em>MyApp3</em>アプリケーションでは、設定ファイルを引数としてJoranConfiguratorを呼び出しています。</p>
 
-   <p class="example">例：<code>JoranConfigurator</code>を直接呼び出す（<a href="http://logback.qos.ch/xref/chapters/configuration/MyApp3.html">logback-examples/src/mian/java/chapters/configuration/MyApp3.java</a>）</p>
+   <p class="example">例：<code>JoranConfigurator</code>を直接呼び出す（<a href="https://logback.qos.ch/xref/chapters/configuration/MyApp3.html">logback-examples/src/mian/java/chapters/configuration/MyApp3.java</a>）</p>
 
 <pre class="prettyprint source">package chapters.configuration;
 
@@ -337,7 +337,7 @@ public class MyApp3 {
 
    <h3 class="doAnchor" name="viewingStatusMessages">ステータスメッセージの内容</h3>
 
-   <p>logback は <code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/status/StatusManager.html">StatusManager</a></code>オブジェクトに内部ステータス情報を蓄積しています。このオブジェクトは<code>LoggerContext</code>からアクセスすることができます。
+   <p>logback は <code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/status/StatusManager.html">StatusManager</a></code>オブジェクトに内部ステータス情報を蓄積しています。このオブジェクトは<code>LoggerContext</code>からアクセスすることができます。
    </p>
 
    <p><code>StatusManager</code>があれば、logbackのコンテキストに関連付けられた全てのステータス情報にアクセスすることができます。メモリ使用量を妥当なレベルで抑えるため、<code>StatusManager</code>のデフォルト実装ではステータスメッセージを先頭と末尾に分けて格納しています。先頭には最初の<em>H</em>個のステータスメッセージを格納し、末尾には最後の<em>T</em>個のステータスメッセージを格納します。今のところ<em>H</em>も<em>T</em>も150になっていますが、将来的にこの値は変更されるかもしれません。</p>
@@ -370,10 +370,10 @@ public class MyApp3 {
    <p><code>StatusManager</code>に<code>StatusListener</code>を割り当てて、ステータスメッセージを受け取った応答として直ちに何らかの処理を実行させることができます。ただし、ステータスメッセージを受け取ることができるのは logback の設定が完了した後になります。ステータスリスナーを登録しておくと、人間が介入しなくてもlogbackの内部状態を監視できるようになるので便利です。
    </p>
 
-   <p>logback の配布物には<code>StatusListener</code>を実装した<code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/status/OnConsoleStatusListener.html">OnConsoleStatusListener</a></code>というクラスが含まれています。名前が表すとおり、<em>到着した</em>ステータスメッセージを全てコンソールに出力します。
+   <p>logback の配布物には<code>StatusListener</code>を実装した<code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/status/OnConsoleStatusListener.html">OnConsoleStatusListener</a></code>というクラスが含まれています。名前が表すとおり、<em>到着した</em>ステータスメッセージを全てコンソールに出力します。
    </p>
 
-   <p>これは、StatusManager に<code>OnConsoleStatusListenerを登録する<a href="http://logback.qos.ch/xref/chapters/configuration/AddStatusListenerApp.html">サンプルコード</a>です。</code>
+   <p>これは、StatusManager に<code>OnConsoleStatusListenerを登録する<a href="https://logback.qos.ch/xref/chapters/configuration/AddStatusListenerApp.html">サンプルコード</a>です。</code>
    </p>
 
    <pre class="prettyprint source">   LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
@@ -400,7 +400,7 @@ public class MyApp3 {
 
    <p class="source">java <b>-Dlogback.statusListenerClass</b>=ch.qos.logback.core.status.OnConsoleStatusListener ...</p>
 
-   <p>logback の配布物にはいくつかのステータスリスナー実装が含まれています。<a href="http://logback.qos.ch/xref/ch/qos/logback/core/status/OnConsoleStatusListener.html">OnConsoleStatusListener</a> は、受け取ったステータスメッセージを、コンソール（例えばSystem.out）に出力します。<a href="http://logback.qos.ch/xref/ch/qos/logback/core/status/OnErrorConsoleStatusListener.html">OnErrorConsoleStatusListener</a> は、受け取ったステータスメッセージをSystem.errに出力します。<a href="http://logback.qos.ch/xref/ch/qos/logback/core/status/NopStatusListener.html">NopStatusListener</a>は、受け取ったステータスメッセージをそのまま捨ててしまいます。</p>
+   <p>logback の配布物にはいくつかのステータスリスナー実装が含まれています。<a href="https://logback.qos.ch/xref/ch/qos/logback/core/status/OnConsoleStatusListener.html">OnConsoleStatusListener</a> は、受け取ったステータスメッセージを、コンソール（例えばSystem.out）に出力します。<a href="https://logback.qos.ch/xref/ch/qos/logback/core/status/OnErrorConsoleStatusListener.html">OnErrorConsoleStatusListener</a> は、受け取ったステータスメッセージをSystem.errに出力します。<a href="https://logback.qos.ch/xref/ch/qos/logback/core/status/NopStatusListener.html">NopStatusListener</a>は、受け取ったステータスメッセージをそのまま捨ててしまいます。</p>
 
 
    <p>設定の途中でステータスリスナーを登録したり、システムプロパティの"logback.statusListenerClass" でステータスリスナーを指定した場合は、<a href="#automaticStatusPrinting">メッセージステータスの自動出力（エラー発生時）</a>が無効になるので気をつけてください。つまり、<code>NopStatusListener</code>を使うように設定すると、内部ステータスの出力を完全に止めることが出来るのです。</p>
@@ -506,7 +506,7 @@ import ch.qos.logback.classic.LoggerContext;
 <pre class="source">17:34:07.578 [main] INFO  chapters.configuration.MyApp3 - Entering application.
 17:34:07.578 [main] INFO  chapters.configuration.MyApp3 - Exiting application.</pre>
 
-  <p><a href="http://logback.qos.ch/xref/chapters/configuration/Foo.html">"chapters.configuration.Foo</a>"のロガーが出力していたDEBUGメッセージが抑止されていることに気づきましたか。気になるならFooクラスを見なおしてください。</p>
+  <p><a href="https://logback.qos.ch/xref/chapters/configuration/Foo.html">"chapters.configuration.Foo</a>"のロガーが出力していたDEBUGメッセージが抑止されていることに気づきましたか。気になるならFooクラスを見なおしてください。</p>
 
   <p>あらゆるロガーのレベルを思った通りに設定することができます。次の設定ファイルでは、<em>chapters.configuration</em>ロガーのレベルをINFOに設定していますが、同時に<em>chapters.configuration.Foo</em>のレベルを<code>DEBUG</code>に設定しています。</p>
 
@@ -799,7 +799,7 @@ import ch.qos.logback.classic.LoggerContext;
 
   <h3 class="doAnchor" name="contextName">コンテキスト名の設定</h3>
 
-  <p><a href="./architecture_ja.html#LoggerContext">前の章</a>で述べたように、全てのロガーはロガーコンテキストに割り当てられます。ロガーコンテキストのデフォルトの名前は「default」です。しかし、<code>contextNameディレクティブ</code>を使えば別の名前を付けることが出来ます。ロガーコンテキストの名前は一度設定したら<a href="http://logback.qos.ch/apidocs/ch/qos/logback/core/ContextBase.html#setName(java.lang.String)">変更できない</a>ので注意してください。複数のアプリケーションが同じ対象にロギングする場合、アプリケーションを区別しやすくするには、コンテキストに名前を付けるのが簡単でわかりやすい方法です。
+  <p><a href="./architecture_ja.html#LoggerContext">前の章</a>で述べたように、全てのロガーはロガーコンテキストに割り当てられます。ロガーコンテキストのデフォルトの名前は「default」です。しかし、<code>contextNameディレクティブ</code>を使えば別の名前を付けることが出来ます。ロガーコンテキストの名前は一度設定したら<a href="https://logback.qos.ch/apidocs/ch/qos/logback/core/ContextBase.html#setName(java.lang.String)">変更できない</a>ので注意してください。複数のアプリケーションが同じ対象にロギングする場合、アプリケーションを区別しやすくするには、コンテキストに名前を付けるのが簡単でわかりやすい方法です。
   </p>
 
   <p class="example">
@@ -1066,7 +1066,7 @@ fileName=myApp.log
   <!-- ============================================================== -->
   <h3 class="doAnchor" name="definingPropsOnTheFly">実行時に変数を定義する</h3>
 
-  <p><code>define要素</code>を使うと動的に変数を定義できます。define要素には二つの必須属性<span class="attr">name属性</span>と<span class="attr">class属性</span>があります。<span class="attr">name属性</span>には変数の名前を指定します。<span class="attr">class属性</span>には<a href="http://logback.qos.ch/xref/ch/qos/logback/core/spi/PropertyDefiner.html">PropertyDefiner</a>インターフェイスを実装したクラスの完全名を指定します。<code>PropertyDefiner</code>の<code>getPropertyValue()</code>メソッドの返す値が、変数の値になります。<span class="attr">scope属性</span>で<a href="#scopes">スコープ</a>を指定することもできます。
+  <p><code>define要素</code>を使うと動的に変数を定義できます。define要素には二つの必須属性<span class="attr">name属性</span>と<span class="attr">class属性</span>があります。<span class="attr">name属性</span>には変数の名前を指定します。<span class="attr">class属性</span>には<a href="https://logback.qos.ch/xref/ch/qos/logback/core/spi/PropertyDefiner.html">PropertyDefiner</a>インターフェイスを実装したクラスの完全名を指定します。<code>PropertyDefiner</code>の<code>getPropertyValue()</code>メソッドの返す値が、変数の値になります。<span class="attr">scope属性</span>で<a href="#scopes">スコープ</a>を指定することもできます。
   </p>
 
   <p>以下に例を示します。</p>
@@ -1113,7 +1113,7 @@ fileName=myApp.log
 
   <h3 class="doAnchor" name="conditional">設定ファイル内の条件分岐</h3>
 
-  <p>開発環境、テスト環境、本番環境のような環境ごとに用意されたlogback設定ファイルと格闘しなければならないことがよくあります。これらの設定ファイルの内容はほとんど同じですが、少しだけ異なる箇所があります。同じような設定ファイルの重複を避けるため、logback は設定ファイル中で条件分岐できるようになっています。<code>if要素</code>、<code>then要素</code>、<code>else要素</code>を使えば、さまざまな環境用のファイルを一つにまとめることができるのです。条件分岐できるようにするため、<a href="http://logback.qos.ch/setup.html#janino">Jainoライブラリ</a>を使用しています。
+  <p>開発環境、テスト環境、本番環境のような環境ごとに用意されたlogback設定ファイルと格闘しなければならないことがよくあります。これらの設定ファイルの内容はほとんど同じですが、少しだけ異なる箇所があります。同じような設定ファイルの重複を避けるため、logback は設定ファイル中で条件分岐できるようになっています。<code>if要素</code>、<code>then要素</code>、<code>else要素</code>を使えば、さまざまな環境用のファイルを一つにまとめることができるのです。条件分岐できるようにするため、<a href="https://logback.qos.ch/setup.html#janino">Jainoライブラリ</a>を使用しています。
   </p>
 
   <p>条件分岐式の一般的な形式を次に示します。</p>
@@ -1270,7 +1270,7 @@ fileName=myApp.log
   <!-- ==================== ContextListener =================== -->
   <h2 class="doAnchor" name="contextListener">コンテキストリスナーを追加する</h2>
 
-  <p><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/spi/LoggerContextListener.html">LoggerContextListener</a>インターフェイスのインスタンスは、ロガーコンテキストのライフサイクルに関連するイベントを待ち受けます。
+  <p><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/spi/LoggerContextListener.html">LoggerContextListener</a>インターフェイスのインスタンスは、ロガーコンテキストのライフサイクルに関連するイベントを待ち受けます。
   </p>
 
 
@@ -1279,7 +1279,7 @@ fileName=myApp.log
 
   <h3 class="doAnchor" name="LevelChangePropagator">LevelChangePropagator</h3>
 
-  <p>バージョン0.9.25から、logback-classic の配布物には<code>LoggerContextListener</code>インターフェイスの実装である<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/jul/LevelChangePropagator.html">LevelChangePropagator</a>が含まれるようになりました。これは、logback-classic のあらゆるロガーのレベルの変更を捉えて、java.util.logging フレームワークに伝播します。ログレベルの変化を伝播するのはコストが高いので、ロギング式を無効にすることで改善されたはずの性能が台無しになってしまいます。<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/logging/LogRecord.html?is-external=true">LogRecord</a>のインスタンスはロギング式が有効な場合にだけ、SLF4Jを介してlogbackに渡されます。したがって、実際のアプリケーションでは<a href="http://www.slf4j.org/legacy.html#jul-to-slf4j">jul-to-slf4j</a>ブリッジを使うのが合理的です。
+  <p>バージョン0.9.25から、logback-classic の配布物には<code>LoggerContextListener</code>インターフェイスの実装である<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/jul/LevelChangePropagator.html">LevelChangePropagator</a>が含まれるようになりました。これは、logback-classic のあらゆるロガーのレベルの変更を捉えて、java.util.logging フレームワークに伝播します。ログレベルの変化を伝播するのはコストが高いので、ロギング式を無効にすることで改善されたはずの性能が台無しになってしまいます。<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/logging/LogRecord.html?is-external=true">LogRecord</a>のインスタンスはロギング式が有効な場合にだけ、SLF4Jを介してlogbackに渡されます。したがって、実際のアプリケーションでは<a href="http://www.slf4j.org/legacy.html#jul-to-slf4j">jul-to-slf4j</a>ブリッジを使うのが合理的です。
   </p>
 
 
