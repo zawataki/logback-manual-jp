@@ -1,7 +1,12 @@
 language: minimal
 
+addons:
+  apt:
+    update: true
+    packages:
+    - python-pip
+
 before_script:
-  - apt install python-pip
   - pip install --user requests[security]
   - pip install --user httpie
   - pip install --user linkchecker
