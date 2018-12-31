@@ -1,7 +1,7 @@
 language: minimal
 
 before_script:
-  - pip install --user --upgrade pip
+  - apt install python-pip
   - pip install --user requests[security]
   - pip install --user httpie
   - pip install --user linkchecker
