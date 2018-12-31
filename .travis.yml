@@ -1,13 +1,10 @@
 language: minimal
 
-python:
-  - "2.7.15"
-
 addons:
   apt:
     update: true
     packages:
-    - python-pip
+    - python-pip python3-pip
 
 before_script:
   - pip3 install --user requests[security]
