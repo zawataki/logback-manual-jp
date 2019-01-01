@@ -7,6 +7,7 @@ addons:
     - python-pip python3-pip
 
 before_script:
+  - pyenv versions
   - pip3 install --user requests[security]
   - pip3 install --user httpie
   - pip install --user linkchecker
