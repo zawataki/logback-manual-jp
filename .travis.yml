@@ -3,17 +3,13 @@ language: python
 python:
   - 2.7
 
-addons:
-  apt:
-    update: true
-    packages:
-    - python-pip python3-pip
+install:
+  - pip install requests[security]
+  - pip install httpie
+  - pip install linkchecker
 
 before_script:
   - pyenv versions
-  - pip3 install --user requests[security]
-  - pip3 install --user httpie
-  - pip install --user linkchecker
   - python --version
   - pip --version
   - pip3 --version
