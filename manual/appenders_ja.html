@@ -204,7 +204,11 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
 
 
-  <p class="example">例：ConsoleAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-Console.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-Console.xml</a>）</p>
+  <p class="example">
+    例：ConsoleAppenderの設定（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/conf/logback-Console.xml"><!--
+      -->logback-examples/src/main/resources/chapters/appenders/conf/logback-Console.xml</a>）
+  </p>
 
   <span class="asGroovy" onclick="return asGroovy('logback_Console');">Groovyで表示</span>
 
@@ -299,7 +303,11 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
    <p><code>FileAppender</code>の設定例を見てください。</p>
 
-   <p class="example">例：FileAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-fileAppender.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-fileAppender.xml</a>）</p>
+   <p class="example">
+     例：FileAppenderの設定（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/conf/logback-fileAppender.xml"><!--
+      -->logback-examples/src/main/resources/chapters/appenders/conf/logback-fileAppender.xml</a>）
+    </p>
 
    <span class="asGroovy" onclick="return asGroovy('logback-fileAppender');">Groovyとして表示</span>
    <pre id="logback-fileAppender" class="prettyprint source">&lt;configuration&gt;
@@ -331,7 +339,11 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
    <p>アプリケーションの開発フェーズの間や、アプリケーションを実行している時間が短い（たとえば、バッチアプリケーション）場合は、アプリケーションを実行するたびに新しいログファイルを作るほうがよいでしょう。<code>timestamp要素</code>を使えば簡単に実現できます。以下に例を示します。</p>
 
 
-   <p class="example">例：タイムスタンプを使ってファイル名を一意にするFileAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-timestamp.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-timestamp.xml</a>）</p>
+  <p class="example">
+    例：タイムスタンプを使ってファイル名を一意にするFileAppenderの設定（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/conf/logback-timestamp.xml"><!--
+      -->logback-examples/src/main/resources/chapters/appenders/conf/logback-timestamp.xml</a>）
+  </p>
 
    <span class="asGroovy" onclick="return asGroovy('logback-timestamp');">Groovyとして表示</span>
    <pre id="logback-timestamp" class="prettyprint source">&lt;configuration&gt;
@@ -366,7 +378,11 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
    <p>ロガーコンテキストを生成した日時を基準時間として使う場合、<span class="attr">timeReference属性</span>に"contextBirth"を指定します。</p>
 
 
-   <p class="example">例：タイムスタンプの基準時間にロガーコンテキストを生成した日時を使用する（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/blogback-timestamp-contextBirth.xml">logback-examples/src/main/java/chapters/appenders/conf/blogback-timestamp-contextBirth.xml</a>）</p>
+  <p class="example">
+    例：タイムスタンプの基準時間にロガーコンテキストを生成した日時を使用する（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/conf/logback-timestamp-contextBirth.xml"><!--
+      -->logback-examples/src/main/resources/chapters/appenders/conf/logback-timestamp-contextBirth.xml</a>）
+  </p>
 
    <span class="asGroovy" onclick="return asGroovy('logback-timestamp-contextBirth');">Groovyとして表示</span>
    <pre id="logback-timestamp-contextBirth" class="prettyprint source">&lt;configuration&gt;
