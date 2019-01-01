@@ -12,7 +12,6 @@ before_script:
   - pyenv versions
   - python --version
   - pip --version
-  - pip3 --version
   - pip list
   - linkchecker --version
 
