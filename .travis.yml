@@ -9,9 +9,11 @@ addons:
 before_script:
   - pip3 install --user requests[security]
   - pip3 install --user httpie
-  - pip3 install --user linkchecker
+  - pip install --user linkchecker
   - python --version
+  - pip --version
   - pip3 --version
+  - pip list
   - linkchecker --version
 
 script:
