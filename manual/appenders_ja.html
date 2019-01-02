@@ -1191,7 +1191,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <h3 class="doAnchor" name="serverSocketAppender">ServerSocketAppenderとSSLServerSocketAppender</h3>
 
-    <p>前に説明した<code>SocketAppender</code>コンポーネントとSSL対応版のSSLSocketAppenderは、ネットワークの向こう側のサーバにロギングイベントを配信するためのものです。アプリケーションがリモートロギングサーバに接続するために設計されています。場合によりますが、アプリケーションから特定のリモートロギングサーバへの接続を確立するのが不便だったり不可能だったりすることがあります。そういう場合のためにlogbackでは<code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/server/ServerSocketAppender">ServerSocketAppender</a></code>が用意されています。
+    <p>前に説明した<code>SocketAppender</code>コンポーネントとSSL対応版のSSLSocketAppenderは、ネットワークの向こう側のサーバにロギングイベントを配信するためのものです。アプリケーションがリモートロギングサーバに接続するために設計されています。場合によりますが、アプリケーションから特定のリモートロギングサーバへの接続を確立するのが不便だったり不可能だったりすることがあります。そういう場合のためにlogbackでは<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/server/ServerSocketAppender.html">ServerSocketAppender</a></code>が用意されています。
     </p>
 
     <p><code>ServerSocketAppender</code>は、特定のリモートロギングサーバとの接続を確立する代わりに、リモートクライアントからのTCPソケット接続を待ち受けます。アペンダーに送信されたロギングイベントは、接続しているクライアントに配布されます。接続しているクライアントがいなければ、ロギングイベントは<em>すぐに破棄されます</em>。
@@ -2695,7 +2695,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
 
     <h3 class="doAnchor" name="AccessServerSocketAppender">ServerSocketAppenderとSSLServerSocketAppender</h3>
 
-    <p><code>SocketAppender</code>と同様に、<a href="http://logback.qos.ch/xref/ch/qos/logback/access/net/server/ServerSocketAppender.html"><code>ServerSocketAppender</code></a>はシリアライズした<code>AccessEvent</code>をネットワーク上のリモートホストに送信するために設計されています。<code>ServerSocketAppender</code>はサーバとして動作します。つまり、外部のクライアントがTCP接続してくるのを待ち受けます。アペンダーに渡されたロギングイベントは、接続している全てのクライアントに配布されます。
+    <p><code>SocketAppender</code>と同様に、<a href="https://logback.qos.ch/xref/ch/qos/logback/access/net/server/ServerSocketAppender.html"><code>ServerSocketAppender</code></a>はシリアライズした<code>AccessEvent</code>をネットワーク上のリモートホストに送信するために設計されています。<code>ServerSocketAppender</code>はサーバとして動作します。つまり、外部のクライアントがTCP接続してくるのを待ち受けます。アペンダーに渡されたロギングイベントは、接続している全てのクライアントに配布されます。
     </p>
 
     <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/net/server/SSLServerSocketAppender.html">SSLSocketAppender</a></code>は基本的な<code>ServerSocketAppender</code>を拡張したもので、Secure Sockets Layer（SSL）を介してリモートホストにログを転送します。
