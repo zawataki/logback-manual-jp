@@ -1143,7 +1143,11 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <p>実行中の<code>SimpleSSLSocketServer</code>には、<code>SSLSocketAppender</code>を使って接続することができます。アペンダーの設定例は次のとおりです。</p>
 
-     <p class="example">例：SSLSocketAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/socket/ssl/client.xml">logback-examples/src/main/java/chapters/appenders/socket/ssl/client.xml</a>）</p>
+    <p class="example">
+      例：SSLSocketAppenderの設定（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/socket/ssl/client.xml"><!--
+        -->logback-examples/src/main/resources/chapters/appenders/socket/ssl/client.xml</a>）
+    </p>
     <span class="asGroovy" onclick="return asGroovy('sslclient');">Groovyとして表示</span>
 <pre id="sslclient" class="prettyprint source">&lt;configuration debug="true"&gt;
 
@@ -1173,7 +1177,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p class="source">java -Dhost=localhost -Dport=6000 \
     -Dtruststore=file:src/main/java/chapters/appenders/socket/ssl/truststore.jks \
     -Dpassword=changeit \
-    chapters.appenders.socket.SocketClient2 src/main/java/chapters/appenders/socket/ssl/client.xml
+    chapters.appenders.socket.SocketClient2 src/main/resources/chapters/appenders/socket/ssl/client.xml
      </p>
 
      <p>前の例と同じく、クライアントアプリケーションのコンソールにメッセージを入力することができます。そうすると、メッセージは（安全な通信路上で）ロギングサーバに送信されます。そして、サーバ側のコンソールにログが出力されます。
