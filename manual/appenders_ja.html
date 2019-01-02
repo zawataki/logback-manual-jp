@@ -857,7 +857,11 @@ public interface RollingPolicy extends LifeCycle {
 
     <p>日時とサイズに基づいてログファイルをアーカイブする設定ファイルの例を示します。</p>
 
-  <p class="example">例：<code>SizeAndTimeBasedFNATP</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-sizeAndTime.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-sizeAndTime.xml</a>）</p>
+  <p class="example">
+    例：<code>SizeAndTimeBasedFNATP</code>の設定（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/conf/logback-sizeAndTime.xml"><!--
+      -->logback-examples/src/main/resources/chapters/appenders/conf/logback-sizeAndTime.xml</a>）
+  </p>
 
   <span class="asGroovy" onclick="return asGroovy('logback-sizeAndTime');">Groovyとして表示</span>
   <pre id="logback-sizeAndTime" class="prettyprint source">&lt;configuration&gt;
@@ -926,7 +930,11 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 <code>RollingFileAppender</code>と<code>SizeBasedTriggeringPolicy</code>の設定例を見てみましょう。
 		</p>
 
-    <p class="example">例：<code>RollingFileAppender</code>と<code>SizeBasedTriggeringPolicy</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-RollingSizeBased.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-RollingSizeBased.xml</a>）</p>
+    <p class="example">
+      例：<code>RollingFileAppender</code>と<code>SizeBasedTriggeringPolicy</code>の設定（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/conf/logback-RollingSizeBased.xml"><!--
+        -->logback-examples/src/main/resources/chapters/appenders/conf/logback-RollingSizeBased.xml</a>）
+    </p>
 
     <span class="asGroovy" onclick="return asGroovy('logback-RollingSizeBased');">Groovyとして表示</span>
     <pre id="logback-RollingSizeBased" class="prettyprint source">&lt;configuration&gt;
@@ -1067,7 +1075,11 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 		<p><code>SocketClient1</code>と違って、<code>SocketClient2</code>ではアプリケーション自体でlogbackを設定していません。XML形式の設定ファイルが必要です。設定ファイル<em>client1.xml</em>の内容は次のとおりです。<code>SocketAppender</code>を定義して、ルートロガーに割り当てています。
 		</p>
 
-		<p class="example">例：SocketAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/socket/client1.xml">logback-examples/src/main/java/chapters/appenders/socket/client1.xml</a>）</p>
+		<p class="example">
+      例：SocketAppenderの設定（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/socket/client1.xml"><!--
+        -->logback-examples/src/main/resources/chapters/appenders/socket/client1.xml</a>）
+    </p>
     <span class="asGroovy" onclick="return asGroovy('client1');">Groovyとして表示</span>
 <pre id="client1" class="prettyprint source">&lt;configuration&gt;
 
@@ -1088,7 +1100,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 <span class="prop">port</span>、<span class="prop">includeCallerData</span>の値が変数で指定されているのがわかりますか。これらの変数の値は、システムプロパティとして指定することができます。</p>
 
     <p class="source">java -Dhost=localhost -Dport=6000 -DincludeCallerData=false \
-  chapters.appenders.socket.SocketClient2 src/main/java/chapters/appenders/socket/client1.xml</p>
+  chapters.appenders.socket.SocketClient2 src/main/resources/chapters/appenders/socket/client1.xml</p>
 
 		<p>このコマンドを実行すると、前の<code>SocketClient1</code>と同じ設定になります。
 		</p>
@@ -1105,7 +1117,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 		<p>この出力は簡単に変更できます。<code>SocketAppender</code>が送信者情報を含めるように設定するには、<span class="prop">includeCallerDataオプションにtrueを指定するだけです。</span>次のように実行すればよいです。</p>
 
    <pre class="source">java -Dhost=localhost -Dport=6000 -DincludeCallerData=true \
-  chapters.appenders.socket.SocketClient2 src/main/java/chapters/appenders/socket/client1.xml</pre>
+  chapters.appenders.socket.SocketClient2 src/main/resources/chapters/appenders/socket/client1.xml</pre>
 
 		<p>デシリアライズされたロギングイベントは、ローカルで生成されたロギングイベントと同じように扱うことができます。つまり、追加で何か処理するためにさらに別のリモートサーバに送信することができるのです。サーバを2つ用意して、最初のサーバがクライアントから受け取ったロギングイベントをトンネルのようにそのまま二つ目のサーバに転送するところを確認するのは、読者の演習課題にしておきます。
 		</p>
