@@ -6,7 +6,7 @@ python:
 install:
   - pip install requests[security]
   - pip install httpie
-  - pip install linkchecker
+  - pip install git+https://github.com/linkchecker/linkchecker.git
 
 before_script:
   - pyenv versions
