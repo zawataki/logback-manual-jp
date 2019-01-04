@@ -233,7 +233,11 @@
 
       <p><code>SocketReceiver</code>の設定は<code>ServerSocketReceiver</code>の設定と非常によく似ています。これらの差は、サーバーとクライアントという真逆の役割に起因するものです。<code>SocketReceiver</code>はクライアントで、リモートアペンダはサーバーとして動作します。</p>
 
-      <p class="example">例：基本的なSocketReceiverの設定（<a href="http://logback.qos.ch/xref/chapters/receivers/socket/receiver3.xml">logback-examples/src/main/java/chapters/receivers/socket/receiver3.xml</a>）</p>
+      <p class="example">
+        例：基本的なSocketReceiverの設定（<a
+          href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/receivers/socket/receiver3.xml"><!--
+          -->logback-examples/src/main/resources/chapters/receivers/socket/receiver3.xml</a>）
+      </p>
       <span class="asGroovy" onclick="return asGroovy('receiver3');">Groovyとして表示</span>
   <pre id="receiver3" class="prettyprint source">&lt;configuration debug="true"&gt;
 
@@ -264,7 +268,7 @@
 
       <p>サンプルアプリケーションは上記の設定ファイルを読み込んだあと、リモートアペンダーからのロギングイベントを待ち受けます。リモートアペンダーが落ちているときは、定期的に<em>接続を拒否された</em>メッセージが出力されます。再接続が成功するか、アプリケーションが停止するまで、レシーバーは定期的にリモートアペンダーへの再接続を繰り返します。設定例にあるとおり、再接続の間隔は<span class="prop">reconnectionDelay</span>プロパティで指定することができます。<p class="source">java -Dhost=localhost -Dport=6000 \
       chapters.receivers.socket.ReceiverExample \
-      src/main/java/chapters/receivers/socket/receiver3.xml</p>
+      src/main/resources/chapters/receivers/socket/receiver3.xml</p>
 
       <p>この例のレシーバーは、前のアプリケーションのアペンダーにそのまま接続できます。アペンダー用のサンプルアプリケーションは、<code>ServerSocketAppender</code>を使った設定ファイルを読み込んでから、ユーザー入力を待ちます。ユーザー入力はアペンダーに接続してきたレシーバーに配信されます。アペンダー用のサンプルアプリケーションを実行してみましょう。</p>
 
