@@ -106,7 +106,11 @@ public class MySampleLayout extends LayoutBase&lt;ILoggingEvent&gt; {
 
     <p>自作レイアウトは、他のコンポーネントと同じように設定されます。前述したように<code>FileAppender</code>とその派生クラスにはエンコーダーが必要です。<code>FileAppender</code>のニーズを満たすため、<code>LayoutWrappingEncoder</code>に自作した<code>MySampleLayout</code>をラップしてみましょう。次のような設定になります。</p>
 
-  <p class="example">例：MySampleLayoutの設定（<a href="http://logback.qos.ch/xref/chapters/layouts/sampleLayoutConfig.xml">logback-examples/src/main/java/chapters/layouts/sampleLayoutConfig.xml</a>）</p>
+  <p class="example">
+    例：MySampleLayoutの設定（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/layouts/sampleLayoutConfig.xml"><!--
+      -->logback-examples/src/main/resources/chapters/layouts/sampleLayoutConfig.xml</a>）
+  </p>
   <span class="asGroovy" onclick="return asGroovy('logback_Console');">Groovyで表示</span>
 <pre id="sampleLayoutConfig" class="prettyprint source">&lt;configuration&gt;
 
@@ -126,7 +130,7 @@ public class MySampleLayout extends LayoutBase&lt;ILoggingEvent&gt; {
     <p><em>logback-examples</em>ディレクトリに移動して、次のコマンドを実行してみましょう。
     </p>
 
-    <p class="command">java chapters.layouts.SampleLogging src/main/java/chapters/layouts/sampleLayoutConfig.xml</p>
+    <p class="command">java chapters.layouts.SampleLogging src/main/resources/chapters/layouts/sampleLayoutConfig.xml</p>
 
     <p>コンソールには次のように出力されます。</p>
 
@@ -988,7 +992,11 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
     <p>色付けをわかりやすく説明する設定ファイルを次に示します。%cyan変換指定子には部分パターン文字列として"%logger{15}"を指定してあるのがわかりますか。こうすると、ロガー名は15文字に短縮されるだけでなく、文字色がシアンになります。%highlight変換指定子を使うと、部分パターン文字列の文字色が、ログレベルがERRORなら赤太字、ログレベルがWARNなら赤字、ログレベルがINFOなら青字、それ以外のログレベルならデフォルトの色になります。</p>
 
-  <p class="example">例：ログレベルに応じた強調表示（<a href="http://logback.qos.ch/xref/chapters/layouts/highlighed.xml">logback-examples/src/main/java/chapters/layouts/highlighed.xml</a>）</p>
+  <p class="example">
+    例：ログレベルに応じた強調表示（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/layouts/highlighted.xml"><!--
+      -->logback-examples/src/main/resources/chapters/layouts/highlighted.xml</a>）
+  </p>
 
 <span class="asGroovy" onclick="return asGroovy('highlighted');">Groovyとして表示</span>
 
