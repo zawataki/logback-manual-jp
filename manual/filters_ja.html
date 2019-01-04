@@ -248,7 +248,7 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
     <h3 class="doAnchor" name="JaninoEventEvaluator">JaninoEventEvaluator</h3>
 
 
-    <p>logback-classicの配布物には、<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/JaninoEventEvaluator.html">JaninoEventEvaluator</a>という<code>EventEvaluator</code>の別の実装クラスが含まれています。これは、booleanを返す任意のJava言語のブロックを評価するものです。私たちはこのJava言語で書かれた式のことを"<em>Java評価式</em>”と呼んでいます。Java評価式を使うとロギングイベントを柔軟にフィルタリングできるようになります。<code>JaninoEventEvaluator</code>を使用するには<a href="http://docs.codehaus.org/display/JANINO/Home">Janinoライブラリ</a>が必要です。設定方法は設定ドキュメントの<a href="http://logback.qos.ch/setup.html#janino">対応するセクション</a>を参照してください。<code>JaninoEventEvaluator</code>と比べると、<code>GEventEvaluator</code>はGroovy言語のおかげで非常に使いやすいです。ですが、<code>JaninoEventEvaluator</code>のほうが同じ評価式をより高速に実行することができます。
+    <p>logback-classicの配布物には、<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/JaninoEventEvaluator.html">JaninoEventEvaluator</a>という<code>EventEvaluator</code>の別の実装クラスが含まれています。これは、booleanを返す任意のJava言語のブロックを評価するものです。私たちはこのJava言語で書かれた式のことを"<em>Java評価式</em>”と呼んでいます。Java評価式を使うとロギングイベントを柔軟にフィルタリングできるようになります。<code>JaninoEventEvaluator</code>を使用するには<a href="https://janino-compiler.github.io/janino/">Janinoライブラリ</a>が必要です。設定方法は設定ドキュメントの<a href="http://logback.qos.ch/setup.html#janino">対応するセクション</a>を参照してください。<code>JaninoEventEvaluator</code>と比べると、<code>GEventEvaluator</code>はGroovy言語のおかげで非常に使いやすいです。ですが、<code>JaninoEventEvaluator</code>のほうが同じ評価式をより高速に実行することができます。
     </p>
 
     <p>Java評価式は設定ファイルを解釈する間にコンパイルされます。どのように呼び出すのか、利用者は気にすることはありません。ですが、Java言語の式が真偽値を返すものであることを保証するのは利用者の責任です。</p>
@@ -762,7 +762,7 @@ logger.debug("Hello {}.", name1);</pre>
 つまり、<code>EventEvaluator</code>を継承すれば、独自のイベント評価ロジックを実装することができます。
 logback-accessの配布物には<a href="http://logback.qos.ch/xref/ch/qos/logback/access/boolex/JaninoEventEvaluator.html">JaninoEventEvaluator</a>という実装クラスが含まれています。これは、booleanを返す任意のJava言語のブロックを評価するものです。私たちはこのJava言語で書かれた式のことを"<em>Java評価式</em>”と呼んでいます。
 Java評価式を使うとロギングイベントを柔軟にフィルタリングできるようになります。
-<code>JaninoEventEvaluator</code>を使用するには<a href="http://docs.codehaus.org/display/JANINO/Home">Janinoライブラリ</a>が必要です。
+<code>JaninoEventEvaluator</code>を使用するには<a href="https://janino-compiler.github.io/janino/">Janinoライブラリ</a>が必要です。
 設定方法は設定ドキュメントの<a href="http://logback.qos.ch/setup.html#janino">対応するセクション</a>を参照してください。
 
     </p>

@@ -1039,7 +1039,7 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
     <p>早速<code>EventEvaluator</code>の例を見てみましょう。次の設定ファイルは、ロギングイベントの日付、スレッド、レベル、メッセージと送信者情報をコンソールに出力するものです。ロギングイベントの送信者情報を抽出するのはとてもコストが高いので、特定のロガーが生成したロギング要求の場合だけに限定しています。さらに、メッセージに特定の文字列が含まれている場合だけにしています。ですので、特定のロギングイベントについてだけ、送信者情報の生成と出力を行うことになります。そうすれば、送信者情報のいらないケースではアプリケーションの性能ペナルティが発生しません。
     </p>
 
-    <p>評価器と<em>具体的な評価式</em>については、<a href="http://logback.qos.ch/manual/filters_ja.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="http://docs.codehaus.org/display/JANINO/Home">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="http://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
+    <p>評価器と<em>具体的な評価式</em>については、<a href="http://logback.qos.ch/manual/filters_ja.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="https://janino-compiler.github.io/janino/">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="http://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
 
   <p class="example">例：EventEvaluatorsの使用例（<a href="http://logback.qos.ch/xref/chapters/callerEvaluatorConfig.xml">logback-examples/src/main/java/chapters/callerEvaluatorConfig.xml</a>）</p>
 <span class="asGroovy" onclick="return asGroovy('callerEvaluatorConfig');">Groovyとして表示</span>
