@@ -97,7 +97,11 @@
 
       <p>次の設定は、最小限のアペンダーとロガーの設定とともに<code>ServerSocketReceiver</code>を使用するものです。リモートアペンダーから受信したロギングイベントは、ルートロガーに渡されて、ローカルのコンソールアペンダーに配信されます。</p>
 
-      <p class="example">例：基本的なServerSocketReceiverの設定（<a href="http://logback.qos.ch/xref/chapters/receivers/socket/receiver1.xml">logback-examples/src/main/java/chapters/receivers/socket/receiver1.xml</a>）</p>
+      <p class="example">
+        例：基本的なServerSocketReceiverの設定（<a
+          href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/receivers/socket/receiver1.xml"><!--
+          -->logback-examples/src/main/resources/chapters/receivers/socket/receiver1.xml</a>）
+      </p>
 
       <span class="asGroovy" onclick="return asGroovy('receiver1');">Groovyとして表示</span>
   <pre id="receiver1" class="prettyprint source">&lt;configuration debug="true"&gt;
@@ -126,7 +130,7 @@
       <p>コマンドをプロンプトで<em>logback-examplesディレクトリ</em>に移動して、次のコマンドを実行しましょう。</p>
 
       <p class="source">java -Dport=6000 <a href="http://logback.qos.ch/xref/chapters/receivers/socket/ReceiverExample.html">chapters.receivers.socket.ReceiverExample</a> \
-      src/main/java/chapters/receivers/socket/receiver1.xml</p>
+        src/main/resources/chapters/receivers/socket/receiver1.xml</p>
 
       <p>クライアントアプリケーションで<code>SocketAppender</code>を設定して、実行中のレシーバーに接続することができます。サンプルのクライアントアプリケーションは、上記のレシーバーに接続する設定ファイルを読み込むだけのものです。クライアントアプリケーションはユーザー入力を待ちます。ユーザー入力はそのままレシーバーに中継されます。クライアントアプリケーションは次のように実行します。</p>
 
@@ -138,7 +142,11 @@
 
       <p>次の設定は、前の設定とは違ってSSLに対応したレシーバーを使うものです。</p>
 
-      <p class="example">例：基本的なSSLServerSocketReceiverの設定（<a href="http://logback.qos.ch/xref/chapters/receivers/socket/receiver2.xml">logback-examples/src/main/java/chapters/receivers/socket/receiver2.xml</a>）</p>
+      <p class="example">
+        例：基本的なSSLServerSocketReceiverの設定（<a
+          href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/receivers/socket/receiver2.xml"><!--
+          -->logback-examples/src/main/resources/chapters/receivers/socket/receiver2.xml</a>）
+      </p>
 
       <span class="asGroovy" onclick="return asGroovy('receiver2');">Groovyとして表示</span>
   <pre id="receiver2" class="prettyprint source">&lt;configuration debug="true"&gt;
@@ -173,7 +181,7 @@
       -Dkeystore=file:src/main/java/chapters/appenders/socket/ssl/keystore.jks \
       -Dpassword=changeit \
       chapters.receivers.socket.ReceiverExample \
-      src/main/java/chapters/receivers/socket/receiver2.xml</p>
+      src/main/resources/chapters/receivers/socket/receiver2.xml</p>
 
       <p>コマンドラインで指定したプロパティ<em>keystore</em>には、キーストアのfileから始まるURLを指定します。<a href="./usingSSL_ja.html">SSLを使用する</a>でも説明していますが、クラスパス上のリソースを指定することもできます。</p>
 
