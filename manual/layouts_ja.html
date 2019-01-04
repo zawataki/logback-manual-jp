@@ -1041,7 +1041,11 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
     <p>評価器と<em>具体的な評価式</em>については、<a href="http://logback.qos.ch/manual/filters_ja.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="https://janino-compiler.github.io/janino/">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="http://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
 
-  <p class="example">例：EventEvaluatorsの使用例（<a href="http://logback.qos.ch/xref/chapters/callerEvaluatorConfig.xml">logback-examples/src/main/java/chapters/callerEvaluatorConfig.xml</a>）</p>
+  <p class="example">
+    例：EventEvaluatorsの使用例（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/layouts/callerEvaluatorConfig.xml"><!--
+      -->logback-examples/src/main/resources/chapters/layouts/callerEvaluatorConfig.xml</a>）
+  </p>
 <span class="asGroovy" onclick="return asGroovy('callerEvaluatorConfig');">Groovyとして表示</span>
 
 
@@ -1068,7 +1072,11 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
     <p>この設定ファイルを使用するクラスを見てみましょう。</p>
 
-  <p class="example">例：EventEvaluatorsの使用例（<a href="http://logback.qos.ch/xref/chapters/CallerEvaluatorExample.html">logback-examples/src/main/java/chapters/CallerEvaluatorExample.java</a>）</p>
+  <p class="example">
+    例：EventEvaluatorsの使用例（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/java/chapters/layouts/CallerEvaluatorExample.java"><!--
+      -->logback-examples/src/main/java/chapters/layouts/CallerEvaluatorExample.java</a>）
+  </p>
     <pre class="prettyprint source">package <b>chapters.layouts</b>;
 
 import org.slf4j.Logger;
@@ -1109,7 +1117,7 @@ public class CallerEvaluatorExample {
 
     <p>次のコマンドで実行します。</p>
 
-    <p class="source">java chapters.layouts.CallerEvaluatorExample src/main/java/chapters/layouts/callerEvaluatorConfig.xml</p>
+    <p class="source">java chapters.layouts.CallerEvaluatorExample src/main/resources/chapters/layouts/callerEvaluatorConfig.xml</p>
 
     <p>そうすると、コンソールに次のように出力されます。</p>
 
@@ -1135,7 +1143,11 @@ Caller+0   at chapters.layouts.CallerEvaluatorExample.main(CallerEvaluatorExampl
 
     <p>次のコードでは、例外オブジェクトを指定したロギング要求を3つ生成しています。二つ目の例外オブジェクトは他のものと違ってメッセージに "do not display this" という文字列が含まれていますし、例外クラスが <code>chapters.layouts.TestException</code>になっています。このメッセージを指示とみなして、二つ目の例外オブジェクトのスタックトレースが出力されないようにしてみましょう。</p>
 
-  <p class="example">例：ExceptionEventEvaluatorsの使用例（<a href="http://logback.qos.ch/xref/chapters/ExceptionEvaluatorExample.html">logback-examples/src/main/java/chapters/ExceptionEvaluatorExample.java</a>）</p>
+  <p class="example">
+    例：ExceptionEventEvaluatorsの使用例（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/java/chapters/layouts/ExceptionEvaluatorExample.java"><!--
+      -->logback-examples/src/main/java/chapters/layouts/ExceptionEvaluatorExample.java</a>）
+  </p>
 <pre class="prettyprint source">package chapters.layouts;
 
 import org.slf4j.Logger;
