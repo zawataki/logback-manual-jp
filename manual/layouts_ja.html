@@ -1188,7 +1188,11 @@ public class ExceptionEvaluatorExample {
     <p>次の設定ファイルで指定した評価式は、<code>chapters.layouts.TextException</code>の例外オブジェクトが設定されたロギングイベントにマッチします。この例外型はスタックトレースの出力を抑止したい型そのものです。
     </p>
 
-  <p class="example">例：ExceptionEventEvaluatorsの使用例（<a href="http://logback.qos.ch/xref/chapters/exceptionEvaluatorConfig.xml">logback-examples/src/main/java/chapters/exceptionEvaluatorConfig.xml</a>）</p>
+  <p class="example">
+    例：ExceptionEventEvaluatorsの使用例（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/layouts/exceptionEvaluatorConfig.xml"><!--
+      -->logback-examples/src/main/resources/chapters/layouts/exceptionEvaluatorConfig.xml</a>）
+  </p>
     <pre class="prettyprint source">&lt;configuration&gt;
 
   <b>&lt;evaluator name="DISPLAY_EX_EVAL"&gt;
@@ -1212,7 +1216,7 @@ public class ExceptionEvaluatorExample {
 
     <p>実行してみましょう。</p>
 
-    <p class="source">java chapters.layouts.ExceptionEvaluatorExample src/main/java/chapters/layouts/exceptionEvaluatorConfig.xml</p>
+    <p class="source">java chapters.layouts.ExceptionEvaluatorExample src/main/resources/chapters/layouts/exceptionEvaluatorConfig.xml</p>
 
     <p>そうすると、次のような出力になります。</p>
 
