@@ -1248,7 +1248,7 @@ java.lang.Exception: display
 
     <p>アプリケーションが起動してからの経過時間をナノ秒単位で返すカスタム変換指定子の実装を見てみましょう。</p>
 
-  <p class="example">例：自作コンバーターの例（<a href="http://logback.qos.ch/xref/chapters/MySampleConverter.html">logback-examples/src/main/java/chapters/MySampleConverter.java</a>）</p>
+  <p class="example">例：自作コンバーターの例（<a href="https://logback.qos.ch/xref/chapters/layouts/MySampleConverter.html">logback-examples/src/main/java/chapters/layouts/MySampleConverter.java</a>）</p>
 <pre class="prettyprint source">public class MySampleConverter extends ClassicConverter {
 
   long start = System.nanoTime();
@@ -1267,7 +1267,7 @@ java.lang.Exception: display
 
     <p>logback に自作した<code>Converter</code>のことを教えなければいけません。そのためには、設定ファイルで新しい変換指定子を宣言する必要があります。</p>
 
-  <p class="example">例：自作コンバーターの設定例（<a href="http://logback.qos.ch/xref/chapters/mySampleConverterConfig.xml">logback-examples/src/main/java/chapters/mySampleConverterConfig.xml</a>）</p>
+  <p class="example">例：自作コンバーターの設定例（<a href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/layouts/mySampleConverterConfig.xml">logback-examples/src/main/resources/chapters/layouts/mySampleConverterConfig.xml</a>）</p>
 <span class="asGroovy" onclick="return asGroovy('mySampleConverterConfig');">Groovyとして表示</span>
 <pre id="mySampleConverterConfig" class="prettyprint source">&lt;configuration&gt;
 
@@ -1289,7 +1289,7 @@ java.lang.Exception: display
 
     <p>実行してみましょう。</p>
 
-    <div class="source">java chapters.layouts.SampleLogging src/main/java/chapters/layouts/mySampleConverterConfig.xml </div>
+    <div class="source">java chapters.layouts.SampleLogging src/main/resources/chapters/layouts/mySampleConverterConfig.xml </div>
 
     <p>次のような出力になるはずです。</p>
 
