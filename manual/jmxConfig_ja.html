@@ -25,13 +25,13 @@
 
     <h1>第10章 JMXコンフィギュレーター</h1>
 
-		<p>名前のとおり、<code>JMXConfigurator</code>を使うとJMX経由でlogbackを設定することができます。つまり、デフォルトの設定ファイルで設定されたlogbackを、指定したパスやURLに配置した設定ファイルの内容で再設定したり、ロガーの一覧を取得したり、ロガーのレベルを変更することができるのです。
-		</p>
+    <p>名前のとおり、<code>JMXConfigurator</code>を使うとJMX経由でlogbackを設定することができます。つまり、デフォルトの設定ファイルで設定されたlogbackを、指定したパスやURLに配置した設定ファイルの内容で再設定したり、ロガーの一覧を取得したり、ロガーのレベルを変更することができるのです。
+    </p>
 
-		<h3>JMXコンフィギュレーターを使用する</h3>
+    <h3>JMXコンフィギュレーターを使用する</h3>
 
 
-		<p>サーバーを実行しているJVMがJDK1.6以降なら、コマンドラインから<code>jconsole</code>コマンドを実行するだけで、実行中のサーバーのMBeanServerにアクセスすることができます。古いJVMで実行している場合は<a href="#jmxEnablingServer">サーバーでJMXを有効化する</a>のセクションを読んでおいてください。
+    <p>サーバーを実行しているJVMがJDK1.6以降なら、コマンドラインから<code>jconsole</code>コマンドを実行するだけで、実行中のサーバーのMBeanServerにアクセスすることができます。古いJVMで実行している場合は<a href="#jmxEnablingServer">サーバーでJMXを有効化する</a>のセクションを読んでおいてください。
     </p>
 
     <p>次のように設定ファイルに1行追加するだけで<code>JMXConfigurator</code>が有効になります。</p>
@@ -56,18 +56,18 @@
 
     <img src="https://logback.qos.ch/manual/images/chapters/jmxConfigurator/jmxConfigurator.gif" alt="jmxConfigurator">
 
-		<p>次のような操作を実行することができます。</p>
+    <p>次のような操作を実行することができます。</p>
 
-		<ul>
+    <ul>
       <li>デフォルトの設定ファイルを使用してlogbackを再設定します。</li>
 
       <li>URLに配置された設定ファイルを使用して再設定します。</li>
       <li>ファイルパスに配置された設定ファイルを使用して再設定します。</li>
 
-			<li>指定したロガーのレベルを設定します。nullを設定するには文字列"null"を指定します。</li>
+      <li>指定したロガーのレベルを設定します。nullを設定するには文字列"null"を指定します。</li>
       <li>指定したロガーのレベルを取得します。nullになることがあります。</li>
-			<li>指定したロガーの<a href="./architecture_ja.html#effectiveLevel">有効レベル</a>を取得します。</li>
-		</ul>
+      <li>指定したロガーの<a href="./architecture_ja.html#effectiveLevel">有効レベル</a>を取得します。</li>
+    </ul>
 
     <p><code>JMXConfigurator</code>はAttributesとして存在しているロガーの一覧と、ステータスの一覧を公開します。</p>
 
@@ -138,17 +138,17 @@ public class MyContextListener implements ServletContextListener {
 
     <p>JDK1.6以降のJVMでサーバーを実行している場合はデフォルトでJMXが有効になっています。</p>
 
-		<p>
+    <p>
       JDK1.6以前の古いJVMを使っている場合は、サーバーのJMX関連のドキュメントを確認することをおすすめします。<br>
       たとえば<a href="http://tomcat.apache.org/tomcat-6.0-doc/monitoring.html">Tomcat</a>や<a href="https://www.eclipse.org/jetty/documentation/current/jmx-chapter.html">Jetty</a>にはドキュメントがあります。<br>
       それはさておき、このドキュメントではTomcatとJettyの設定方法を簡単に説明していきます。
-		</p>
+    </p>
 
     <!-- ================ Configuring Jetty ================== -->
 
-		<h4>JettyでJMXを有効にする（JDK 1.5およびJDK 1.6で動作確認済み）</h4>
+    <h4>JettyでJMXを有効にする（JDK 1.5およびJDK 1.6で動作確認済み）</h4>
 
-		<p>以降の設定はJDK1.5とJDK1.6で動作確認しています。JDK1.6以降のJVMでは、デフォルトでJMXが有効になっています。以降の設定をしてもよいですが、特に何も変わりません。JDK1.5のJVMで実行するJettyでJMXを有効にするには、設定ファイル<em>$JETTY_HOME/etc/jetty.xml</em>にいくつか設定を追加する必要があります。追加するのは次の設定です。</p>
+    <p>以降の設定はJDK1.5とJDK1.6で動作確認しています。JDK1.6以降のJVMでは、デフォルトでJMXが有効になっています。以降の設定をしてもよいですが、特に何も変わりません。JDK1.5のJVMで実行するJettyでJMXを有効にするには、設定ファイル<em>$JETTY_HOME/etc/jetty.xml</em>にいくつか設定を追加する必要があります。追加するのは次の設定です。</p>
 
     <pre class="prettyprint source">&lt;Call id="MBeanServer" class="java.lang.management.ManagementFactory"
       name="getPlatformMBeanServer"/&gt;
@@ -225,7 +225,7 @@ public class MyContextListener implements ServletContextListener {
   &lt;/dependencies&gt;</b>
 &lt;/plugin&gt;</pre>
 
-		<p>この設定でJettyを起動すると、ブラウザで次のURLから<code>JMXConfigurator</code>にアクセスできるようになります。アクセスした後は "ch.qos.logback.classic" を探してください。</p>
+    <p>この設定でJettyを起動すると、ブラウザで次のURLから<code>JMXConfigurator</code>にアクセスできるようになります。アクセスした後は "ch.qos.logback.classic" を探してください。</p>
 
     <p class="source"><a href="http://localhost:8082/">http://localhost:8082/</a></p>
 
@@ -236,13 +236,13 @@ public class MyContextListener implements ServletContextListener {
 
     <!-- ================ Tomcat ================== -->
 
-		<h4>Tomcat用のJMXの設定（JDK 1.5およびJDK 1.6で動作確認済み）</h4>
+    <h4>Tomcat用のJMXの設定（JDK 1.5およびJDK 1.6で動作確認済み）</h4>
 
     <p>JDK1.6以降のJVMを使用しているならJMXはデフォルトで有効になっているので以降の設定をする必要はありません。JDK1.5の場合は<em>$TOMCAT_HOME/bin/catalina.sh（Windowsの場合はcatalina.bat）</em>の適切な場所に次の設定を追加する必要があります。</p>
 
     <p class="source">CATALINA_OPTS="-Dcom.sun.management.jmxremote"</p>
 
-		<p>そうすれば、<code>jconsole</code>を使ってTomcatの公開するMBeanとして<code>JMXConfigurator</code>にアクセスできるようになります。</p>
+    <p>そうすれば、<code>jconsole</code>を使ってTomcatの公開するMBeanとして<code>JMXConfigurator</code>にアクセスできるようになります。</p>
 
     <p class="source"></p>
 
@@ -254,7 +254,7 @@ public class MyContextListener implements ServletContextListener {
 
     <h4>TomcatにMX4Jを入れる（JDK 1.5およびJDK 1.6で動作確認済み）</h4>
 
-		<p>MX4JのWebインターフェイスを使ってJMXのコンポーネントにアクセスしたくなるかもしれません。そうするために必要な設定方法を説明します。</p>
+    <p>MX4JのWebインターフェイスを使ってJMXのコンポーネントにアクセスしたくなるかもしれません。そうするために必要な設定方法を説明します。</p>
 
     <p><a href="http://mx4j.sourceforge.net/">MX4J</a>はすでにダウンロードしてあることにしましょう。<em>mx4j-tools.jar</em>を<em>$TOMCAT_HOME/bin</em>フォルダーにおいてください。それから、<em>$TOMCAT_HOME/bin/catalina.sh（Windowsの場合はcatalina.bat）</em>の適切な場所に次の設定を追加します。</p>
 
@@ -264,7 +264,7 @@ CATALINA_OPTS="-Dcom.sun.management.jmxremote"
 &lt;!-- in the "Add on extra jar files to CLASSPATH" section --&gt;
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/bin/mx4j-tools.jar</p>
 
-		<p>最後に、<em>$TOMCAT_HOME/conf/server.xmlで新しい<code>Connector要素</code>を宣言します。</em></p>
+    <p>最後に、<em>$TOMCAT_HOME/conf/server.xmlで新しい<code>Connector要素</code>を宣言します。</em></p>
 
 
     <pre class="prettyprint source">&lt;Connector port="0"
@@ -274,7 +274,7 @@ CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/bin/mx4j-tools.jar</p>
   mx.httpPort="8082"
   protocol="AJP/1.3" /&gt;</pre>
 
-  	<p>Tomcatを起動したら、ブラウザで次のURLからJMXConfiguratorにアクセスできるようになります。アクセスした後は "ch.qos.logback.classic" を探してください。</p>
+    <p>Tomcatを起動したら、ブラウザで次のURLからJMXConfiguratorにアクセスできるようになります。アクセスした後は "ch.qos.logback.classic" を探してください。</p>
 
     <p class="source"><a href="http://localhost:8082">http://localhost:8082/</a></p>
 
