@@ -16,4 +16,4 @@ before_script:
   - linkchecker --version
 
 script:
-  - linkchecker --check-extern --timeout 10 ./manual/
+  - linkchecker --check-extern --ignore-url http://localhost:8082 --timeout 10 ./manual/
