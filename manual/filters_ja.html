@@ -454,7 +454,11 @@ java chapters.filters.FilterEvents src/main/java/chapters/filters/basicConfigura
 
     <p>マッチャーの使用例を見てみましょう。</p>
 
-    <p class="example">例：マッチャーの定義（<a href="http://logback.qos.ch/xref/chapters/filters/evaluatorWithMatcher.xml">logback-examples/src/main/java/chapters/filters/evaluatorWithMatcher.xml</a>）</p>
+    <p class="example">
+      例：マッチャーの定義（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/evaluatorWithMatcher.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/evaluatorWithMatcher.xml</a>）
+    </p>
 
 <span class="asGroovy" onclick="return asGroovy('evaluatorWithMatcher');">Groovyとして表示</span>
 
@@ -485,7 +489,7 @@ java chapters.filters.FilterEvents src/main/java/chapters/filters/basicConfigura
 &lt;/configuration&gt;</pre>
 
     <p><em>evaluatorWithMatcher.xml</em>の設定を使ってみましょう。</p>
-    <p class="source">java chapters.filters.FilterEvents src/main/java/chapters/filters/evaluatorWithMatcher.xml</p>
+    <p class="source">java chapters.filters.FilterEvents src/main/resources/chapters/filters/evaluatorWithMatcher.xml</p>
     <p>コンソールには次のように出力されます。</p>
 
     <p class="source">260  [main] INFO  chapters.filters.FilterEvents - logging statement 0
@@ -583,7 +587,11 @@ public class SampleTurboFilter extends TurboFilter {
 		<p>自作した<code>ターボフィルター</code>を使う設定ファイルは次のとおりです。
 		</p>
 
-    <p class="example">例：基本的な自作<code>TurboFilter</code>の設定（<a href="http://logback.qos.ch/xref/chapters/filters/sampleTurboFilterConfig.xml">logback-examples/src/main/java/chapters/filters/sampleTurboFilterConfig.xml</a>）</p>
+    <p class="example">
+      例：基本的な自作<code>TurboFilter</code>の設定（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/sampleTurboFilterConfig.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/sampleTurboFilterConfig.xml</a>）
+    </p>
 
 <span class="asGroovy" onclick="return asGroovy('sampleTurboFilterConfig');">Groovyとして表示</span>
 
@@ -610,7 +618,11 @@ public class SampleTurboFilter extends TurboFilter {
    	<p><code>MDCFilter</code>と<code>MarkerFilter</code>の両方を使う設定を見てみましょう。
    	</p>
 
-    <p class="example">例：<code>MDCFilter</code>と<code>MarkerFilter</code>の設定例（<a href="http://logback.qos.ch/xref/chapters/filters/turboFilters.xml">logback-examples/src/main/java/chapters/filters/turboFilters.xml</a>）</p>
+    <p class="example">
+      例：<code>MDCFilter</code>と<code>MarkerFilter</code>の設定例（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/turboFilters.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/turboFilters.xml</a>）
+    </p>
 
 <span class="asGroovy" onclick="return asGroovy('turboFilters');">Groovyとして表示</span>
     <pre id="turboFilters" class="prettyprint source">&lt;configuration&gt;
@@ -639,7 +651,7 @@ public class SampleTurboFilter extends TurboFilter {
 
 		<p>次のコマンドを実行してみましょう。</p>
 
-    <p class="source">java chapters.filters.FilterEvents src/main/java/chapters/filters/turboFilters.xml</p>
+    <p class="source">java chapters.filters.FilterEvents src/main/resources/chapters/filters/turboFilters.xml</p>
 
 		<p>前に見たように、<a href="http://logback.qos.ch/xref/chapters/filters/FilterEvents.html"><code>FilterEvents</code></a>アプリケーションは0〜9の連番を付けて10個のロギング要求を生成します。3番目と6番目を除く他のロギング要求のログレベルは<em>INFO</em>です。これはルートロガーに割り当てたログレベルと同じです。3番目のロギング要求のログレベルは<em>DEBUGレベル</em>で、これは有効レベルを下回っています。ですが、3番目のロギング要求を生成する直前に、MDCのキー"username"には値"sebastien"が設定され、直後に取り除かれています。そして、<code>MDCFIlter</code>はこのロギング要求だけを受け入れるようになっています。6番目のロギング要求はログレベル<em>ERROR</em>で、かつ、"billing" というマーカーが指定されています。このロギング要求はMarkerFilter（二つ目のターボフィルター）によって拒否されます。
 		</p>
