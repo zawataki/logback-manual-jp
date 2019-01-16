@@ -190,7 +190,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
     <tr>
       <td><span class="prop" container="conApp">withJansi</span></td>
       <td><code>boolean</code></td>
-      <td><span class="prop">withJansi</span>プロパティの値にはデフォルトで<code>false</code>が設定されています。<span class="prop">withJansi</span>プロパティに<code>true</code>を指定すると、<a href="http://jansi.fusesource.org/">Jansi</a>ライブラリが有効化され、Windowsマシン上でANSIカラーコードがサポートされるようになります。Windows のホスト上でこのプロパティにtrueを指定する場合、クラスパス上にjansiライブラリのjarファイルを置かなければなりません。なお、UnixベースのOSであるLinuxやMac OS Xのターミナルは、デフォルトでANSIカラーコードをサポートしています。
+      <td><span class="prop">withJansi</span>プロパティの値にはデフォルトで<code>false</code>が設定されています。<span class="prop">withJansi</span>プロパティに<code>true</code>を指定すると、<a href="https://fusesource.github.io/jansi/">Jansi</a>ライブラリが有効化され、Windowsマシン上でANSIカラーコードがサポートされるようになります。Windows のホスト上でこのプロパティにtrueを指定する場合、クラスパス上にjansiライブラリのjarファイルを置かなければなりません。なお、UnixベースのOSであるLinuxやMac OS Xのターミナルは、デフォルトでANSIカラーコードをサポートしています。
 
       <p>Eclipse IDEから利用する場合は、<a href="http://www.mihai-nita.net/eclipse/">ANSI in Eclipse Console</a>プラグインをインストールしてみましょう。
       </p>
