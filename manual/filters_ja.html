@@ -349,7 +349,11 @@ public class SampleFilter extends Filter&lt;ILoggingEvent&gt; {
 
     <p>具体的な例を見てみましょう。</p>
 
-    <p class="example">例：評価式の基本的な使い方（<a href="http://logback.qos.ch/xref/chapters/filters/basicEventEvaluator.xml">logback-examples/src/main/java/chapters/filters/basicEventEvaluator.xml</a>）</p>
+    <p class="example">
+      例：評価式の基本的な使い方（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/basicEventEvaluator.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/basicEventEvaluator.xml</a>）
+    </p>
 
 <span class="asGroovy" onclick="return asGroovy('basicEventEvaluator');">Groovyとして表示</span>
     <pre id="basicEventEvaluator" class="prettyprint source longline">&lt;configuration&gt;
@@ -407,7 +411,7 @@ java chapters.filters.FilterEvents src/main/java/chapters/filters/basicConfigura
 		<p>この中から"billing statement"を取り除きたいものとします。上記の<em>basicEventEvaluator.xml</em>では、メッセージに"billing"を含むロギングイベントをフィルタリングするので、まさに今欲しいものです。</p>
 
     <p><em>basicEventEvaluator.xml</em>を使って実行してみましょう。</p>
-    <p class="source">java chapters.filters.FilterEvents src/main/java/chapters/filters/basicEventEvaluator.xml</p>
+    <p class="source">java chapters.filters.FilterEvents src/main/resources/chapters/filters/basicEventEvaluator.xml</p>
     <p>次のような出力になります。</p>
 
     <p class="source">0    [main] INFO  chapters.filters.FilterEvents - logging statement 0
