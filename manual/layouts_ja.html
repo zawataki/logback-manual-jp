@@ -36,7 +36,7 @@
 
     <h2 class="doAnchor">レイアウトとは何か</h2>
 
-    <p>レイアウトといってもフロリダ州の大規模集合住宅とは何の関係もありません。レイアウトはlogbackのコンポーネントであり、受け取ったロギングイベントを文字列に変換する役割を担っています。<a href="http://logback.qos.ch/xref/ch/qos/logback/core/Layout.html"><code>Layout</code></a>インターフェイスの<code>format()</code>メソッドは、引数としてロギングイベントとみなされる（任意の型の）オブジェクトを受け取り、文字列を返します。<code>Layout</code>インターフェイスの概要を次に示します。
+    <p>レイアウトといってもフロリダ州の大規模集合住宅とは何の関係もありません。レイアウトはlogbackのコンポーネントであり、受け取ったロギングイベントを文字列に変換する役割を担っています。<a href="https://logback.qos.ch/xref/ch/qos/logback/core/Layout.html"><code>Layout</code></a>インターフェイスの<code>format()</code>メソッドは、引数としてロギングイベントとみなされる（任意の型の）オブジェクトを受け取り、文字列を返します。<code>Layout</code>インターフェイスの概要を次に示します。
     </p>
 
     <pre class="prettyprint source">public interface Layout&lt;E&gt; extends ContextAware, LifeCycle {
@@ -54,7 +54,7 @@
 
     <h2>Logback-classic モジュール</h2>
 
-    <p>logback-classic モジュールは<code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/spi/ILoggingEvent.html">ch.qos.logback.classic.spi.ILoggingEvent</a></code>だけを扱うようになっています。この節を読み進めていけば理由が明らかになります。</p>
+    <p>logback-classic モジュールは<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/spi/ILoggingEvent.html">ch.qos.logback.classic.spi.ILoggingEvent</a></code>だけを扱うようになっています。この節を読み進めていけば理由が明らかになります。</p>
 
     <h2 class="doAnchor" name="writingYourOwnLayout">レイアウトを自作する</h2>
 
@@ -66,7 +66,7 @@
     <div class="source">10489 DEBUG [main] com.marsupial.Pouch - Hello world.</div>
 
     <p>テキサスの開拓者が実装したレイアウトのコードを見てましょう。</p>
-    <p class="example">例：自作レイアウトのサンプル実装（<a href="http://logback.qos.ch/xref/chapters/layouts/MySampleLayout.html">logback-examples/src/main/java/chapters/layouts/MySampleLayout.java</a>）</p>
+    <p class="example">例：自作レイアウトのサンプル実装（<a href="https://logback.qos.ch/xref/chapters/layouts/MySampleLayout.html">logback-examples/src/main/java/chapters/layouts/MySampleLayout.java</a>）</p>
 
     <pre class="prettyprint source">package chapters.layouts;
 
@@ -91,7 +91,7 @@ public class MySampleLayout extends LayoutBase&lt;ILoggingEvent&gt; {
   }
 }</pre>
 
-    <p><code>MySampleLayout</code>は<a href="http://logback.qos.ch/xref/ch/qos/logback/core/LayoutBase.html"><code>LayoutBase</code></a>を継承しているのに気付きましたか。このクラスは全てのレイアウトのインスタンスに共通する内部状態を管理するものです。例えば、レイアウトが開始しているか、停止しているか、ヘッダーはあるか、フッターはあるか、コンテンツタイプはあるか、といったものです。おかげで、開発者は書式化の方法にだけ集中することができるのです。<code>LayoutBase</code>はジェネリッククラスです。上記のコードでは、<code>MySampleLayout</code>は<code>LayoutBase&lt;ILoggingEvent&gt;</code>を継承しています。
+    <p><code>MySampleLayout</code>は<a href="https://logback.qos.ch/xref/ch/qos/logback/core/LayoutBase.html"><code>LayoutBase</code></a>を継承しているのに気付きましたか。このクラスは全てのレイアウトのインスタンスに共通する内部状態を管理するものです。例えば、レイアウトが開始しているか、停止しているか、ヘッダーはあるか、フッターはあるか、コンテンツタイプはあるか、といったものです。おかげで、開発者は書式化の方法にだけ集中することができるのです。<code>LayoutBase</code>はジェネリッククラスです。上記のコードでは、<code>MySampleLayout</code>は<code>LayoutBase&lt;ILoggingEvent&gt;</code>を継承しています。
     </p>
 
     <p><code>doLayout(ILoggingEvent event)</code>メソッド（<code>MySampleLayout</code>の実装する唯一のメソッドです）では、最初に空の<code>StringBuffer</code>を生成して、ロギングイベントのパラメータを付け足していきます。開拓者らしく、慎重に書式化したようです。ロギング要求で1つ以上のパラメータが渡されることを考えればこれは大事なことです。</p>
@@ -125,7 +125,7 @@ public class MySampleLayout extends LayoutBase&lt;ILoggingEvent&gt; {
   &lt;/root&gt;
 &lt;/configuration&gt;</pre>
 
-    <p>サンプルアプリケーションの<code><a href="http://logback.qos.ch/xref/chapters/layouts/SampleLogging.html">chapters.layouts.SampleLogging</a></code>は、一つ目の引数で指定された設定ファイルを使ってlogbackを設定します。そして、デバッグメッセージとエラーメッセージを1つづつロギングします。</p>
+    <p>サンプルアプリケーションの<code><a href="https://logback.qos.ch/xref/chapters/layouts/SampleLogging.html">chapters.layouts.SampleLogging</a></code>は、一つ目の引数で指定された設定ファイルを使ってlogbackを設定します。そして、デバッグメッセージとエラーメッセージを1つづつロギングします。</p>
 
     <p><em>logback-examples</em>ディレクトリに移動して、次のコマンドを実行してみましょう。
     </p>
@@ -137,13 +137,13 @@ public class MySampleLayout extends LayoutBase&lt;ILoggingEvent&gt; {
 <div class="source"><pre>0 DEBUG [main] chapters.layouts.SampleLogging - Everything's going well
 0 ERROR [main] chapters.layouts.SampleLogging - maybe not quite...</pre></div>
 
-    <p>簡単でしょう？エレア派の懐疑論者ピュロンは、それ自体が不確実であるということ以外に確実なことは無い、と主張しました。つまり、確かなことなど何もないというのです。彼はきっとこう質問するでしょう。「それでレイアウトのオプションについてはどうなっているの？」上記の自作レイアウトを少し変更したバージョンが<a href="http://logback.qos.ch/xref/chapters/layouts/MySampleLayout2.html"><code>MySampleLayout2.java</code></a>です。このマニュアル全体を通じて言えることですが、レイアウトでもlogbackの他のコンポーネントでも、単にセッターメソッドを設定するだけでプロパティを指定できるようになります。
+    <p>簡単でしょう？エレア派の懐疑論者ピュロンは、それ自体が不確実であるということ以外に確実なことは無い、と主張しました。つまり、確かなことなど何もないというのです。彼はきっとこう質問するでしょう。「それでレイアウトのオプションについてはどうなっているの？」上記の自作レイアウトを少し変更したバージョンが<a href="https://logback.qos.ch/xref/chapters/layouts/MySampleLayout2.html"><code>MySampleLayout2.java</code></a>です。このマニュアル全体を通じて言えることですが、レイアウトでもlogbackの他のコンポーネントでも、単にセッターメソッドを設定するだけでプロパティを指定できるようになります。
     </p>
 
-    <p><a href="http://logback.qos.ch/xref/chapters/layouts/MySampleLayout2.html"><code>MySampleLayout2</code></a>クラスには、2つのプロパティがあります。一つ目は、出力されるメッセージの先頭に追加する接頭辞です。二つ目は、ロギング要求を送信したスレッドの名前を表示するかどうかを選択する真偽値です。
+    <p><a href="https://logback.qos.ch/xref/chapters/layouts/MySampleLayout2.html"><code>MySampleLayout2</code></a>クラスには、2つのプロパティがあります。一つ目は、出力されるメッセージの先頭に追加する接頭辞です。二つ目は、ロギング要求を送信したスレッドの名前を表示するかどうかを選択する真偽値です。
     </p>
 
-    <p><a href="http://logback.qos.ch/xref/chapters/layouts/MySampleLayout2.html"><code>MySampleLayout2</code></a>のコードを見てみましょう。</p>
+    <p><a href="https://logback.qos.ch/xref/chapters/layouts/MySampleLayout2.html"><code>MySampleLayout2</code></a>のコードを見てみましょう。</p>
 
     <pre class="prettyprint source">package chapters.layouts;
 
@@ -213,7 +213,7 @@ public class MySampleLayout2 extends LayoutBase&lt;ILoggingEvent&gt; {
 
     <h2 class="doAnchor" name="ClassicPatternLayout">PatternLayout</h2>
 
-    <p>logback-classic の配布物には、<code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/PatternLayout.html">PatternLayout</a></code>と呼ばれる柔軟性のあるレイアウトが含まれています。他のレイアウトと同じく、<code>PatternLayout</code>はロギングイベントを受け取って<code>文字列</code>を返します。<code>文字列</code>は、変換パターン文字列を調整してカスタマイズすることができます。
+    <p>logback-classic の配布物には、<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/PatternLayout.html">PatternLayout</a></code>と呼ばれる柔軟性のあるレイアウトが含まれています。他のレイアウトと同じく、<code>PatternLayout</code>はロギングイベントを受け取って<code>文字列</code>を返します。<code>文字列</code>は、変換パターン文字列を調整してカスタマイズすることができます。
     </p>
 
     <p><code>PatternLayout</code>の変換パターン文字列はC言語の<code>printf()</code>関数と非常によく似たもので、文字列リテラルと<em>変換指定</em>と呼ばれる書式制御式で構成されています。変換パターン文字列には、どんな文字列リテラルでも入れることができます。変換指定はパーセント記号"%"で始まり、オプションの<em>書式修飾子</em>、<em>変換指定子</em>、括弧で囲まれたパラメータが続いたものです。変換指定子には変換したいデータフィールドを指定します。例えばロガー名、レベル、日付、スレッド名などです。書式修飾子には、フィールド幅、パディング、左揃えや右揃えを指定します。
@@ -222,7 +222,7 @@ public class MySampleLayout2 extends LayoutBase&lt;ILoggingEvent&gt; {
     <p>既に何度か述べたとおり、<code>FileAppender</code>とその派生クラスにはエンコーダーが必要です。結局、<code>FileAppender</code>やその派生クラスと<code>PatternLayout</code>を一緒に使うには、エンコーダーでラップしなければなりません。<code>FileAppender</code>と<code>PatternLayout</code>を組み合わせることがあまりにも一般的になってしまったことを考慮して、logback の配布物には<code>PatternLayoutEncoder</code>を含めるようになりました。これは単に<code>PatternLayout</code>をラップするだけのエンコーダーなので、エンコーダーであるにも関わらずPatternLayoutのように扱えるようになっています。プログラム的に<code>ConsoleAppender</code>と<code>PatternLayoutEncoder</code>を設定する例を示します。</p>
 
 
-  <p class="example">例：PatternLayoutの使用例（<a href="http://logback.qos.ch/xref/chapters/layouts/PatternSample.html">logback-examples/src/main/java/chapters/layouts/PatternSample.java</a>）</p>
+  <p class="example">例：PatternLayoutの使用例（<a href="https://logback.qos.ch/xref/chapters/layouts/PatternSample.html">logback-examples/src/main/java/chapters/layouts/PatternSample.java</a>）</p>
 
     <pre class="prettyprint source">package chapters.layouts;
 
@@ -1032,14 +1032,14 @@ Wrapped by: org.springframework.BeanCreationException: Error creating bean with 
 
     <h2 class="doAnchor" name="Evaluators">評価器</h2>
 
-    <p>前述したように、オプションをリストで指定できると、変換指定子に<a href="http://logback.qos.ch/xref/ch/qos/logback/core/boolex/EventEvaluator.html">EventEvaluator</a>に基づく動的な振る舞いを複数指定できる必要があるときは便利です。
+    <p>前述したように、オプションをリストで指定できると、変換指定子に<a href="https://logback.qos.ch/xref/ch/qos/logback/core/boolex/EventEvaluator.html">EventEvaluator</a>に基づく動的な振る舞いを複数指定できる必要があるときは便利です。
     <code>EventEvaluator</code>の役割は、ロギングイベントが基準に合致するかどうかを判定することです。
     </p>
 
     <p>早速<code>EventEvaluator</code>の例を見てみましょう。次の設定ファイルは、ロギングイベントの日付、スレッド、レベル、メッセージと送信者情報をコンソールに出力するものです。ロギングイベントの送信者情報を抽出するのはとてもコストが高いので、特定のロガーが生成したロギング要求の場合だけに限定しています。さらに、メッセージに特定の文字列が含まれている場合だけにしています。ですので、特定のロギングイベントについてだけ、送信者情報の生成と出力を行うことになります。そうすれば、送信者情報のいらないケースではアプリケーションの性能ペナルティが発生しません。
     </p>
 
-    <p>評価器と<em>具体的な評価式</em>については、<a href="filters_ja.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="https://janino-compiler.github.io/janino/">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="http://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
+    <p>評価器と<em>具体的な評価式</em>については、<a href="filters_ja.html#evalutatorFilter">フィルタの章の独立したセクション</a>で紹介しています。もし評価器を実戦投入しようとしているなら必ず読んでおいてください。この後で紹介する例では、明示的に書いていませんが<code>JaninoEventEvaluator</code>を使用しています。ですので実行するには<a href="https://janino-compiler.github.io/janino/">Jainoライブラリ</a>が必要になります。設定方法をまとめたドキュメントの<a href="https://logback.qos.ch/setup.html#janino">該当するセクション</a>を読んでください。</p>
 
   <p class="example">
     例：EventEvaluatorsの使用例（<a
@@ -1244,7 +1244,7 @@ java.lang.Exception: display
 
     <h4>ステップ1</h4>
 
-    <p>まず、<code>ClassicConverter</code>を継承したクラスを作ります。<code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/pattern/ClassicConverter.html">ClassicConverter</a></code>の役割は、<code>ILoggingEvent</code>から情報を抽出して出力する文字列を生成することです。たとえば、 %logger変換指定子を実装した<code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/pattern/LoggerConverter.html">LoggerConverter</a></code>は、<code>ILoggingEvent</code>から抽出したロガーの名前を文字列として返します。ロガー名の省略はこの手順で行います。</p>
+    <p>まず、<code>ClassicConverter</code>を継承したクラスを作ります。<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/pattern/ClassicConverter.html">ClassicConverter</a></code>の役割は、<code>ILoggingEvent</code>から情報を抽出して出力する文字列を生成することです。たとえば、 %logger変換指定子を実装した<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/pattern/LoggerConverter.html">LoggerConverter</a></code>は、<code>ILoggingEvent</code>から抽出したロガーの名前を文字列として返します。ロガー名の省略はこの手順で行います。</p>
 
     <p>アプリケーションが起動してからの経過時間をナノ秒単位で返すカスタム変換指定子の実装を見てみましょう。</p>
 
@@ -1297,14 +1297,14 @@ java.lang.Exception: display
 5758748 [main] ERROR - maybe not quite...</pre>
 
 
-    <p>オプションの扱い方や、もっと複雑な振る舞いをさせるやり方を知りたければ、<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/pattern/MDCConverter.html"><code>MDCConverter</code></a>などの既存の<code>Converter</code>実装を見てみるとよいでしょう。独自の色付けをしたければ<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/pattern/color/HighlightingCompositeConverter.html"><code>HighlightingCompositeConverter</code></a>を参考にするとよいでしょう。
+    <p>オプションの扱い方や、もっと複雑な振る舞いをさせるやり方を知りたければ、<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/pattern/MDCConverter.html"><code>MDCConverter</code></a>などの既存の<code>Converter</code>実装を見てみるとよいでしょう。独自の色付けをしたければ<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/pattern/color/HighlightingCompositeConverter.html"><code>HighlightingCompositeConverter</code></a>を参考にするとよいでしょう。
     </p>
 
 
 
     <h2 class="doAnchor" name="ClassicHTMLLayout">HTMLLayout</h2>
 
-    <p><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/html/HTMLLayout.html"><code>HTMLLayout</code></a>はHTML形式のログを出力します（logback-classicに含まれています）。<code>HTMLLayout</code>はHTMLのテーブルを出力します。それぞれの行がロギングイベントに対応しています。</p>
+    <p><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/html/HTMLLayout.html"><code>HTMLLayout</code></a>はHTML形式のログを出力します（logback-classicに含まれています）。<code>HTMLLayout</code>はHTMLのテーブルを出力します。それぞれの行がロギングイベントに対応しています。</p>
 
     <p>デフォルトのCSSを使った<code>HTMLLayout</code>の出力例を見てください。</p>
     <img src="https://logback.qos.ch/manual/images/chapters/layouts/htmlLayout0.gif" alt="HTMLレイアウトサンプル画像">
@@ -1340,7 +1340,7 @@ java.lang.Exception: display
 &lt;/configuration&gt;
 </pre>
 
-   <p><a href="http://logback.qos.ch/xref/chapters/layouts/TrivialMain.html">TrivialMain</a>アプリケーションは、いくつかログを出力してから最後に例外オブジェクトを指定したログを出力します。実行してみましょう。</p>
+   <p><a href="https://logback.qos.ch/xref/chapters/layouts/TrivialMain.html">TrivialMain</a>アプリケーションは、いくつかログを出力してから最後に例外オブジェクトを指定したログを出力します。実行してみましょう。</p>
 
    <p class="source">java chapters.layouts.TrivialMain src/main/resources/chapters/layouts/htmlLayoutConfig1.xml</p>
 
@@ -1352,10 +1352,10 @@ java.lang.Exception: display
     <p>スタックトレースを出力するには<em>%ex変換指定</em>を指定します。そうすると専用の列が追加されます。ほとんどの場合スタックトレースの列は空なので、無駄に画面を専有することでしょう。さらに、スタックトレースを専用の列に出力したところで読みやすくはならないです。なお、スタックトレースを出力するには、<em>%ex変換指定</em>を指定する以外の方法があります。
     </p>
 
-    <p>よりよい解決策は、自分で<code>IThrowableRenderer</code>インターフェイスを実装することです。実装したクラスは、例外オブジェクトに関係する情報を出力するため、<code>HTMLLayout</code>に割り当てることができます。デフォルトでは、<code>HTMLLayout</code>インスタンスに<code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/html/DefaultThrowableRenderer.html">DefaultThrowableRenderer</a></code>が割り当てられています。これは例外オブジェクトのスタックトレースを<em>新しい行</em>に出力します。前の図を見るとわかりますが多少読みやすいです。
+    <p>よりよい解決策は、自分で<code>IThrowableRenderer</code>インターフェイスを実装することです。実装したクラスは、例外オブジェクトに関係する情報を出力するため、<code>HTMLLayout</code>に割り当てることができます。デフォルトでは、<code>HTMLLayout</code>インスタンスに<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/html/DefaultThrowableRenderer.html">DefaultThrowableRenderer</a></code>が割り当てられています。これは例外オブジェクトのスタックトレースを<em>新しい行</em>に出力します。前の図を見るとわかりますが多少読みやすいです。
     </p>
 
-    <p>それでも理由があって<em>%ex</em>を使いたいときは、設定ファイルに<code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/html/NOPThrowableRenderer.html">NOPThrowableRenderer</a></code>を指定すればスタックトレースを別々の行に出力しないようにできます。あなたの望み通りに全てが上手くいくようなアイデアはありません。それでも、こうしたいという気持ちがあればきっと実現できます。
+    <p>それでも理由があって<em>%ex</em>を使いたいときは、設定ファイルに<code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/html/NOPThrowableRenderer.html">NOPThrowableRenderer</a></code>を指定すればスタックトレースを別々の行に出力しないようにできます。あなたの望み通りに全てが上手くいくようなアイデアはありません。それでも、こうしたいという気持ちがあればきっと実現できます。
     </p>
 
     <h3>CSS</h3>
@@ -1378,7 +1378,7 @@ java.lang.Exception: display
     <h2 class="doAnchor" name="log4jXMLLayout">Log4jのXMLLayout</h2>
 
     <p>
-      <a href="http://logback.qos.ch/xref/ch/qos/logback/classic/log4j/XMLLayout.html">XMLLayout</a>
+      <a href="https://logback.qos.ch/xref/ch/qos/logback/classic/log4j/XMLLayout.html">XMLLayout</a>
       （logback-classicに含まれています）を使うとlog4j.dtdに準拠した書式で出力できるようになります。<br>
       つまり、<a href="http://logging.apache.org/chainsaw/2.x/">Chainsaw</a>や<a href="http://vigilog.sourceforge.net/">Vigilog</a>などの、<a href="http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/XMLLayout.html">log4jのXML書式</a>を入力とするツールと相互運用できるのです。
     </p>
@@ -1422,7 +1422,7 @@ java.lang.Exception: display
 
     <h3 class="doAnchor" name="AccessPatternLayout">PatternLayout</h3>
 
-    <p>logback-access の<code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/PatternLayout.html">PatternLayout</a></code>は、logback-classic とほとんど同じように設定することができます。ですが、HTTPリクエストやHTTPレスポンスにしか無い、ロギングに適した情報のための変換指定が追加されています。
+    <p>logback-access の<code><a href="https://logback.qos.ch/xref/ch/qos/logback/access/PatternLayout.html">PatternLayout</a></code>は、logback-classic とほとんど同じように設定することができます。ですが、HTTPリクエストやHTTPレスポンスにしか無い、ロギングに適した情報のための変換指定が追加されています。
     </p>
 
     <p>logback-accessの<code>PatternLayout</code>で使える変換指定を表にまとめました。</p>
@@ -1598,7 +1598,7 @@ server</b></td>
       <tr class="b">
         <td class="word" name="requestContent"><b>requestContent</b></td>
         <td>
-          <p>この変換指定はリクエストの中身、つまり、リクエストの<code>InputStream</code>を出力します。実際は、<code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/servlet/TeeFilter.html">TeeFilter</a></code>によって元の<code>HttpServletRequest</code>を<code>TeeHttpServletRequest</code>に置き換えます。だから、データを失わずに何度でもリクエストの<code>InputStream</code>にアクセスできるのです。
+          <p>この変換指定はリクエストの中身、つまり、リクエストの<code>InputStream</code>を出力します。実際は、<code><a href="https://logback.qos.ch/xref/ch/qos/logback/access/servlet/TeeFilter.html">TeeFilter</a></code>によって元の<code>HttpServletRequest</code>を<code>TeeHttpServletRequest</code>に置き換えます。だから、データを失わずに何度でもリクエストの<code>InputStream</code>にアクセスできるのです。
           </p>
         </td>
       </tr>
@@ -1652,7 +1652,7 @@ server</b></td>
 
     <h3 class="doAnchor" name="AccessHTMLLayout">HTMLLayout</h3>
 
-    <p>logback-accessモジュールの<a href="http://logback.qos.ch/xref/ch/qos/logback/access/html/HTMLLayout.html"><code>HTMLLayout</code></a>は、logback-classicモジュールの<a href="#ClassicHTMLLayout"><code>HTMLLayout</code></a>とほとんど変わりません。
+    <p>logback-accessモジュールの<a href="https://logback.qos.ch/xref/ch/qos/logback/access/html/HTMLLayout.html"><code>HTMLLayout</code></a>は、logback-classicモジュールの<a href="#ClassicHTMLLayout"><code>HTMLLayout</code></a>とほとんど変わりません。
     </p>
 
     <p>デフォルトでは次の項目を含む表を作ります。</p>
@@ -1668,10 +1668,10 @@ server</b></td>
     <p>logack-accessの<code>HTMLLayout</code>による出力例を見てください。</p>
     <img src="https://logback.qos.ch/manual/images/chapters/layouts/htmlLayoutAccess.gif" alt="アクセスHTMLレイアウトサンプル画像">
 
-    <p>実際に使うと上でもっと良くするにはどうしたらいいでしょうか？log4j.properties for logback <a href="http://logback.qos.ch/translator/">translator</a>は、logback-access の<code>RollingFileAppender</code>と<code>HTMLLayout</code>を使ってリアルタイム出力をするようになっています。</p>
+    <p>実際に使うと上でもっと良くするにはどうしたらいいでしょうか？log4j.properties for logback <a href="https://logback.qos.ch/translator/">translator</a>は、logback-access の<code>RollingFileAppender</code>と<code>HTMLLayout</code>を使ってリアルタイム出力をするようになっています。</p>
 
 
-    <p>Webアプリケーションの<a href="http://logback.qos.ch/translator/">translator</a>に対するユーザーからのリクエストに対して、都度新しいアクセスログが出力されます。<a href="http://logback.qos.ch/translator/logs/access.html">このリンク先</a>でそれを見ることが出来ます。</p>
+    <p>Webアプリケーションの<a href="https://logback.qos.ch/translator/">translator</a>に対するユーザーからのリクエストに対して、都度新しいアクセスログが出力されます。<a href="https://logback.qos.ch/translator/logs/access.html">このリンク先</a>でそれを見ることが出来ます。</p>
 
 
     <script src="https://logback.qos.ch/templates/footer.js" type="text/javascript"></script>
