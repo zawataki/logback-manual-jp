@@ -745,7 +745,7 @@ logger.debug("Hello {}.", name1);</pre>
 
 		<h2 class="doAnchor" name="countingFilter"><code>CountingFilter</code></h2>
 
-		<p>logback-access では、<a href="https://logback.qos.ch/manual/xref/ch/qos/logback/access/filter/CountingFilter.html"><code>CountingFilter</code></a>を使ってWebサーバへのアクセス統計情報を集めることができます。<code>CountingFilter</code>は、初期化時に実行プラットフォームの JMX サーバーに自身を MBean として登録します。その後は、MBean に統計情報を問い合わせることができるようになります。分平均、時間平均、日平均、週平均、月平均などです。他にも、集計単位の一つ前の情報と全体の合計を参照することができます。
+		<p>logback-access では、<a href="https://logback.qos.ch/xref/ch/qos/logback/access/filter/CountingFilter.html"><code>CountingFilter</code></a>を使ってWebサーバへのアクセス統計情報を集めることができます。<code>CountingFilter</code>は、初期化時に実行プラットフォームの JMX サーバーに自身を MBean として登録します。その後は、MBean に統計情報を問い合わせることができるようになります。分平均、時間平均、日平均、週平均、月平均などです。他にも、集計単位の一つ前の情報と全体の合計を参照することができます。
 		</p>
 
 		<p><code>CountingFilter</code>を使用する設定ファイルを見てみましょう。</p>
@@ -798,7 +798,11 @@ Java評価式を使うとロギングイベントを柔軟にフィルタリン�
 
     <p>次の設定ファイルでは、応答コード<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404（Not Found）</a>をひっかけます。つまり、応答コードが404になったHTTPリクエストをすべてコンソールに出力するのです。</p>
 
-    <p class="example">例：Access Evaluator（<a href="https://logback.qos.ch/xref/chapters/filters/accessEventEvaluator.xml">logback-examples/src/main/java/chapters/filters/accessEventEvaluator.xml</a>）</p>
+    <p class="example">
+      例：Access Evaluator（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/accessEventEvaluator.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/accessEventEvaluator.xml</a>）
+    </p>
 
 <pre class="prettyprint source">&lt;configuration&gt;
   &lt;statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" /&gt;
@@ -820,7 +824,11 @@ Java評価式を使うとロギングイベントを柔軟にフィルタリン�
 		</p>
 
 
-    <p class="example">例6.10：Access Evaluator（<a href="https://logback.qos.ch/xref/chapters/filters/accessEventEvaluator2.xml">logback-examples/src/main/java/chapters/filters/accessEventEvaluator2.xml</a>）</p>
+    <p class="example">
+      例6.10：Access Evaluator（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/filters/accessEventEvaluator2.xml"><!--
+        -->logback-examples/src/main/resources/chapters/filters/accessEventEvaluator2.xml</a>）
+    </p>
 
     <pre class="prettyprint source">&lt;configuration&gt;
   &lt;statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" /&gt;
