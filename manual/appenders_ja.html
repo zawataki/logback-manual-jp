@@ -971,7 +971,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <h3 class="doAnchor" name="SocketAppender">SocketAppenderとSSLSocketAppender</h3>
 
-    <p>ここまでに紹介してきたアペンダーは、ローカルリソースだけにログを出力するものでした。対照的に、 <code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/SocketAppender.html">SocketAppender</a></code>はログをシリアライズした<code>ILoggingEvent</code>のインスタンスとしてリモートホストに送信するものとして設計されています。<code>SocketAppender</code>では、ロギングイベントを平文で送信します。<code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/SSLSocketAppender.html">SSLSocketAppender</a></code>では、暗号化された安全なチャネルを介してロギングイベントを送信します。</p>
+    <p>ここまでに紹介してきたアペンダーは、ローカルリソースだけにログを出力するものでした。対照的に、 <code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/SocketAppender.html">SocketAppender</a></code>はログをシリアライズした<code>ILoggingEvent</code>のインスタンスとしてリモートホストに送信するものとして設計されています。<code>SocketAppender</code>では、ロギングイベントを平文で送信します。<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SSLSocketAppender.html">SSLSocketAppender</a></code>では、暗号化された安全なチャネルを介してロギングイベントを送信します。</p>
 
     <p>シリアライズされたロギングイベントの実際の型は、<code>ILoggingEvent</code>インターフェイスを実装した<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/spi/LoggingEventVO.html"><code>LoggingEventVO</code></a>です。ロギングイベントがどれだけ心配なのはわかりますが、リモートロギングが盗聴されることはありません。★受信したロギングイベントをデシリアライズしたら、ローカルで生成されたものとまったく同じように扱われます。それぞれのマシンで実行されている<code>SocketAppender</code>のインスタンスの出力書式がどれも同じになっていれば、中央ログサーバに直接ロギング出力を送りつけることができます。<code>SocketAppender</code>に割り当てられたレイアウトをリモートサーバに送ることはありません。シリアライズされたイベントを送信するからです。<code>SocketAppender</code>は<em>Transmission Control Protocol（TCP）</em>レイヤーで動作します。TCPレイヤーは、信頼性、順序性、フロー制御を備えた端末間のオクテットストリームによる通信を提供するものです。つまり、リモートサーバがネットワークから到達可能な場合、ロギングイベントは確実に到着します。リモートサーバーがダウンしているか到達不能である場合、ロギングイベントは単純に破棄されてしまいます。リモートサーバが復旧した場合、ロギングイベントの送信は透過的に再開されます。この透過的な再接続は、定期的にサーバへの接続を試みるコネクタースレッドによって行われます。
     </p>
@@ -1197,7 +1197,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p><code>ServerSocketAppender</code>は、特定のリモートロギングサーバとの接続を確立する代わりに、リモートクライアントからのTCPソケット接続を待ち受けます。アペンダーに送信されたロギングイベントは、接続しているクライアントに配布されます。接続しているクライアントがいなければ、ロギングイベントは<em>すぐに破棄されます</em>。
     </p>
 
-    <p>logback は、普通の<code>ServerSocketAppender</code>だけでなく、SSL対応版の<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/server/SSLServerSocketAppender"><code>SSLServerSocketAppender</code></a>も用意しています。安全な、暗号化された通信路で接続したクライアントにロギングイベントを配布します。さらに、SSL対応版のアペンダーは、完全な相互認証をサポートしています。つまり、認証されたクライアントだけがロギングイベントを受信するためにアペンダーに接続できることが保証されるのです。
+    <p>logback は、普通の<code>ServerSocketAppender</code>だけでなく、SSL対応版の<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/server/SSLServerSocketAppender.html"><code>SSLServerSocketAppender</code></a>も用意しています。安全な、暗号化された通信路で接続したクライアントにロギングイベントを配布します。さらに、SSL対応版のアペンダーは、完全な相互認証をサポートしています。つまり、認証されたクライアントだけがロギングイベントを受信するためにアペンダーに接続できることが保証されるのです。
     </p>
 
     <p>通信路上でのロギングイベントの符号化方法は使用している<code>SocketAppender</code>に関わらず同一です。ロギングイベントは<code>ILoggingEvent</code>のインスタンスがシリアライズされたものです。接続を確立する方向だけが逆転しています。<code>SocketAppender</code>が特定のロギングサーバに対して接続を確立しようとする活性ピアとして振る舞うのに対して、<code>ServerSocketAppender</code>は受動的にクライアントからの接続を待ち受けます。</p>
@@ -2687,7 +2687,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
     <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/net/SocketAppender.html">SocketAppender</a></code>は、シリアライズした<code>AccessEvent</code>をネットワーク上のリモートホストに送信するために設計されています。リモートロギングは、アクセスイベントが重要であろうとなかろうと盗聴できないようになっています。受信したイベントをデシリアライズした後は、自分で生成したロギングイベントと同じように扱うことができます。
     </p>
 
-    <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/net/SSLSocketAppender.html">SSLSocketAppender</a></code>は基本的な<code>SocketAppender</code>を拡張したもので、Secure Sockets Layer（SSL）を介してリモートホストにログを転送します。
+    <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SSLSocketAppender.html">SSLSocketAppender</a></code>は基本的な<code>SocketAppender</code>を拡張したもので、Secure Sockets Layer（SSL）を介してリモートホストにログを転送します。
     </p>
 
     <p>logback-access の<code>SocketAppender</code>で設定可能なプロパティは、logback-classic の<code>SocketAppender</code>と同じです。
@@ -2698,7 +2698,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
     <p><code>SocketAppender</code>と同様に、<a href="https://logback.qos.ch/xref/ch/qos/logback/access/net/server/ServerSocketAppender.html"><code>ServerSocketAppender</code></a>はシリアライズした<code>AccessEvent</code>をネットワーク上のリモートホストに送信するために設計されています。<code>ServerSocketAppender</code>はサーバとして動作します。つまり、外部のクライアントがTCP接続してくるのを待ち受けます。アペンダーに渡されたロギングイベントは、接続している全てのクライアントに配布されます。
     </p>
 
-    <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/net/server/SSLServerSocketAppender.html">SSLSocketAppender</a></code>は基本的な<code>ServerSocketAppender</code>を拡張したもので、Secure Sockets Layer（SSL）を介してリモートホストにログを転送します。
+    <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/server/SSLServerSocketAppender.html">SSLServerSocketAppender</a></code>は基本的な<code>ServerSocketAppender</code>を拡張したもので、Secure Sockets Layer（SSL）を介してリモートホストにログを転送します。
     </p>
 
     <p>logback-access の<code>ServerSocketAppender</code>で設定可能なプロパティは、logback-classic の<code>ServerSocketAppender</code>と同じです。
