@@ -1472,7 +1472,11 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <p><code>Email</code>アプリケーションから使う設定ファイルは次のとおりです。</p>
 
-    <p class="example">例：<code>SMTPAppender</code>の設定例（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mail1.xml">logback-examples/src/main/java/chapters/appenders/mail/mail1.xml</a>）</p>
+    <p class="example">
+      例：<code>SMTPAppender</code>の設定例（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/mail/mail1.xml"><!--
+        -->logback-examples/src/main/resources/chapters/appenders/mail/mail1.xml</a>）
+    </p>
     <span class="asGroovy" onclick="return asGroovy('mail1');">Groovyとして表示</span>
     <pre id="mail1" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
@@ -1493,7 +1497,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <p>上記の設定ファイルで<code>chapters.appenders.mail.Email</code>アプリケーションを動かしてみる前に、smtpHostや<span class="prop">to</span>や<span class="prop">from</span>へ、あなたの環境に適した値を指定しなければなりません。設定ファイルに正しい値を指定したら次のコマンドを実行しましょう。</p>
 
-<div class="source"><pre>java chapters.appenders.mail.EMail 100 src/main/java/chapters/appenders/mail/mail1.xml</pre></div>
+<div class="source"><pre>java chapters.appenders.mail.EMail 100 src/main/resources/chapters/appenders/mail/mail1.xml</pre></div>
 
     <p>指定したrecipientには<code>PatternLayout</code>で指定したとおりに書式化された100個のロギングイベントが含まれたメールが届くはずです。Mozilla Thunderbird で受信したメールを開いたところを示します。
     </p>
