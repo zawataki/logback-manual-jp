@@ -38,7 +38,7 @@
 
     <h2 class="doAnchor" name="whatIsAnAppender">アペンダーについて</h2>
 
-    <p>logback はロギングイベントを出力する仕事を、アペンダーと呼ばれるコンポーネントに任せています。<a href="http://logback.qos.ch/xref/ch/qos/logback/core/Appender.html"><code>ch.qos.logback.core.Appender</code></a>インターフェイスを実装したものがアペンダーとして利用できます。このインターフェイスに宣言された重要なメソッドは次のとおりです。</p>
+    <p>logback はロギングイベントを出力する仕事を、アペンダーと呼ばれるコンポーネントに任せています。<a href="https://logback.qos.ch/xref/ch/qos/logback/core/Appender.html"><code>ch.qos.logback.core.Appender</code></a>インターフェイスを実装したものがアペンダーとして利用できます。このインターフェイスに宣言された重要なメソッドは次のとおりです。</p>
     <pre class="prettyprint source">package ch.qos.logback.core;
 
 import ch.qos.logback.core.spi.ContextAware;
@@ -54,7 +54,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
 }</pre>
 
-  <p><code>Appender</code>インターフェイスのほとんどのメソッドはゲッター、あるいはセッターです。<code>doAppend()</code>メソッドだけは特別で、唯一の引数として型<em>E</em>のオブジェクトを取ります。<em>E</em>の実際の型は、logbackモジュールによって異なります。logback-classic モジュールの場合、<em>E</em>は<a href="http://logback.qos.ch/apidocs/ch/qos/logback/classic/spi/ILoggingEvent.html">ILoggingEvent</a>になるでしょうし、logback-access モジュールでは<a href="http://logback.qos.ch/apidocs/ch/qos/logback/access/spi/AccessEvent.html">AccessEvent</a>になるでしょう。<code>doAppend()</code>メソッドは、おそらくlogbackフレームワークの中で最も重要なメソッドです。ロギングイベントを、適切な書式で、適切な出力デバイスに出力する役目があります。
+  <p><code>Appender</code>インターフェイスのほとんどのメソッドはゲッター、あるいはセッターです。<code>doAppend()</code>メソッドだけは特別で、唯一の引数として型<em>E</em>のオブジェクトを取ります。<em>E</em>の実際の型は、logbackモジュールによって異なります。logback-classic モジュールの場合、<em>E</em>は<a href="https://logback.qos.ch/apidocs/ch/qos/logback/classic/spi/ILoggingEvent.html">ILoggingEvent</a>になるでしょうし、logback-access モジュールでは<a href="https://logback.qos.ch/apidocs/ch/qos/logback/access/spi/AccessEvent.html">AccessEvent</a>になるでしょう。<code>doAppend()</code>メソッドは、おそらくlogbackフレームワークの中で最も重要なメソッドです。ロギングイベントを、適切な書式で、適切な出力デバイスに出力する役目があります。
   </p>
 
   <p>アペンダーには名前を付けられます。設定ファイル中で参照しやすいようにするためです。<code>Appender</code>インターフェイスは<code>FilterAttachable</code>インターフェイスを継承しています。つまり、アペンダーのインスタンスには一つ以上のフィルターを割り当てられるのです。フィルターについては、後の章で詳しく説明します。
@@ -66,7 +66,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
   <h2 class="doAnchor" name="AppenderBase">AppenderBase</h2>
 
-  <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/AppenderBase.html">ch.qos.logback.core.AppenderBase</a></code>は、<code>Appender</code>インターフェイスを実装した抽象クラスです。このクラスは、どんなアペンダーにも必要な共通の機能として、名前や活性化状態やレイアウト、フィルターに対するゲッターおよびセッターメソッドが実装されています。logback の配布物に含まれるアペンダーはすべてこのクラスの派生クラスです。<code>AppenderBase</code>は抽象クラスですが、<code>Append</code>インターフェイスの<code>doAppend()</code>メソッドを実装しています。<code>AppenderBase</code>クラスの話は、実際にソースコードの抜粋を見ながら進めるのが一番わかりやすいと思います。
+  <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/AppenderBase.html">ch.qos.logback.core.AppenderBase</a></code>は、<code>Appender</code>インターフェイスを実装した抽象クラスです。このクラスは、どんなアペンダーにも必要な共通の機能として、名前や活性化状態やレイアウト、フィルターに対するゲッターおよびセッターメソッドが実装されています。logback の配布物に含まれるアペンダーはすべてこのクラスの派生クラスです。<code>AppenderBase</code>は抽象クラスですが、<code>Append</code>インターフェイスの<code>doAppend()</code>メソッドを実装しています。<code>AppenderBase</code>クラスの話は、実際にソースコードの抜粋を見ながら進めるのが一番わかりやすいと思います。
   </p>
 
 <pre class="prettyprint source">public synchronized void doAppend(E eventObject) {
@@ -102,7 +102,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
   <p><code>doAppend()</code>メソッドはsynchronizedメソッドになっています。つまり、別のスレッドから同じアペンダーに安全にロギングできるのです。スレッド<em>T</em>が<code>doAppend()</code>メソッドを実行している間は、<em>T</em>だけが排他的にアペンダーにアクセスできるので、他のスレッドからの呼び出しはキューイングされます。
   </p>
 
-  <p>synchronized が不適切な場合もあります。そういうときのために、logback の配布物には<a href="http://logback.qos.ch/xref/ch/qos/logback/core/AppenderBase.html"><code>AppenderBase</code></a>とよく似た<a href="http://logback.qos.ch/xref/ch/qos/logback/core/UnsynchronizedAppenderBase.html"><code>ch.qos.logback.core.UnsynchronizedAppenderBase</code></a>も含まれています。ややこしくなるので、<code>UnsynchronizedAppenderBase</code>については本章の後半で説明します。
+  <p>synchronized が不適切な場合もあります。そういうときのために、logback の配布物には<a href="https://logback.qos.ch/xref/ch/qos/logback/core/AppenderBase.html"><code>AppenderBase</code></a>とよく似た<a href="https://logback.qos.ch/xref/ch/qos/logback/core/UnsynchronizedAppenderBase.html"><code>ch.qos.logback.core.UnsynchronizedAppenderBase</code></a>も含まれています。ややこしくなるので、<code>UnsynchronizedAppenderBase</code>については本章の後半で説明します。
   </p>
 
 
@@ -135,7 +135,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
   <h2 class="doAnchor" name="OutputStreamAppender">OutputStreamAppender</h2>
 
-  <p><a href="http://logback.qos.ch/xref/ch/qos/logback/core/OutputStreamAppender.html"><code>OutputStreamAppender</code></a>は<code>java.io.OutputStream</code>にロギングイベントを出力します。このクラスは他のアペンダーを構築するための基本的なサービスを提供するものです。普通なら、利用者が<code>OutputStreamAppender</code>を直接インスタンス化することはありません。<code>java.io.OutputStream</code>を文字列で表現することはできないので、設定ファイルから<code>OutputStream</code>オブジェクトを指定することはできないのです。簡単に言うと、設定ファイルでは<code>OutputStreamAppender</code>を設定することはできません。しかし、<code>OutputStreamAppender</code>に設定できるプロパティが無いという意味ではありません。次のようなプロパティがあります。
+  <p><a href="https://logback.qos.ch/xref/ch/qos/logback/core/OutputStreamAppender.html"><code>OutputStreamAppender</code></a>は<code>java.io.OutputStream</code>にロギングイベントを出力します。このクラスは他のアペンダーを構築するための基本的なサービスを提供するものです。普通なら、利用者が<code>OutputStreamAppender</code>を直接インスタンス化することはありません。<code>java.io.OutputStream</code>を文字列で表現することはできないので、設定ファイルから<code>OutputStream</code>オブジェクトを指定することはできないのです。簡単に言うと、設定ファイルでは<code>OutputStreamAppender</code>を設定することはできません。しかし、<code>OutputStreamAppender</code>に設定できるプロパティが無いという意味ではありません。次のようなプロパティがあります。
   </p>
 
   <table class="bodyTable striped">
@@ -148,7 +148,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
     <tr>
       <td><span class="prop" name="osaEncoder">encoder</span></td>
 
-      <td><a href="http://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a></td>
+      <td><a href="https://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a></td>
 
       <td><code>OutputStreamAppender</code>への出力を書式化する。エンコーダについては<a href="./encoders_ja.html">別の章</a>で説明しています。
       </td>
@@ -164,7 +164,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
   <h2 class="doAnchor" name="ConsoleAppender">ConsoleAppender</h2>
 
-  <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/ConsoleAppender.html">ConsoleAppender</a></code>は名前のとおり、ロギングイベントをコンソールに出力します。正確に言うと、<em>System.out</em>あるいは<em>System.err</em>に出力します。デフォルトではSystem.outが使われます。<code>ConsoleAppender</code>は、利用者が指定したエンコーダーを使ってロギングイベントを書式化します。エンコーダーについては別の章で説明します。<em>System.out</em>と<em>System.err</em>の型は<code>java.io.PrintStream</code>です。つまり、いずれもバッファIO操作のための<code>OutputStreamWriter</code>にラップされているということです。
+  <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/ConsoleAppender.html">ConsoleAppender</a></code>は名前のとおり、ロギングイベントをコンソールに出力します。正確に言うと、<em>System.out</em>あるいは<em>System.err</em>に出力します。デフォルトではSystem.outが使われます。<code>ConsoleAppender</code>は、利用者が指定したエンコーダーを使ってロギングイベントを書式化します。エンコーダーについては別の章で説明します。<em>System.out</em>と<em>System.err</em>の型は<code>java.io.PrintStream</code>です。つまり、いずれもバッファIO操作のための<code>OutputStreamWriter</code>にラップされているということです。
   </p>
 
   <table class="bodyTable striped">
@@ -176,7 +176,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
     <tr>
       <td><span class="prop" container="conApp">encoder</span></td>
       <td>
-        <a href="http://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a>
+        <a href="https://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a>
       </td>
       <td><code>OutputStreamAppender</code>と同じです。</td>
     </tr>
@@ -227,14 +227,14 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
   &lt;/root&gt;
 &lt;/configuration&gt;</pre>
 
-   <p><em>logback-examples</em>ディレクトリに移動して、<a href="http://logback.qos.ch/setup.html">クラスパスを設定</a>すれば、次のコマンドで上の設定ファイルを使って実行できます。</p>
+   <p><em>logback-examples</em>ディレクトリに移動して、<a href="https://logback.qos.ch/setup.html">クラスパスを設定</a>すれば、次のコマンドで上の設定ファイルを使って実行できます。</p>
 
-   <p class="source">java <a href="http://logback.qos.ch/xref/chapters/appenders/ConfigurationTester.html">chapters.appenders.ConfigurationTester</a> src/main/java/chapters/appenders/conf/logback-Console.xml</p>
+   <p class="source">java <a href="https://logback.qos.ch/xref/chapters/appenders/ConfigurationTester.html">chapters.appenders.ConfigurationTester</a> src/main/java/chapters/appenders/conf/logback-Console.xml</p>
 
 
    <h2 class="doAnchor" name="FileAppender">FileAppender</h2>
 
-   <p><a href="http://logback.qos.ch/xref/ch/qos/logback/core/FileAppender.html"><code>FileAppender</code></a>は<code>OutputStreamAppender</code>の派生クラスで、ファイルにロギングイベントを出力します。<span class="prop">file</span>オプションで対象のファイルを指定します。既にファイルが存在するとき、ファイル内容を切り捨てるか、追加するかどうかは、<span class="prop">append</span>プロパティの値に応じて決まります。
+   <p><a href="https://logback.qos.ch/xref/ch/qos/logback/core/FileAppender.html"><code>FileAppender</code></a>は<code>OutputStreamAppender</code>の派生クラスで、ファイルにロギングイベントを出力します。<span class="prop">file</span>オプションで対象のファイルを指定します。既にファイルが存在するとき、ファイル内容を切り捨てるか、追加するかどうかは、<span class="prop">append</span>プロパティの値に応じて決まります。
    </p>
 
    <table class="bodyTable properties striped">
@@ -252,7 +252,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
      <tr>
        <td><span class="prop" container="fileApppender">encoder</span></td>
        <td>
-         <a href="http://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a>
+         <a href="https://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a>
        </td>
        <td><code>OutputStreamAppender</code>と同じです。</td>
      </tr>
@@ -393,7 +393,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
    <h2 class="doAnchor" name="RollingFileAppender">RollingFileAppender</h2>
 
-   <p><a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/RollingFileAppender.html"><code>RollingFileAppender</code></a>は<code>FileAppender</code>を拡張して、ログファイルを切り替えられるようにしたものです。たとえば、<code>RollingFileAppender</code>では、<em>log.txt</em>という名前のファイルにログを出力するようにした上で、一定の条件が満たされたら、出力先を別のファイルに変えることができます。
+   <p><a href="https://logback.qos.ch/xref/ch/qos/logback/core/rolling/RollingFileAppender.html"><code>RollingFileAppender</code></a>は<code>FileAppender</code>を拡張して、ログファイルを切り替えられるようにしたものです。たとえば、<code>RollingFileAppender</code>では、<em>log.txt</em>という名前のファイルにログを出力するようにした上で、一定の条件が満たされたら、出力先を別のファイルに変えることができます。
    </p>
 
    <p><code>RollingFileAppender</code>と連携する2つの重要なサブコンポーネントがあります。一つは<code>RollingPolicy</code>です。これはファイルを切り替えるために必要な処理を行います。<a href="#onRollingPolicies">詳しくは後述します</a>。もう一つは<code>TriggeringPolicy</code>です。これはいつ切り替えるのか決定するものです。こちらも<a href="#TriggeringPolicy">詳しくは後述します</a>。つまり、<code>RollingPolicy</code>が<em>what</em>を、<code>TriggeringPolicy</code>が<em>when</em>を表しているのです。</p>
@@ -422,7 +422,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
      <tr>
        <td><span class="prop" container="rfa">encoder</span></td>
        <td>
-         <a href="http://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a>
+         <a href="https://logback.qos.ch/xref/ch/qos/logback/core/encoder/Encoder.html"><code>Encoder</code></a>
        </td>
        <td><code>OutputStreamAppender</code>と同じです。</td>
      </tr>
@@ -462,7 +462,7 @@ public interface Appender&lt;E&gt; extends LifeCycle, ContextAware, FilterAttach
 
    <h3 class="doAnchor" name="onRollingPolicies">ローリングポリシーの概要</h3>
 
-   <p><a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/RollingPolicy.html"><code>RollingPolicy</code></a>は、ファイルの切り替えに伴う移動や名前の変更を行います。</p>
+   <p><a href="https://logback.qos.ch/xref/ch/qos/logback/core/rolling/RollingPolicy.html"><code>RollingPolicy</code></a>は、ファイルの切り替えに伴う移動や名前の変更を行います。</p>
 
    <p><code>RollingPolicy</code>インターフェイスは次のようなものです。</p>
 
@@ -488,7 +488,7 @@ public interface RollingPolicy extends LifeCycle {
 
    <h4 class="doAnchor" name="TimeBasedRollingPolicy">TimeBasedRollingPolicy</h4>
 
-   <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/TimeBasedRollingPolicy.html">TimeBasedRollingPolicy</a></code>はおそらく一番人気のあるポリシーです。これは、ファイル切り替えポリシーを日付や月などの日時に基いて定義するものです。
+   <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/rolling/TimeBasedRollingPolicy.html">TimeBasedRollingPolicy</a></code>はおそらく一番人気のあるポリシーです。これは、ファイル切り替えポリシーを日付や月などの日時に基いて定義するものです。
    <code>TimeBasedRollingPolicy</code>にはファイルを切り替えるタイミングを通知する役割もあります。実際に、 <code>TimeBasedTriggeringPolicy</code>は<code>RollingPolicy</code>と<code>TriggeringPolicy</code>の<em>両方</em>のインターフェイスを実装しています。
    </p>
 
@@ -649,7 +649,7 @@ public interface RollingPolicy extends LifeCycle {
    <p><span class="prop">fileNamePattern</span>には2つの目的があります。1つは、パターン文字列を処理して、logbackに切り替えタイミングを指示することです。もう1つはアーカイブファイル名を決めることです。パターン文字列の形が違っても切り替えタイミングが同じになることがあるので気をつけてください。パターン文字列が<em>yyyy@MM</em>でも<em>yyyy-MM</em>でも、切り替えタイミングは毎月ですが、アーカイブファイル名は異なります。
    </p>
 
-   <p><span class="prop">file</span>プロパティを設定すると、アクティブなログファイルの場所とアーカイブファイルの場所を別々にすることができます。ログは<span class="prop">file</span>プロパティで指定したファイルに出力されます。つまり、アクティブなログファイルの名前は常に同じになるのです。ただし、<span class="prop">file</span>プロパティを省略した場合、アクティブなログファイルの名前は<span class="prop">fileNamePattern</span>に基づいたものになります。<span class="prop">file</span>オプションを設定しなければ、<a href="http://logback.qos.ch/codes.html#renamingError">ログファイルの名前変更エラー</a>を割けられます。これは外部からログファイルを参照している間に切り替えようとすると発生するエラーです。存在するときに発生する。
+   <p><span class="prop">file</span>プロパティを設定すると、アクティブなログファイルの場所とアーカイブファイルの場所を別々にすることができます。ログは<span class="prop">file</span>プロパティで指定したファイルに出力されます。つまり、アクティブなログファイルの名前は常に同じになるのです。ただし、<span class="prop">file</span>プロパティを省略した場合、アクティブなログファイルの名前は<span class="prop">fileNamePattern</span>に基づいたものになります。<span class="prop">file</span>オプションを設定しなければ、<a href="https://logback.qos.ch/codes.html#renamingError">ログファイルの名前変更エラー</a>を割けられます。これは外部からログファイルを参照している間に切り替えようとすると発生するエラーです。存在するときに発生する。
    </p>
 
    <p><span class="prop">maxHistory</span>プロパティは、削除せずに保持しておくアーカイブファイルの最大数を指定します。たとえば、切り替えタイミングが毎月で、<span class="prop">maxHistory</span>に6を指定していたら、6ヶ月以内のアーカイブは保持されますが、6ヶ月を超える古いアーカイブは削除されます。古いアーカイブは削除されてしまうので注意しましょう。logbackによって作られたフォルダも必要に応じて削除されてしまいます。
@@ -721,7 +721,7 @@ public interface RollingPolicy extends LifeCycle {
 
    <h4 class="doAnchor" name="FixedWindowRollingPolicy">FixedWindowRollingPolicy</h4>
 
-   <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/FixedWindowRollingPolicy.html">FixedWindowRollingPolicy</a></code>を使うと、固定幅アルゴリズムに従ってファイルの名前を変更することができます。
+   <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/rolling/FixedWindowRollingPolicy.html">FixedWindowRollingPolicy</a></code>を使うと、固定幅アルゴリズムに従ってファイルの名前を変更することができます。
    </p>
 
    <p><span class="prop">fileNamePattern</span>オプションには、アーカイブファイル名のパターンを指定します。このオプションは必須<em>で</em>、パターン文字列中のどこかに整数トークンの<em>％i</em>を含めなければなりません。
@@ -897,7 +897,7 @@ public interface RollingPolicy extends LifeCycle {
       <a name="TriggeringPolicy" href="#TriggeringPolicy">トリガーポリシーについて</a>
     </h2>
 
-    <p><code>RollingFileAppender</code>にファイルを切り替えるタイミングを通知するのが<a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/TriggeringPolicy.html"><code>TriggeringPolicy</code></a>です。</p>
+    <p><code>RollingFileAppender</code>にファイルを切り替えるタイミングを通知するのが<a href="https://logback.qos.ch/xref/ch/qos/logback/core/rolling/TriggeringPolicy.html"><code>TriggeringPolicy</code></a>です。</p>
 
     <p><code>TriggeringPolicy</code>インターフェイスには1つだけメソッドが宣言されています。</p>
 
@@ -918,7 +918,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <h4><a name="SizeBasedTriggeringPolicy" href="#SizeBasedTriggeringPolicy">SizeBasedTriggeringPolicy</a></h4>
 
-    <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/rolling/SizeBasedTriggeringPolicy.html">SizeBasedTriggeringPolicy</a></code>は現在有効なファイルのサイズを判断します。指定したサイズより大きくなった場合、<code>RollingFileAppender</code>に現在のファイルを切り替えるよう通知します。
+    <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/rolling/SizeBasedTriggeringPolicy.html">SizeBasedTriggeringPolicy</a></code>は現在有効なファイルのサイズを判断します。指定したサイズより大きくなった場合、<code>RollingFileAppender</code>に現在のファイルを切り替えるよう通知します。
     </p>
 
     <p><code>SizeBasedTriggeringPolicy</code>は<span class="prop">maxFileSize</span>パラメータだけを受け付けます。デフォルトは10MBです。</p>
@@ -971,9 +971,9 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <h3 class="doAnchor" name="SocketAppender">SocketAppenderとSSLSocketAppender</h3>
 
-    <p>ここまでに紹介してきたアペンダーは、ローカルリソースだけにログを出力するものでした。対照的に、 <code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/SocketAppender.html">SocketAppender</a></code>はログをシリアライズした<code>ILoggingEvent</code>のインスタンスとしてリモートホストに送信するものとして設計されています。<code>SocketAppender</code>では、ロギングイベントを平文で送信します。<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SSLSocketAppender.html">SSLSocketAppender</a></code>では、暗号化された安全なチャネルを介してロギングイベントを送信します。</p>
+    <p>ここまでに紹介してきたアペンダーは、ローカルリソースだけにログを出力するものでした。対照的に、 <code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SocketAppender.html">SocketAppender</a></code>はログをシリアライズした<code>ILoggingEvent</code>のインスタンスとしてリモートホストに送信するものとして設計されています。<code>SocketAppender</code>では、ロギングイベントを平文で送信します。<code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SSLSocketAppender.html">SSLSocketAppender</a></code>では、暗号化された安全なチャネルを介してロギングイベントを送信します。</p>
 
-    <p>シリアライズされたロギングイベントの実際の型は、<code>ILoggingEvent</code>インターフェイスを実装した<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/spi/LoggingEventVO.html"><code>LoggingEventVO</code></a>です。ロギングイベントがどれだけ心配なのはわかりますが、リモートロギングが盗聴されることはありません。★受信したロギングイベントをデシリアライズしたら、ローカルで生成されたものとまったく同じように扱われます。それぞれのマシンで実行されている<code>SocketAppender</code>のインスタンスの出力書式がどれも同じになっていれば、中央ログサーバに直接ロギング出力を送りつけることができます。<code>SocketAppender</code>に割り当てられたレイアウトをリモートサーバに送ることはありません。シリアライズされたイベントを送信するからです。<code>SocketAppender</code>は<em>Transmission Control Protocol（TCP）</em>レイヤーで動作します。TCPレイヤーは、信頼性、順序性、フロー制御を備えた端末間のオクテットストリームによる通信を提供するものです。つまり、リモートサーバがネットワークから到達可能な場合、ロギングイベントは確実に到着します。リモートサーバーがダウンしているか到達不能である場合、ロギングイベントは単純に破棄されてしまいます。リモートサーバが復旧した場合、ロギングイベントの送信は透過的に再開されます。この透過的な再接続は、定期的にサーバへの接続を試みるコネクタースレッドによって行われます。
+    <p>シリアライズされたロギングイベントの実際の型は、<code>ILoggingEvent</code>インターフェイスを実装した<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/spi/LoggingEventVO.html"><code>LoggingEventVO</code></a>です。ロギングイベントがどれだけ心配なのはわかりますが、リモートロギングが盗聴されることはありません。★受信したロギングイベントをデシリアライズしたら、ローカルで生成されたものとまったく同じように扱われます。それぞれのマシンで実行されている<code>SocketAppender</code>のインスタンスの出力書式がどれも同じになっていれば、中央ログサーバに直接ロギング出力を送りつけることができます。<code>SocketAppender</code>に割り当てられたレイアウトをリモートサーバに送ることはありません。シリアライズされたイベントを送信するからです。<code>SocketAppender</code>は<em>Transmission Control Protocol（TCP）</em>レイヤーで動作します。TCPレイヤーは、信頼性、順序性、フロー制御を備えた端末間のオクテットストリームによる通信を提供するものです。つまり、リモートサーバがネットワークから到達可能な場合、ロギングイベントは確実に到着します。リモートサーバーがダウンしているか到達不能である場合、ロギングイベントは単純に破棄されてしまいます。リモートサーバが復旧した場合、ロギングイベントの送信は透過的に再開されます。この透過的な再接続は、定期的にサーバへの接続を試みるコネクタースレッドによって行われます。
     </p>
 
     <p>ロギングイベントはネイティブのTCP実装によって自動的にバッファへ保存されます。つまり、リモートサーバへの通信速度がクライアントでロギングイベントを生成する速度より遅かったとしても、クライアントアプリケーションが通信速度に影響を受けることはない、ということです。通信速度がロギングイベントを生成する速度よりも遅ければ、クライアントは通信速度に合わせた速度でしか処理を進めることができません。極端な具体例ですが、リモートサーバへのネットワーク接続がダウンしている場合、最終的にクライアントはブロックしてしまいます。また、ネットワーク接続は生きててもリモートサーバがダウンしている場合、ロギングイベントはサーバが利用できないために破棄されてしまいますが、クライアントがブロックされることはありません。
@@ -1009,7 +1009,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
       </tr>
       <tr>
         <td><span class="prop" container="socket">reconnectionDelay</span></td>
-        <td><code><a href="http://logback.qos.ch/apidocs/ch/qos/logback/core/util/Duration.html">Duration</a></code></td>
+        <td><code><a href="https://logback.qos.ch/apidocs/ch/qos/logback/core/util/Duration.html">Duration</a></code></td>
         <td><span class="prop">reconnectionDelay</span>オプションには、待ち時間を表す文字列を指定します。たとえば、"10 seconds"と指定した場合、サーバへの接続が失敗するたびに10秒間待ってから、再接続を試みます。このオプションのデフォルト値は30秒​​です。0を指定すると再接続機能が無効になります。サーバへの接続が成功した場合、コネクタースレッドは存在しないはずなので注意してください。
         </td>
       </tr>
@@ -1027,7 +1027,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
       <tr>
         <td><span class="prop" container="socket">eventDelayLimit</span></td>
-        <td><code><a href="http://logback.qos.ch/apidocs/ch/qos/logback/core/util/Duration.html">Duration</a></code></td>
+        <td><code><a href="https://logback.qos.ch/apidocs/ch/qos/logback/core/util/Duration.html">Duration</a></code></td>
         <td><span class="prop">eventDelayLimit</span>オプションには、"10 seconds"のような待ち時間を表す文字列を指定します。これは、ローカルキューが満杯になった際、蓄積されたロギングイベントを削除する前に待機する時間を表しています。リモートホストがロギングイベントを受信するのが継続的に遅い場合に発生する可能性があります。このオプションのデフォルト値は100ミリ秒です。
         </td>
       </tr>
@@ -1293,7 +1293,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
    <h3 class="doAnchor">SMTPAppender</h3>
 
-   <p><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/SMTPAppender.html"><code>SMTPAppender</code></a>は、一つ以上の固定サイズのバッファにロギングイベントを蓄積し、利用者が指定したイベントが発生したら適切なバッファを選んで内容をメールで送信します。SMTPによるメール送信は非同期で実行されます。デフォルトでは、ERRORレベルのロギングイベントがトリガとなってメールが送信されます。また、1つのバッファがすべてのロギングイベントから使用されます。
+   <p><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SMTPAppender.html"><code>SMTPAppender</code></a>は、一つ以上の固定サイズのバッファにロギングイベントを蓄積し、利用者が指定したイベントが発生したら適切なバッファを選んで内容をメールで送信します。SMTPによるメール送信は非同期で実行されます。デフォルトでは、ERRORレベルのロギングイベントがトリガとなってメールが送信されます。また、1つのバッファがすべてのロギングイベントから使用されます。
    </p>
 
    <p><code>SMTPAppender</code>の設定可能なプロパティを表にまとめました。
@@ -1350,7 +1350,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
       </tr>
       <tr>
         <td><span class="prop" container="smtp">discriminator</span></td>
-        <td><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/sift/Discriminator.html">Discriminator</a></code></td>
+        <td><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/sift/Discriminator.html">Discriminator</a></code></td>
         <td>
           <p><code>SMTPAppender</code>は、<span class="prop">弁別器</span>の返す値に基づいてバッファを選択して、発生したロギングイベントを振り分けます。デフォルトの弁別器は常に同じ値を返すので、全てのロギングイベントが常に同じバッファに振り分けられます。
           </p>
@@ -1361,13 +1361,13 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
       </tr>
       <tr>
         <td><span class="prop" name="smtpAppender_Evaluator">evaluator</span></td>
-        <td><code><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/IEvaluator.html">IEvaluator</a></code></td>
+        <td><code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/boolex/IEvaluator.html">IEvaluator</a></code></td>
         <td>
           <p>このオプションを指定するには、新しく<code>EventEvaluator要素</code>を宣言します。<code>SMTPAppender</code>の<code>Evaluator</code>として使いたいクラスの完全クラス名を、<span class="attr">class属性</span>に指定します。
           </p>
 
 
-          <p>このオプションを指定しなかった場合、<code>SMTPAppender</code>は<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnErrorEvaluator.html">OnErrorEvaluator</a>のインスタンスを使用します。これは<em>ERROR</em>以上のロギングイベントが発生したらメール送信をトリガします。
+          <p>このオプションを指定しなかった場合、<code>SMTPAppender</code>は<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnErrorEvaluator.html">OnErrorEvaluator</a>のインスタンスを使用します。これは<em>ERROR</em>以上のロギングイベントが発生したらメール送信をトリガします。
           </p>
 
           <!--
@@ -1378,7 +1378,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
           </p>
           -->
 
-          <p>logback の配布物には他の評価器もいくつか含まれています。<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnMarkerEvaluator.html"><code>OnMarkerEvaluator</code></a>（詳しくは後述します）と、より強力な評価器の<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/JaninoEventEvaluator.html"><code>JaninoEventEvaluator</code></a>です。後者については<a href="./filters_ja.html#evalutatorFilter">別の章</a>で紹介します。最新バージョンの配布物にはさらに強力な評価器である<a href="./filters_ja.html#GEventEvaluator"><code>GEventEvaluator</code></a>が含まれます。
+          <p>logback の配布物には他の評価器もいくつか含まれています。<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnMarkerEvaluator.html"><code>OnMarkerEvaluator</code></a>（詳しくは後述します）と、より強力な評価器の<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/boolex/JaninoEventEvaluator.html"><code>JaninoEventEvaluator</code></a>です。後者については<a href="./filters_ja.html#evalutatorFilter">別の章</a>で紹介します。最新バージョンの配布物にはさらに強力な評価器である<a href="./filters_ja.html#GEventEvaluator"><code>GEventEvaluator</code></a>が含まれます。
           </p>
 
         </td>
@@ -1386,7 +1386,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
       <tr>
         <td valign="top"><span class="prop" container="smtp">cyclicBufferTracker</span></td>
-        <td><a href="http://logback.qos.ch/xref/ch/qos/logback/core/spi/CyclicBufferTracker.html"><code>CyclicBufferTracker</code></a>
+        <td><a href="https://logback.qos.ch/xref/ch/qos/logback/core/spi/CyclicBufferTracker.html"><code>CyclicBufferTracker</code></a>
         </td>
         <td>
           <p>名前が示す通り、<code>CyclicBufferTracker</code>クラスは循環バッファを追跡します。追跡は、前に説明した<span class="prop">弁別器</span>の返すキーに基づいて行われます。
@@ -1467,7 +1467,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p><code>SMTPAppender</code>はJavaMail APIにも依存しています。テストされているJavaMail APIのバージョンは1.4です。JavaMail APIにはJavaBeans Activation フレームワークが必要です。<a href="http://java.sun.com/products/javamail/">JavaMail API</a>と<a href="http://java.sun.com/beans/glasgow/jaf.html">JavaBeans Activation フレームワーク</a>はそれぞれのウェブサイトからダウンロードすることができます。以降の例を試す前に、クラスパス上にこれらのjarファイルが配置されていることを確かめてください。
     </p>
 
-    <p>サンプルアプリケーションでは、<a href="http://logback.qos.ch/xref/chapters/appenders/mail/EMail.html"><code>chapters.appenders.mail.EMail</code></a>がいくつかのログメッセージを生成したあとで、エラーメッセージを1つ生成しています。このアプリケーションの引数は二つあります。一つ目のパラメータは生成するロギングイベントの数となる整数値です。二つ目のパラメータはlogbackの設定ファイルです。<em>EMail</em>アプリケーションが最後に生成するロギングイベントのログレベルはERRORなので、メール送信をトリガします。
+    <p>サンプルアプリケーションでは、<a href="https://logback.qos.ch/xref/chapters/appenders/mail/EMail.html"><code>chapters.appenders.mail.EMail</code></a>がいくつかのログメッセージを生成したあとで、エラーメッセージを1つ生成しています。このアプリケーションの引数は二つあります。一つ目のパラメータは生成するロギングイベントの数となる整数値です。二つ目のパラメータはlogbackの設定ファイルです。<em>EMail</em>アプリケーションが最後に生成するロギングイベントのログレベルはERRORなので、メール送信をトリガします。
     </p>
 
     <p><code>Email</code>アプリケーションから使う設定ファイルは次のとおりです。</p>
@@ -1538,7 +1538,7 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p>デフォルトでは、<code>SMTPAppender</code>から送信されるメッセージには最大で256件のロギングメッセージが含まれています。次の例に示すように、別のバッファサイズを指定することができます。
     </p>
 
-    <p class="example">例： バッファサイズを変更した<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/customBufferSize.xml">logback-examples/src/main/java/chapters/appender/mail/customBufferSize.xml</a>）</p>
+    <p class="example">例： バッファサイズを変更した<code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/customBufferSize.xml">logback-examples/src/main/java/chapters/appender/mail/customBufferSize.xml</a>）</p>
     <pre class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     &lt;smtpHost&gt;${smtpHost}&lt;/smtpHost&gt;
@@ -1561,13 +1561,13 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
 
     <h3 class="doAnchor">トリガイベント</h3>
 
-    <p>Evaluatorプロパティが指定されなかったら、<code>SMTPAppender</code>はデフォルトで<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnErrorEvaluator.html">OnErrorEvaluator</a>を使用して、ERRORレベルのロギングイベントの発生をトリガとしてメールを送信する。エラーの発生に応じて、メール送信をトリガするのはそれなりに合理的ですが、<code>EventEvaluator</code>インターフェイスの別の実装を指定すればデフォルトの振る舞いを上書きすることができます。
+    <p>Evaluatorプロパティが指定されなかったら、<code>SMTPAppender</code>はデフォルトで<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnErrorEvaluator.html">OnErrorEvaluator</a>を使用して、ERRORレベルのロギングイベントの発生をトリガとしてメールを送信する。エラーの発生に応じて、メール送信をトリガするのはそれなりに合理的ですが、<code>EventEvaluator</code>インターフェイスの別の実装を指定すればデフォルトの振る舞いを上書きすることができます。
     </p>
 
     <p><code>SMTPAppender</code>は<code>evaluate()</code>メソッドを呼び出すことで、受け取ったロギングイベントを評価器に渡します。そのロギングイベントがメール送信をトリガするものなのか、単に循環バッファに入れておくだけでいいのかを判定するためです。評価器が評価した結果が真なら、メールを送信します。<code>SMTPAppender</code>の保持する評価器オブジェクトは1つだけです。このオブジェクトは、自身の内部状態を管理することができます。わかりにくいので、<code>CounterBasedEvaluator</code>クラスのコードで説明します。これはロギングイベントが1024件発生するたびにメール送信をトリガします。
     </p>
 
-    <p class="example">例： 1024件ごとに評価値<code>true</code>を返す<code>EventEvaluator</code>インターフェイスの実装（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/CounterBasedEvaluator.java">logback-examples/src/main/java/chapters/appenders/mail/CounterBasedEvaluator.java</a>）</p>
+    <p class="example">例： 1024件ごとに評価値<code>true</code>を返す<code>EventEvaluator</code>インターフェイスの実装（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/CounterBasedEvaluator.java">logback-examples/src/main/java/chapters/appenders/mail/CounterBasedEvaluator.java</a>）</p>
 
    <pre class="prettyprint source">package chapters.appenders.mail;
 
@@ -1609,7 +1609,7 @@ public class CounterBasedEvaluator extends ContextAwareBase implements EventEval
     <p><code>SMTPAppender</code>の<span class="prop">evaluator</span>オプションを指定するということは、カスタム評価器を使うということです。次の設定ファイルではルートロガーに<code>SMTPAppender</code>を割り当てています。SMTPAppenderでは、<code>CounterBasedEvaluator</code>を評価器として指定しています。
     </p>
 
-    <p class="example">例： <code>SMTPAppender</code>とカスタム<code>評価器</code>とバッファサイズの設定例（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mail3.xml">logback-examples/src/main/java/chapters/appenders/mail/mail3.xml</a>）</p>
+    <p class="example">例： <code>SMTPAppender</code>とカスタム<code>評価器</code>とバッファサイズの設定例（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/mail3.xml">logback-examples/src/main/java/chapters/appenders/mail/mail3.xml</a>）</p>
     <span class="asGroovy" onclick="return asGroovy('mail3');">Groovyとして表示</span>
     <pre id="mail3" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
@@ -1630,10 +1630,10 @@ public class CounterBasedEvaluator extends ContextAwareBase implements EventEval
 
     <h3 class="doAnchor" name="OnMarkerEvaluator">マーカーに基づくトリガ</h3>
 
-    <p>全てのERRORレベルのロギングイベントをトリガとしてメールを送信するデフォルトのポリシーは合理的ではありますが、メールを送信する機会が多すぎると対象になっているユーザのメールボックスを埋め尽くしてしまいます。logback の配布物には<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnMarkerEvaluator.html">OnMarkerEvaluator</a>というトリガポリシーも含まれています。これはマーカーに基づいてトリガするものです。原則として、利用者が指定したマーカーのロギングイベントが発生したときだけメール送信がトリガされます。次の例を見ればどういう動き方をするのかはっきりするでしょう。
+    <p>全てのERRORレベルのロギングイベントをトリガとしてメールを送信するデフォルトのポリシーは合理的ではありますが、メールを送信する機会が多すぎると対象になっているユーザのメールボックスを埋め尽くしてしまいます。logback の配布物には<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/boolex/OnMarkerEvaluator.html">OnMarkerEvaluator</a>というトリガポリシーも含まれています。これはマーカーに基づいてトリガするものです。原則として、利用者が指定したマーカーのロギングイベントが発生したときだけメール送信がトリガされます。次の例を見ればどういう動き方をするのかはっきりするでしょう。
     </p>
 
-    <p><a href="http://logback.qos.ch/xref/chapters/appenders/mail/Marked_EMail.html">Marked_EMailの</a>アプリケーションには、ERRORレベルを含むいくつものロギング式があります。そのうちで、一つのロギング式にだけマーカーが指定されています。該当するコードは次のとおりです。
+    <p><a href="https://logback.qos.ch/xref/chapters/appenders/mail/Marked_EMail.html">Marked_EMailの</a>アプリケーションには、ERRORレベルを含むいくつものロギング式があります。そのうちで、一つのロギング式にだけマーカーが指定されています。該当するコードは次のとおりです。
     </p>
 
     <pre class="prettyprint source">Marker notifyAdmin = MarkerFactory.getMarker("NOTIFY_ADMIN");
@@ -1644,7 +1644,7 @@ logger.error(<b>notifyAdmin</b>,
    <p>次の設定ファイルは、マーカーとしてNOTIFY_ADMINあるいはTRANSACTION_FAILUREを指定されたロギングイベントが発生したときだけメール送信をトリガするものです。
    </p>
 
-   <p class="example">例: <code>OnMarkerEvaluator</code>を指定した<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mailWithMarker.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker.xml</a>）</p>
+   <p class="example">例: <code>OnMarkerEvaluator</code>を指定した<code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/mailWithMarker.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker.xml</a>）</p>
 
    <span class="asGroovy" onclick="return asGroovy('mailWithMarker');">Groovyとして表示</span>
    <pre id="mailWithMarker" class="prettyprint source">&lt;configuration&gt;
@@ -1696,7 +1696,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p><a href="./filters_ja.html#GEventEvaluator">GEventEvaluator</a>を使っている以外は前の例と同じ内容です。</p>
 
-    <p class="example">例:<code>GEventEvaluator</code>を指定したSMTPAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mailWithMarker_GEvent.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker_GEvent.xml</a>）</p>
+    <p class="example">例:<code>GEventEvaluator</code>を指定したSMTPAppenderの設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/mailWithMarker_GEvent.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker_GEvent.xml</a>）</p>
    <span class="asGroovy" onclick="return asGroovy('mailWithMarker_GEventEvaluator');">Groovyとして表示</span>
 
    <pre id="mailWithMarker_GEventEvaluator" class="prettyprint source">&lt;configuration&gt;
@@ -1723,7 +1723,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p>次の例はGmailにSSLプロトコルで接続する<code>SMTPAppender</code>の設定です。</p>
 
-    <p class="example">例:GmailにSSLで接続する<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/gmaliSSL.xml">logback-examples/src/main/java/chapters/appenders/mail/gmaliSSL.xml</a>）</p>
+    <p class="example">例:GmailにSSLで接続する<code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/gmaliSSL.xml">logback-examples/src/main/java/chapters/appenders/mail/gmaliSSL.xml</a>）</p>
 
     <span class="asGroovy" onclick="return asGroovy('gmailSSLExample');">Groovyとして表示</span>
     <pre id="gmailSSLExample" class="prettyprint source">&lt;configuration&gt;
@@ -1754,7 +1754,7 @@ logger.error(<b>notifyAdmin</b>,
     <p>次の例はGmailにSTARTTLSで接続する<code>SMTPAppender</code>の設定です。
 </p>
 
-    <p class="example">例:GmailにSTARTTLSで接続する<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/gmailSTARTTLS.xml">logback-examples/src/main/java/chapters/appenders/mail/gmailSTARTTLS.xml</a>）</p>
+    <p class="example">例:GmailにSTARTTLSで接続する<code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/gmailSTARTTLS.xml">logback-examples/src/main/java/chapters/appenders/mail/gmailSTARTTLS.xml</a>）</p>
 
     <span class="asGroovy" onclick="return asGroovy('gmailSTARTTLSExample');">Groovyとして表示</span>
     <pre id="gmailSTARTTLSExample" class="prettyprint source">&lt;configuration&gt;
@@ -1786,10 +1786,10 @@ logger.error(<b>notifyAdmin</b>,
     <p>前述したように、<code>SMTPAppender</code>にデフォルト以外の弁別器を指定すれば、特定のユーザ、ユーザセッション、送信元のIPアドレスを含むロギングイベントが発生した場合にだけメールメッセージを生成することができます。
     </p>
 
-    <p>次の例は<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/sift/MDCBasedDiscriminator.html">MDCBasedDiscriminator</a>に"req.remoteHost"というキーを指定したものです。値として、架空のWebアプリケーションにアクセスしてきたクライアントのリモートホストのIPアドレスが設定されることを想定しています。Webアプリケーションなら<a href="./mdc_ja.html#mis">MDCInsertingServletFilter</a>使ってMDCに値を設定することができます。
+    <p>次の例は<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/sift/MDCBasedDiscriminator.html">MDCBasedDiscriminator</a>に"req.remoteHost"というキーを指定したものです。値として、架空のWebアプリケーションにアクセスしてきたクライアントのリモートホストのIPアドレスが設定されることを想定しています。Webアプリケーションなら<a href="./mdc_ja.html#mis">MDCInsertingServletFilter</a>使ってMDCに値を設定することができます。
     </p>
 
-    <p class="example">例：MDCDiscriminatorを指定した<code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/mail/mailWithMDCBasedDiscriminator.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMDCBasedDiscriminator.xml</a>）</p>
+    <p class="example">例：MDCDiscriminatorを指定した<code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/mailWithMDCBasedDiscriminator.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMDCBasedDiscriminator.xml</a>）</p>
 
     <span class="asGroovy" onclick="return asGroovy('mailWithMDCBasedDiscriminator');">Groovyとして表示</span>
     <pre id="mailWithMDCBasedDiscriminator" class="prettyprint source">&lt;configuration&gt;
@@ -1836,7 +1836,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <h3 class="doAnchor" name="DBAppender">DBAppender</h3>
 
-    <p><a href="http://logback.qos.ch/xref/ch/qos/logback/classic/db/DBAppender.html"><code>DBAppender</code></a>はデータベース上の3つのテーブルに、Javaプログラミング言語に依存しない形式のロギングイベントを登録します。
+    <p><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/db/DBAppender.html"><code>DBAppender</code></a>はデータベース上の3つのテーブルに、Javaプログラミング言語に依存しない形式のロギングイベントを登録します。
     </p>
 
     <p>3つのテーブルとは、<em>logging_event</em>、<em>logging_event_property</em>、<em>logging_event_exception</em>です。<code>DBAppender</code>を使う前に事前に用意しておかなければなりません。logack の配布物にテーブルを作成するSQLスクリプトが含まれています。フォルダの場所は <em>logback-classic/src/main/java/ch/qos/logback/classic/db/script</em>です。一般的なデータベースそれぞれのスクリプトが用意されています。あなたの使用するデータベース用のスクリプトが無かったとしても、既存のスクリプトを参考にすれば自分で作るのは簡単です。logback の開発メンバーに教えてくれれば、喜んで今後のリリースに含めるようにします。
@@ -2091,7 +2091,7 @@ logger.error(<b>notifyAdmin</b>,
     <p>最初に、<code>DriverManagerConnectionSource</code>を使ってMySQLデータベースに接続する例を見てみましょう。次の設定ファイルを見てください。
     </p>
 
-    <p class="example">例： <code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-driveManger.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-driveManger.xml</a>）</p>
+    <p class="example">例： <code>DBAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-driveManger.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-driveManger.xml</a>）</p>
     <span class="asGroovy" onclick="return asGroovy('append-toMySQL-with-driverManager');">Groovyとして表示</span>
     <pre id="append-toMySQL-with-driverManager" class="prettyprint source">&lt;configuration&gt;
 
@@ -2112,7 +2112,7 @@ logger.error(<b>notifyAdmin</b>,
     <p>正しいJDBCドライバクラス名を指定してください。この例では<code>com.mysql.jdbc.Driver</code>です。<span class="prop">url</span>は<em>jdbc:mysql://</em>で始まらなければなりません。
     </p>
 
-    <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/db/DriverManagerConnectionSource.html">DriverManagerConnectionSource</a></code>は<code>ConnectionSource</code>の実装クラスで、JDBCの伝統的なやり方（接続用URLに基づくやり方）でデータベース接続を取得します。</p>
+    <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/db/DriverManagerConnectionSource.html">DriverManagerConnectionSource</a></code>は<code>ConnectionSource</code>の実装クラスで、JDBCの伝統的なやり方（接続用URLに基づくやり方）でデータベース接続を取得します。</p>
     <p>このクラスは<code>getConnection()</code>メソッドが呼ばれるたびに新しい<code>Connection</code>を生成することに注意してください。コネクションプーリングをサポートしているJDBCドライバーを使うか、コネクションプーリングを利用する<code>ConnectionSource</code>を自分で実装することをおすすめします。Java EE アプリケーションサーバの上で、<code>javax.sql.DataSource</code>をサポートしたJNDI実装を利用する場合は、後述する<a href="#JNDIConnectionSource"><code>JNDIConnectionSource</code></a>を参照してください。
     </p>
 <!--
@@ -2143,10 +2143,10 @@ logger.error(<b>notifyAdmin</b>,
     </p>
  -->
 
-    <p><code>DataSource</code>を使ってデータベースに接続する場合もだいたい同じです。設定ファイルでは<code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/db/DataSourceConnectionSource.html">DataSourceConnectionSource</a></code>を指定してください。JDBCの推奨するやり方（<code>javax.sql.DataSource</code>に基づくやり方）でデータベース接続（<code>Connection</code>）を取得します。
+    <p><code>DataSource</code>を使ってデータベースに接続する場合もだいたい同じです。設定ファイルでは<code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/db/DataSourceConnectionSource.html">DataSourceConnectionSource</a></code>を指定してください。JDBCの推奨するやり方（<code>javax.sql.DataSource</code>に基づくやり方）でデータベース接続（<code>Connection</code>）を取得します。
     </p>
 
-    <p class="example">例： <code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-with-datasource.xml">logback-examples/src/main/java/chapters/appenders/db/append-with-datasource.xml</a>）</p>
+    <p class="example">例： <code>DBAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/db/append-with-datasource.xml">logback-examples/src/main/java/chapters/appenders/db/append-with-datasource.xml</a>）</p>
 
 
     <span class="asGroovy" onclick="return asGroovy('append-with-datasource');">Groovyとして表示</span>
@@ -2209,7 +2209,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <h4 class="doAnchor" name="JNDIConnectionSource">JNDIConnectionSource</h4>
 
-    <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/db/JNDIConnectionSource.html">JNDIConnectionSource</a></code>もlogbackの配布物に含まれる<code>ConnectionSource</code>の実装クラスです。名前のとおり、JNDIから<code>javax.sql.DataSource</code>を取得し、そこから<code>java.sql.Connection</code>を取得します。<code>JNDIConnectionSource</code>は、Java EE アプリケーションサーバの内部か、アプリケーションサーバのクライアント（アプリケーションサーバの<code>javax.sql.DataSource</code>にリモートアクセスできることを想定しています）で使用することを念頭に設計されています。したがって、他にどんな便利機能を提供しているかはともかくとして、少なくともコネクションプーリングを利用することができるはずです。もっと重要なのは、<em>logback.xml</em>で<code>DataSource</code>を定義しなくてもよくなるので、アプリケーションをより<a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>にできることです。</p>
+    <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/db/JNDIConnectionSource.html">JNDIConnectionSource</a></code>もlogbackの配布物に含まれる<code>ConnectionSource</code>の実装クラスです。名前のとおり、JNDIから<code>javax.sql.DataSource</code>を取得し、そこから<code>java.sql.Connection</code>を取得します。<code>JNDIConnectionSource</code>は、Java EE アプリケーションサーバの内部か、アプリケーションサーバのクライアント（アプリケーションサーバの<code>javax.sql.DataSource</code>にリモートアクセスできることを想定しています）で使用することを念頭に設計されています。したがって、他にどんな便利機能を提供しているかはともかくとして、少なくともコネクションプーリングを利用することができるはずです。もっと重要なのは、<em>logback.xml</em>で<code>DataSource</code>を定義しなくてもよくなるので、アプリケーションをより<a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>にできることです。</p>
 
     <p>次の例はTomcat用の設定ファイルから抜粋したものです。PostgreSQL で使うための設定ですが、サポートしているデータベースならどれでも同じように動くはずです。</p>
 
@@ -2229,7 +2229,7 @@ logger.error(<b>notifyAdmin</b>,
 
    <p>Java EE アプリケーションサーバで定義した<code>DataSource</code>をlogbackの設定ファイルから参照するのは簡単です。</p>
 
-   <p class="example">例：<code>JNDIConnectionSource</code>を使った<code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-via-jndi.xml">logback-examples/src/main/java/chapters/appenders/db/append-via-jndi.xml</a>）</p>
+   <p class="example">例：<code>JNDIConnectionSource</code>を使った<code>DBAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/db/append-via-jndi.xml">logback-examples/src/main/java/chapters/appenders/db/append-via-jndi.xml</a>）</p>
 
     <span class="asGroovy" onclick="return asGroovy('append-via-jndi');">Groovyとして表示</span>
 
@@ -2257,7 +2257,7 @@ logger.error(<b>notifyAdmin</b>,
     <p><code>DBAppender</code>でコネクションプーリングを利用すると、著しく性能が改善することが実証されています。次の設定ファイルは、コネクションプーリング無しでMySQLデータベースにロギングイベントを登録するものです。
     </p>
 
-    <p class="example">例： コネクションプーリング無しの<code>DBAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-datasource.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-datasource.xml</a>）</p>
+    <p class="example">例： コネクションプーリング無しの<code>DBAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-datasource.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-datasource.xml</a>）</p>
 
     <span class="asGroovy" onclick="return asGroovy('append-toMySQL-with-datasource');">Groovyとして表示</span>
     <pre id="append-toMySQL-with-datasource" class="prettyprint source">&lt;configuration&gt;
@@ -2285,7 +2285,7 @@ logger.error(<b>notifyAdmin</b>,
     <p><code>DBAppender</code>でコネクションプーリングを利用するには、外部ライブラリが必要です。次の例は<a href="http://sourceforge.net/projects/c3p0">c3p0</a>を使っています。c3p0を利用するには、まずダウンロードして、<em>c3p0-VERSION.jar</em>をクラスパス上に配置しなければなりません。
     </p>
 
-    <p class="example">例： <code>DBAppender</code>でコネクションプーリングを利用する設定（<a href="http://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-datasource-and-pooling.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-datasource-and-pooling.xml</a>）</p>
+    <p class="example">例： <code>DBAppender</code>でコネクションプーリングを利用する設定（<a href="https://logback.qos.ch/xref/chapters/appenders/db/append-toMySQL-with-datasource-and-pooling.xml">logback-examples/src/main/java/chapters/appenders/db/append-toMySQL-with-datasource-and-pooling.xml</a>）</p>
     <span class="asGroovy" onclick="return asGroovy('append-toMySQL-with-datasource-and-pooling');">Groovyとして表示</span>
     <pre id="append-toMySQL-with-datasource-and-pooling" class="prettyprint source">&lt;configuration&gt;
 
@@ -2312,7 +2312,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <h3 class="doAnchor" name="SyslogAppender">SyslogAppender</h3>
 
-    <p>syslogプロトコルは非常に単純なプロトコルです。syslogの送信者は小さなメッセージをsyslogの受信者に送信します。一般的に受信者は<em>syslogデーモン</em>や<em>syslogサーバ</em>と呼ばれます。logbackは、<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/net/SyslogAppender.html"><code>SyslogAppender</code></a>を使ってリモートのsyslogデーモンにメッセージを送信することができます。
+    <p>syslogプロトコルは非常に単純なプロトコルです。syslogの送信者は小さなメッセージをsyslogの受信者に送信します。一般的に受信者は<em>syslogデーモン</em>や<em>syslogサーバ</em>と呼ばれます。logbackは、<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SyslogAppender.html"><code>SyslogAppender</code></a>を使ってリモートのsyslogデーモンにメッセージを送信することができます。
     </p>
 
     <p>SyslogAppenderの設定可能なプロパティは次のとおりです。</p>
@@ -2374,7 +2374,7 @@ logger.error(<b>notifyAdmin</b>,
 
     <p><code>SyslogAppender</code>の設定例を見てみましょう。</p>
 
-    <p class="example">例： <code>SyslogAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/logback-syslog.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-syslog.xml</a>）</p>
+    <p class="example">例： <code>SyslogAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/conf/logback-syslog.xml">logback-examples/src/main/java/chapters/appenders/conf/logback-syslog.xml</a>）</p>
     <span class="asGroovy" onclick="return asGroovy('logback-syslog');">Groovyとして表示</span>
     <pre id="logback-syslog" class="prettyprint source">&lt;configuration&gt;
 
@@ -2408,7 +2408,7 @@ logger.error(<b>notifyAdmin</b>,
       </tr>
       <tr>
         <td><span class="prop" container="sift">timeout</span></td>
-        <td><code><a href="http://logback.qos.ch/apidocs/ch/qos/logback/core/util/Duration.html">Duration</a></code></td>
+        <td><code><a href="https://logback.qos.ch/apidocs/ch/qos/logback/core/util/Duration.html">Duration</a></code></td>
         <td><span class="prop">タイムアウト時間</span>を経過してもアクセスされなかったアペンダーは、古くなったものと判断されます。古くなったアペンダーは閉じられて、<code>SiftingAppender</code>から切り離されます。デフォルトは30分です。</td>
       </tr>
       <tr>
@@ -2421,12 +2421,12 @@ logger.error(<b>notifyAdmin</b>,
     <p><code>SiftingAppender</code>は実行時にアペンダーを作成します。<code>SiftingAppender</code>の設定で指定された設定テンプレート（<code>sift要素</code>で囲まれた部分です。後で例を示します）に従って作成します。<code>SiftingAppender</code>には、子アペンダーのライフサイクルを管理する責任があります。たとえば、 <code>SiftingAppender</code>は古くなったアペンダー自動的に閉じて削除します。<span class="prop">タイムアウト時間</span>で指定された時間を過ぎてもアクセスの無かったアペンダーを無効とみなすのです。
     </p>
 
-    <p>ロギングイベントが発生したら、<code>SiftingAppender</code>は委譲する子アペンダーを選択します。選択条件は弁別器によって実行時に計算されます。利用者は<code><a href="http://logback.qos.ch/xref/ch/qos/logback/core/sift/Discriminator.html">Discriminator</a></code>で選択条件を指定することができます。例を見てみましょう。
+    <p>ロギングイベントが発生したら、<code>SiftingAppender</code>は委譲する子アペンダーを選択します。選択条件は弁別器によって実行時に計算されます。利用者は<code><a href="https://logback.qos.ch/xref/ch/qos/logback/core/sift/Discriminator.html">Discriminator</a></code>で選択条件を指定することができます。例を見てみましょう。
     </p>
 
     <h4>例</h4>
 
-    <p><a href="http://logback.qos.ch/xref/chapters/appenders/sift/SiftExample.html">SiftExample</a>アプリケーションは、アプリケーションが起動したことを表すメッセージをロギングします。その後、MDCのキー"uesrid"に"Alice"を設定して、メッセージをロギングします。該当するコードは次のとおりです。</p>
+    <p><a href="https://logback.qos.ch/xref/chapters/appenders/sift/SiftExample.html">SiftExample</a>アプリケーションは、アプリケーションが起動したことを表すメッセージをロギングします。その後、MDCのキー"uesrid"に"Alice"を設定して、メッセージをロギングします。該当するコードは次のとおりです。</p>
 
     <p class="source">logger.debug("Application started");
 MDC.put("userid", "Alice");
@@ -2435,7 +2435,7 @@ logger.debug("Alice says hello"); </p>
     <p><code>SiftingAppender</code>で使う設定ファイルのテンプレートは次のようになっています。</p>
 
 
-    <p class="example">例： <code>SiftingAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/sift/byUserid.xml">logback-examples/src/main/java/chapters/appenders/sift/byUserid.xml</a>）</p>
+    <p class="example">例： <code>SiftingAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/sift/byUserid.xml">logback-examples/src/main/java/chapters/appenders/sift/byUserid.xml</a>）</p>
 
     <span class="asGroovy" onclick="return asGroovy('byUserid');">Groovyとして表示</span>
 
@@ -2466,7 +2466,7 @@ logger.debug("Alice says hello"); </p>
 &lt;/configuration&gt;</pre>
 
 
-    <p>discriminator 要素にclass属性がない場合、<a href="http://logback.qos.ch/xref/ch/qos/logback/classic/sift/MDCBasedDiscriminator.html">MDCBasedDiscriminator</a>が設定されます。弁別器は、<span class="prop">key</span>プロパティで指定されたキーのMDC値を返します。MDC値がnullの場合は、<span class="prop">defaultValue</span>プロパティで指定した値を返します。
+    <p>discriminator 要素にclass属性がない場合、<a href="https://logback.qos.ch/xref/ch/qos/logback/classic/sift/MDCBasedDiscriminator.html">MDCBasedDiscriminator</a>が設定されます。弁別器は、<span class="prop">key</span>プロパティで指定されたキーのMDC値を返します。MDC値がnullの場合は、<span class="prop">defaultValue</span>プロパティで指定した値を返します。
     </p>
 
     <p><code>SiftingAppender</code>による子アペンダーの管理機能は独特なものです。上記の例では、<code>SiftingAppender</code>によって複数の<code>FileAppender</code>が作られます。それぞれの<code>FileAppender</code>はキー"userid"でMDCに登録された値によって区別されます。キー"uesrid"のMDC値が新しい値のときは、新しい<code>FileAppender</code>インスタンスをゼロから作ります。<code>SiftingAppender</code>は自分が作ったアペンダーを追跡し続けます。30分間使われなかったアペンダーは自動的に閉じられ、破棄されます。
@@ -2486,7 +2486,7 @@ logger.debug("Alice says hello"); </p>
     <p>アプリケーションによっては、適切な<span class="prop">タイムアウト時間</span>を決めるのが難しいことがあります。<span class="prop">タイムアウト時間</span>が短すぎると、ネストされたアペンダーが削除された直後に新しく生成されるようになってしまいます。これは<em>ゴミ漁り</em>と呼ばれる事象です。<span class="prop">タイムアウト時間</span>が長すぎると、立て続けにアペンダーが生成されるとリソース不足になってしまうかもしれません。<span class="prop">maxAppenderCount</span>が小さすぎても同じようにゴミ漁りが発生するかもしれません。
     </p>
 
-    <p>どんな場合でも、ネストされたアペンダーが不要になる箇所を特定するのは簡単でしょう。そういう場所が特定できたら、あるいはほぼ確実にそうだと言える場所が特定できたら、そこに書かれているロギング式に<a href="http://logback.qos.ch/apidocs/ch/qos/logback/classic/ClassicConstants.html#FINALIZE_SESSION_MARKER">FINALIZE_SESSION</a>マーカーを指定しましょう。SiftingAppenderは<code>FINALIZE_SESSION</code>マーカーを指定されたロギングイベントを見つけたら、関連付けられたアペンダーはもう破棄していいいものと判断します。破棄されることになったアペンダーは、数秒間到着するであろうロギングイベントに備えて活性化した後、何も到着しなければそのままクローズします。
+    <p>どんな場合でも、ネストされたアペンダーが不要になる箇所を特定するのは簡単でしょう。そういう場所が特定できたら、あるいはほぼ確実にそうだと言える場所が特定できたら、そこに書かれているロギング式に<a href="https://logback.qos.ch/apidocs/ch/qos/logback/classic/ClassicConstants.html#FINALIZE_SESSION_MARKER">FINALIZE_SESSION</a>マーカーを指定しましょう。SiftingAppenderは<code>FINALIZE_SESSION</code>マーカーを指定されたロギングイベントを見つけたら、関連付けられたアペンダーはもう破棄していいいものと判断します。破棄されることになったアペンダーは、数秒間到着するであろうロギングイベントに備えて活性化した後、何も到着しなければそのままクローズします。
     </p>
 
     <pre class="prettyprint source">import org.slf4j.Logger;
@@ -2516,7 +2516,7 @@ import static ch.qos.logback.classic.ClassicConstants.FINALIZE_SESSION_MARKER;
 
     <h3 class="doAnchor" name="AsyncAppender">AsyncAppender</h3>
 
-    <p>AsyncAppenderは<a href="http://logback.qos.ch/apidocs/ch/qos/logback/classic/spi/ILoggingEvent.html">ILoggingEvent</a>を非同期的にロギングします。単にイベントディスパッチャとして機能するので、意味のある仕事をさせるには他のアペンダーを参照させなければなりません。</p>
+    <p>AsyncAppenderは<a href="https://logback.qos.ch/apidocs/ch/qos/logback/classic/spi/ILoggingEvent.html">ILoggingEvent</a>を非同期的にロギングします。単にイベントディスパッチャとして機能するので、意味のある仕事をさせるには他のアペンダーを参照させなければなりません。</p>
 
     <p><span class="label notice">80%を越えると消えてしまう</span>
 AsyncAppenderはロギングイベントを<a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/BlockingQueue.html">BlockingQueue</a>に蓄積します。<code>AsyncAppender</code>のワーカースレッドは、キューの先頭からロギングイベントを取り出して、<code>AsyncAppender</code>に割り当てられたアペンダーに振り分けます。キューの使用量が80%を超えている場合、デフォルトではTRACE、DEBUG、および、INFOレベルのログを捨ててしまいます。これは、ロギングイベントを失ってしまうリスクに見合うだけの性能影響があります。
@@ -2574,7 +2574,7 @@ AsyncAppenderはロギングイベントを<a href="http://docs.oracle.com/javas
 上記の議論を踏まえながらブロックする可能性を減らすため、AsyncAppenderはデフォルトでは利用可能なキューが最大値の20%未満になったらTRACE、DEBUG、INFOレベルのロギングイベントを破棄し、WARNとERRORレベルのロギングイベントだけを残すようになっています。そうすると、TRACE、DEBUG、INFOレベルのロギングイベントにコストをかけなくてもよくなるので、非同期処理を妨げず、高い性能を維持することができます。しきい値<span class="prop">discardingThreshold</span>を0にすればロギングイベントを破棄しないようにすることもできます。
     </p>
 
-    <p class="example">例： <code>AsyncAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conc/logback-async.xml">logback-examples/src/main/java/chapters/appenders/conc/logback-async.xml</a>）</p>
+    <p class="example">例： <code>AsyncAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/conc/logback-async.xml">logback-examples/src/main/java/chapters/appenders/conc/logback-async.xml</a>）</p>
 
     <span class="asGroovy" onclick="return asGroovy('asyncAppender');">Groovyとして表示</span>
 
@@ -2605,7 +2605,7 @@ AsyncAppenderはロギングイベントを<a href="http://docs.oracle.com/javas
     <p>次に示す<code>CountingConsoleAppender</code>は、限られた数のロギングイベントをコンソールに出力する自作アペンダーです。指定された数のロギングイベントを処理したらシャットダウンします。ロギングイベントを書式化するために<code>PatternLayoutEncoder</code>を使用します。そして、<code>limit</code>というプロパティを設定することができます。また、<code>append(Object eventObject)</code>メソッド以外にもいくつかメソッドを用意しなければなりません。例を見ればわかりますが、これらのパラメータは logback のさまざまな設定の仕組みによって自動的に設定されます。
     </p>
 
-    <em>例4<span class="autoExec"></span>: <code>CountingConsoleAppender</code> (<a href="http://logback.qos.ch/xref/chapters/appenders/CountingConsoleAppender.java">logback-examples/src/main/java/chapters/appenders/CountingConsoleAppender.java</a>)</em>
+    <em>例4<span class="autoExec"></span>: <code>CountingConsoleAppender</code> (<a href="https://logback.qos.ch/xref/chapters/appenders/CountingConsoleAppender.java">logback-examples/src/main/java/chapters/appenders/CountingConsoleAppender.java</a>)</em>
     <pre class="prettyprint source">package chapters.appenders;
 
 import java.io.IOException;
@@ -2681,7 +2681,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
       </li>
     </ul>
 
-    <p><a href="http://logback.qos.ch/xref/chapters/appenders/CountingConsoleAppender.html"><code>CountingConsoleAppender</code></a>は他のアペンダーと同じように定義することができます。設定ファイルの例として<a href="http://logback.qos.ch/xref/chapters/appenders/countingConsole.xml"><em>logback-examples/src/main/java/chapters/appenders/countingConsole.xml</em></a>も見てください。
+    <p><a href="https://logback.qos.ch/xref/chapters/appenders/CountingConsoleAppender.html"><code>CountingConsoleAppender</code></a>は他のアペンダーと同じように定義することができます。設定ファイルの例として<a href="https://logback.qos.ch/xref/chapters/appenders/countingConsole.xml"><em>logback-examples/src/main/java/chapters/appenders/countingConsole.xml</em></a>も見てください。
     </p>
 
 
@@ -2692,7 +2692,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
 
     <h3 class="doAnchor" name="AccessSocketAppender">SocketAppenderとSSLSocketAppender</h3>
 
-    <p><code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/net/SocketAppender.html">SocketAppender</a></code>は、シリアライズした<code>AccessEvent</code>をネットワーク上のリモートホストに送信するために設計されています。リモートロギングは、アクセスイベントが重要であろうとなかろうと盗聴できないようになっています。受信したイベントをデシリアライズした後は、自分で生成したロギングイベントと同じように扱うことができます。
+    <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/access/net/SocketAppender.html">SocketAppender</a></code>は、シリアライズした<code>AccessEvent</code>をネットワーク上のリモートホストに送信するために設計されています。リモートロギングは、アクセスイベントが重要であろうとなかろうと盗聴できないようになっています。受信したイベントをデシリアライズした後は、自分で生成したロギングイベントと同じように扱うことができます。
     </p>
 
     <p><code><a href="https://logback.qos.ch/xref/ch/qos/logback/classic/net/SSLSocketAppender.html">SSLSocketAppender</a></code>は基本的な<code>SocketAppender</code>を拡張したもので、Secure Sockets Layer（SSL）を介してリモートホストにログを転送します。
@@ -2715,12 +2715,12 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
 
     <h3 class="doAnchor" name="AccessSMTPAppender">SMTPAppender</h3>
 
-    <p>logback-access の<code><a href="http://logback.qos.ch/xref/ch/qos/logback/access/net/SMTPAppender.html">SMTPAppender</a></code>は、logback-classic と同じように動作します。ｔだ、<span class="prop">評価器</span>の設定はだいぶ違います。デフォルトでは、 <code>URLEvaluator</code>オブジェクトが使用されます。この評価器はロギング要求のURLと突き合わせるURLのリストを持っています。いずれかのURLにマッチするロギング要求が発生したら、<code>SMTPAppender</code>はメールを送信します。
+    <p>logback-access の<code><a href="https://logback.qos.ch/xref/ch/qos/logback/access/net/SMTPAppender.html">SMTPAppender</a></code>は、logback-classic と同じように動作します。ｔだ、<span class="prop">評価器</span>の設定はだいぶ違います。デフォルトでは、 <code>URLEvaluator</code>オブジェクトが使用されます。この評価器はロギング要求のURLと突き合わせるURLのリストを持っています。いずれかのURLにマッチするロギング要求が発生したら、<code>SMTPAppender</code>はメールを送信します。
     </p>
 
     <p>logback-access の<code>SMTPAppender</code>の設定例を見てみましょう。
     </p>
-    <p class="example">例： <code>SMTPAppender</code>の設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/access/logback-smtp.xml">logback-examples/src/main/java/chapters/appenders/conf/access/logback-smtp.xml</a>）</p>
+    <p class="example">例： <code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/conf/access/logback-smtp.xml">logback-examples/src/main/java/chapters/appenders/conf/access/logback-smtp.xml</a>）</p>
 
 <pre class="prettyprint source">&lt;appender name="SMTP"
   class="ch.qos.logback.access.net.SMTPAppender"&gt;
@@ -2742,7 +2742,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
 
     <h3 class="doAnchor" name="AccessDBAppender">DBAppender</h3>
 
-    <p><a href="http://logback.qos.ch/xref/ch/qos/logback/access/db/DBAppender.html"><code>DBAppender</code></a>はアクセスイベントをデータベースに登録するために使用します。
+    <p><a href="https://logback.qos.ch/xref/ch/qos/logback/access/db/DBAppender.html"><code>DBAppender</code></a>はアクセスイベントをデータベースに登録するために使用します。
     </p>
 
     <p><code>DBAppender</code>は<em>access_event</em>テーブルと<em>access_event_header</em>テーブルを使います。いずれも<code>DBAppender</code>を使用する前に準備しなければなりません。テーブルを作成するSQLスクリプトはlogback の配布物に含まれています。<em>logback-access/src/main/java/ch/qos/logback/access/db/script</em>ディレクトリにあるはずです。一般的なデータベースそれぞれの専用スクリプトがあります。あなたの使用しているデータベース用のスクリプトが無かったとしても、他のスクリプトを参考にすれば簡単に作成できます。あなたの使っているデータベース用のスクリプトが無かった時は、作成したスクリプトをlogbackプロジェクトに送ってください。
@@ -2860,7 +2860,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
 
     <p><code>DBAppender</code>の設定例を見てください。</p>
 
-    <p class="example">例：DBAppenderの設定（<em><a href="http://logback.qos.ch/xref/chapters/appenders/conf/access/logback-DB.xml</em>">logback-examples/src/main/java/chapters/appenders/conf/access/logback-DB.xml</em></a>）</p>
+    <p class="example">例：DBAppenderの設定（<em><a href="https://logback.qos.ch/xref/chapters/appenders/conf/access/logback-DB.xml</em>">logback-examples/src/main/java/chapters/appenders/conf/access/logback-DB.xml</em></a>）</p>
 
     <pre class="prettyprint source">&lt;configuration&gt;
 
@@ -2880,14 +2880,14 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
 
     <h3 class="doAnchor" name="AccessSiftingAppender">SiftingAppender</h3>
 
-    <p>logback-access のSiftingAppenderは、logback-classic のSiftingAppenderとほとんど同じです。主な違いは、デフォルトの弁別器がMDCを参照するものではなく、<a href="http://logback.qos.ch/xref/ch/qos/logback/access/sift/AccessEventDiscriminator.html">AccessEventDiscriminator</a>になっていることです。AccessEventDiscriminatorは、その名のとおり、ネストされたアペンダーを選択するために、AccessEventのフィールドを使用します。指定されたフィールドの値がnullの場合<span class="prop">DefaultValue</span>プロパティの値が使用されます。
+    <p>logback-access のSiftingAppenderは、logback-classic のSiftingAppenderとほとんど同じです。主な違いは、デフォルトの弁別器がMDCを参照するものではなく、<a href="https://logback.qos.ch/xref/ch/qos/logback/access/sift/AccessEventDiscriminator.html">AccessEventDiscriminator</a>になっていることです。AccessEventDiscriminatorは、その名のとおり、ネストされたアペンダーを選択するために、AccessEventのフィールドを使用します。指定されたフィールドの値がnullの場合<span class="prop">DefaultValue</span>プロパティの値が使用されます。
     </p>
 
     <p>AccessEventのフィールドとして指定できるのはCOOKIE、REQUEST_ATTRIBUTE、SESSION_ATTRIBUTE、REMOTE_ADDRESS、LOCAL_PORT、REQUEST_URIです。最初の3つのフィールドは単独で指定することはできません。<span class="prop">AdditionalKey要素</span>が必要なので注意してください。</p>
 
     <p>設定ファイルの例を示します。</p>
 
-    <p class="example">例：SiftingAppenderの設定（<a href="http://logback.qos.ch/xref/chapters/appenders/conf/sift/access-siftingFile.xml">logback-examples/src/main/java/chapters/appenders/conf/sift/access-siftingFile.xml</a>）</p>
+    <p class="example">例：SiftingAppenderの設定（<a href="https://logback.qos.ch/xref/chapters/appenders/conf/sift/access-siftingFile.xml">logback-examples/src/main/java/chapters/appenders/conf/sift/access-siftingFile.xml</a>）</p>
 
     <pre class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="SIFTING" class="ch.qos.logback.access.sift.SiftingAppender"&gt;
@@ -2914,7 +2914,7 @@ public class CountingConsoleAppender extends AppenderBase&lt;ILoggingEvent&gt; {
     </p>
 
 
-    <script src="http://logback.qos.ch/templates/footer.js" type="text/javascript"></script>
+    <script src="https://logback.qos.ch/templates/footer.js" type="text/javascript"></script>
 
 
   </div>
