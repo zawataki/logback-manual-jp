@@ -1571,7 +1571,11 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p><code>SMTPAppender</code>は<code>evaluate()</code>メソッドを呼び出すことで、受け取ったロギングイベントを評価器に渡します。そのロギングイベントがメール送信をトリガするものなのか、単に循環バッファに入れておくだけでいいのかを判定するためです。評価器が評価した結果が真なら、メールを送信します。<code>SMTPAppender</code>の保持する評価器オブジェクトは1つだけです。このオブジェクトは、自身の内部状態を管理することができます。わかりにくいので、<code>CounterBasedEvaluator</code>クラスのコードで説明します。これはロギングイベントが1024件発生するたびにメール送信をトリガします。
     </p>
 
-    <p class="example">例： 1024件ごとに評価値<code>true</code>を返す<code>EventEvaluator</code>インターフェイスの実装（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/CounterBasedEvaluator.java">logback-examples/src/main/java/chapters/appenders/mail/CounterBasedEvaluator.java</a>）</p>
+    <p class="example">
+      例： 1024件ごとに評価値<code>true</code>を返す<code>EventEvaluator</code>インターフェイスの実装（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/java/chapters/appenders/mail/CounterBasedEvaluator.java"><!--
+      -->logback-examples/src/main/java/chapters/appenders/mail/CounterBasedEvaluator.java</a>）
+    </p>
 
    <pre class="prettyprint source">package chapters.appenders.mail;
 
