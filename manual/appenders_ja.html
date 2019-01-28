@@ -1538,7 +1538,11 @@ public interface TriggeringPolicy&lt;E&gt; extends LifeCycle {
     <p>デフォルトでは、<code>SMTPAppender</code>から送信されるメッセージには最大で256件のロギングメッセージが含まれています。次の例に示すように、別のバッファサイズを指定することができます。
     </p>
 
-    <p class="example">例： バッファサイズを変更した<code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/customBufferSize.xml">logback-examples/src/main/java/chapters/appender/mail/customBufferSize.xml</a>）</p>
+    <p class="example">
+      例： バッファサイズを変更した<code>SMTPAppender</code>の設定（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/mail/customBufferSize.xml"><!--
+        -->logback-examples/src/main/resources/chapters/appenders/mail/customBufferSize.xml</a>）
+    </p>
     <pre class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
     &lt;smtpHost&gt;${smtpHost}&lt;/smtpHost&gt;
