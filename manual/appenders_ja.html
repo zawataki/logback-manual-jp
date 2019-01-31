@@ -1617,7 +1617,11 @@ public class CounterBasedEvaluator extends ContextAwareBase implements EventEval
     <p><code>SMTPAppender</code>の<span class="prop">evaluator</span>オプションを指定するということは、カスタム評価器を使うということです。次の設定ファイルではルートロガーに<code>SMTPAppender</code>を割り当てています。SMTPAppenderでは、<code>CounterBasedEvaluator</code>を評価器として指定しています。
     </p>
 
-    <p class="example">例： <code>SMTPAppender</code>とカスタム<code>評価器</code>とバッファサイズの設定例（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/mail3.xml">logback-examples/src/main/java/chapters/appenders/mail/mail3.xml</a>）</p>
+    <p class="example">
+      例： <code>SMTPAppender</code>とカスタム<code>評価器</code>とバッファサイズの設定例（<a
+      href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/mail/mail3.xml"><!--
+      -->logback-examples/src/main/resources/chapters/appenders/mail/mail3.xml</a>）
+    </p>
     <span class="asGroovy" onclick="return asGroovy('mail3');">Groovyとして表示</span>
     <pre id="mail3" class="prettyprint source">&lt;configuration&gt;
   &lt;appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender"&gt;
