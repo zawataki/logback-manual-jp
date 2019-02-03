@@ -1656,7 +1656,11 @@ logger.error(<b>notifyAdmin</b>,
    <p>次の設定ファイルは、マーカーとしてNOTIFY_ADMINあるいはTRANSACTION_FAILUREを指定されたロギングイベントが発生したときだけメール送信をトリガするものです。
    </p>
 
-   <p class="example">例: <code>OnMarkerEvaluator</code>を指定した<code>SMTPAppender</code>の設定（<a href="https://logback.qos.ch/xref/chapters/appenders/mail/mailWithMarker.xml">logback-examples/src/main/java/chapters/appenders/mail/mailWithMarker.xml</a>）</p>
+    <p class="example">
+      例: <code>OnMarkerEvaluator</code>を指定した<code>SMTPAppender</code>の設定（<a
+        href="https://github.com/qos-ch/logback/blob/master/logback-examples/src/main/resources/chapters/appenders/mail/mailWithMarker.xml"><!--
+        -->logback-examples/src/main/resources/chapters/appenders/mail/mailWithMarker.xml</a>）
+    </p>
 
    <span class="asGroovy" onclick="return asGroovy('mailWithMarker');">Groovyとして表示</span>
    <pre id="mailWithMarker" class="prettyprint source">&lt;configuration&gt;
@@ -1681,7 +1685,7 @@ logger.error(<b>notifyAdmin</b>,
     <p>次のコマンドを実行してみましょう。</p>
 
     <pre class="source">java -Dfrom=source@xyz.com -Dto=recipient@xyz.com -DsmtpHost=some_smtp_host \
-  chapters.appenders.mail.Marked_EMail src/main/java/chapters/appenders/mail/mailWithMarker.xml</pre>
+  chapters.appenders.mail.Marked_EMail src/main/resources/chapters/appenders/mail/mailWithMarker.xml</pre>
 
 
   <h4 class="doAnchor" name="marker_JaninoEventEvaluator">JaninoEventEvaluatorを使ったマーカーに基づくトリガ</h4>
